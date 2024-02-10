@@ -8,7 +8,7 @@ const Mainlayout = () => {
     return (
         <div className='mainLayout'>
             <Navbar />
-            <main>
+            <main className='outlet'>
                 <Outlet />
             </main>
             <Footer />

@@ -1,6 +1,18 @@
-// .mainLayout{
-//     background-color: rgba(0, 0, 0, 0.940);
-//     width: 100vw;
-//     height: 100vh;
-    
-// }
+* {
+    .link {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .mainLayout{    
+
+    .outlet{
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+    }
+  }

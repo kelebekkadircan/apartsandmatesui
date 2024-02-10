@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react'
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import './navbar.scss'
 
 
@@ -9,6 +9,11 @@ const Navbar = () => {
 
     const [active, setActive] = useState(false)
     const [open, setOpen] = useState(false)
+
+    const { pathname } = useLocation()
+    const path = pathname.split("/")[1];
+
+    console.log(path);
 
     const isActive = () => {
         window.scrollY > 0 ? setActive(true) : setActive(false)
@@ -26,16 +31,18 @@ const Navbar = () => {
     const currentUser = {
         id: 1,
         username: "Kadir",
-        isOwner: true
+        isOwner: false
     }
 
 
     return (
-        <div className={active ? "navbar active" : "navbar"} >
+        <div className={active || pathname !== "/" ? "navbar active" : "navbar"} >
             <div className="container">
-                <div className="logo">
-                    Aparts<span className='andSign' >&</span>Mates
-                </div>
+                <Link className='link'>
+                    <div className="logo">
+                        Aparts<span className='andSign' >&</span>Mates
+                    </div>
+                </Link>
                 <div className="links">
                     <NavLink className="navlink" to="/about" >Hakkımızda</NavLink>
                     <NavLink className="navlink" to="/favorites" >Favoriler</NavLink>
@@ -52,16 +59,25 @@ const Navbar = () => {
                             {open && (
                                 <div className="options">
                                     {
-                                        currentUser?.isOwner &&
-                                        (
-                                            <>
-                                                <span>Profilim</span>
-                                                <span>Profilim</span>
-                                                <span>Profilim</span>
-                                                <span>Profilim</span>
-                                                <span>Profilim</span>
-                                            </>
-                                        )
+                                        currentUser?.isOwner ?
+                                            (
+                                                <>
+                                                    <span>otel Profilim</span>
+                                                    <span>otel Profilim</span>
+                                                    <span>otel Profilim</span>
+                                                    <span>otel Profilim</span>
+                                                    <span>otel Profilim</span>
+
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <span>Profilim</span>
+                                                    <span>Profilim</span>
+                                                    <span>Profilim</span>
+                                                    <span>Profilim</span>
+                                                    <span>Profilim</span>
+                                                </>
+                                            )
                                     }
                                 </div>)}
                         </div>
