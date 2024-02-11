@@ -1,12 +1,16 @@
 .home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    display: flex;  
+    // align-items: center;
+    // justify-content: center;
+    overflow: hidden;
     
     
     .container{
         width: 1200px;
+        background-color: rgba(181, 47, 47, 0.406);
+        display: flex;
+        flex-direction: column;
+        
+
     }
 }

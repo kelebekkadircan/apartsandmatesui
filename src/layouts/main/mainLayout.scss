@@ -6,13 +6,24 @@
   }
 
   .mainLayout{    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    // position: relative;
 
-    .outlet{
+  
+    
 
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: auto;
-    }
+      .outlet{
+  
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // overflow: hidden;
+        margin: auto;
+      }
+
+    
+  
   }

@@ -67,7 +67,6 @@ const Navbar = () => {
                                                     <span>otel Profilim</span>
                                                     <span>otel Profilim</span>
                                                     <span>otel Profilim</span>
-
                                                 </>
                                             ) : (
                                                 <>

@@ -1,0 +1,36 @@
+.about{
+    background-color: red;
+    color: white;
+    display: flex;
+    justify-content: center;
+    height: 600px;
+
+    .container{
+        width: 1200px;
+        display: flex;
+        flex-direction:column ;
+
+        .top{
+            background-color: purple;
+            flex: 2;
+            
+
+        }
+
+        .bottom{
+            display: flex;
+            flex: 2;
+
+            .left{
+                flex: 1;
+                background-color: blue;
+            }
+
+            .right{
+                flex: 1;
+                background-color: green;
+            }
+        }
+
+    }
+}

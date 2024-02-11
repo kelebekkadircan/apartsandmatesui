@@ -1,14 +1,16 @@
 import React from 'react'
 import Search from '~/components/search/Search'
+import About from '~/components/about/About'
 import './home.scss'
-import Slide from '~/components/slide/Slide'
 
 const Home = () => {
     return (
         <div className='home' >
             <div className="container">
                 <Search />
+                <About />
                 {/* <Slide /> */}
+
             </div>
         </div>
     )
