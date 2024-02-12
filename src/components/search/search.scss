@@ -47,11 +47,12 @@
             flex-direction: row;
             // margin-top: 20px;
             width: 1200px;
-            background-color: rgb(255, 255, 255);
+            -color: rgb(255, 255, 255);
             padding: 10px 20px;
             align-items: center;
             justify-content: center;
             border-radius: 8px;
+            background-color: rgba(255, 255, 255, 0.894);
             
 
             .searchInput{

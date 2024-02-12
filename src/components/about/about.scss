@@ -1,9 +1,9 @@
 .about{
-    background-color: red;
+    // background-color: red;
     color: white;
     display: flex;
     justify-content: center;
-    height: 600px;
+    height: 700px;
 
     .container{
         width: 1200px;
@@ -11,10 +11,44 @@
         flex-direction:column ;
 
         .top{
-            background-color: purple;
+            // background-color: purple;
             flex: 2;
-            
 
+            .slideContainer{
+                width: 90%;
+                // background-color: black;
+                margin: 30px auto;
+                height: 100%;
+                position: relative;
+
+                
+
+                    // .slick-arrow{
+                        
+                    //     // background-color: red;
+                    //     position: absolute;
+                    //     top: 150px;
+
+                        
+
+                    // }
+                    // .slick-next {
+                    //     right: -30px;
+                    // }
+                    
+                    // .slick-prev {
+                    //     left: -30px;
+                    // }
+                    
+                    
+                    // .slick-prev::before{
+                    //     font-size: 20px;
+                    // }
+                    // .slick-next::before{
+                    //     font-size: 20px;
+                    // }
+                
+            }
         }
 
         .bottom{
@@ -22,12 +56,17 @@
             flex: 2;
 
             .left{
-                flex: 1;
-                background-color: blue;
+                flex: 3;
+                // background-color: blue;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                gap: 30px;
+            
             }
 
             .right{
-                flex: 1;
+                flex: 2;
                 background-color: green;
             }
         }

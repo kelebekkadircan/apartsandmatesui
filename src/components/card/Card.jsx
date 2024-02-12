@@ -1,9 +1,14 @@
 import React from 'react'
+import { cards } from '~/data'
 import './card.scss'
 
-const Card = () => {
+const Card = ({ item }) => {
     return (
-        <div>Card</div>
+        <div className="card">
+            <img src={item.img} alt="" />
+            <span className="desc">{item.desc}</span>
+            <span className="title">{item.title}</span>
+        </div>
     )
 }
 
