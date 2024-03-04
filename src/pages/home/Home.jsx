@@ -1,19 +1,18 @@
-import React from 'react'
-import Search from '~/components/search/Search'
-import About from '~/components/about/About'
-import './home.scss'
+import React from "react";
+import Search from "~/components/search/Search";
+import About from "~/components/about/About";
+import "./home.scss";
 
 const Home = () => {
-    return (
-        <div className='home' >
-            <div className="container">
-                <Search />
-                <About />
-                {/* <Slide /> */}
+  return (
+    <div className="home">
+      <div className="container">
+        <Search />
+        <About />
+        {/* <Slide /> */}
+      </div>
+    </div>
+  );
+};
 
-            </div>
-        </div>
-    )
-}
-
-export default Home
+export default Home;

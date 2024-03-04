@@ -1,0 +1,15 @@
+.test {
+  max-width: 1200px;
+  width: 100%;
+  background-color: red;
+  .container {
+    margin: 0 auto;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: rgb(129, 62, 158);
+  }
+}

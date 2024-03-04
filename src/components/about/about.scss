@@ -1,103 +1,93 @@
-.about{
-    // background-color: red;
-    color: white;
+.about {
+  // background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  height: 1000px;
+
+  .container {
+    width: 1200px;
     display: flex;
-    justify-content: center;
-    height: 1000px;
+    flex-direction: column;
 
-    .container{
-        width: 1200px;
-        display: flex;
-        flex-direction:column ;
+    .top {
+      // background-color: purple;
+      flex: 2;
 
-        .top{
-            // background-color: purple;
-            flex: 2;
+      .slideContainer {
+        width: 90%;
+        // background-color: black;
+        margin: 30px auto;
+        height: 100%;
+        position: relative;
 
-            .slideContainer{
-                width: 90%;
-                // background-color: black;
-                margin: 30px auto;
-                height: 100%;
-                position: relative;
+        // .slick-arrow{
 
-                
+        //     // background-color: red;
+        //     position: absolute;
+        //     top: 150px;
 
-                    // .slick-arrow{
-                        
-                    //     // background-color: red;
-                    //     position: absolute;
-                    //     top: 150px;
+        // }
+        // .slick-next {
+        //     right: -30px;
+        // }
 
-                        
+        // .slick-prev {
+        //     left: -30px;
+        // }
 
-                    // }
-                    // .slick-next {
-                    //     right: -30px;
-                    // }
-                    
-                    // .slick-prev {
-                    //     left: -30px;
-                    // }
-                    
-                    
-                    // .slick-prev::before{
-                    //     font-size: 20px;
-                    // }
-                    // .slick-next::before{
-                    //     font-size: 20px;
-                    // }
-                
-            }
-        }
-
-        .bottom{
-            display: flex;
-            flex: 2;
-
-            .left{
-                flex: 3;
-                font-weight: 300;
-                font-size: 32px;
-                // background-color: rgba(0, 0, 255, 0.269);
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                gap: 30px;
-
-                .aboutLink{
-                    display: flex;
-                    flex-direction: row;
-                    gap: 30px;
-
-                    &:hover{
-                        color: rgb(28, 92, 144) ;
-                        transition: all .4s ease-in-out;
-                        cursor: pointer;
-                    }
-                }
-
-                
-            }
-
-            .right{
-                flex: 2;
-                
-                .imgContainer{
-                     width: 100% ;
-                     height: 100%;
-                     scale: 0.9;
-                    // background-color: red;
-                }
-
-                img{
-                    width: 90%;
-                    height: 90%;
-                    object-fit: cover;
-                    
-                }
-            }
-        }
-
+        // .slick-prev::before{
+        //     font-size: 20px;
+        // }
+        // .slick-next::before{
+        //     font-size: 20px;
+        // }
+      }
     }
+
+    .bottom {
+      display: flex;
+      flex: 2;
+
+      .left {
+        flex: 3;
+        font-weight: 300;
+        font-size: 32px;
+        // background-color: rgba(0, 0, 255, 0.269);
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 30px;
+
+        .aboutLink {
+          display: flex;
+          flex-direction: row;
+          gap: 30px;
+
+          &:hover {
+            color: rgb(28, 92, 144);
+            transition: all 0.4s ease-in-out;
+            cursor: pointer;
+          }
+        }
+      }
+
+      .right {
+        flex: 2;
+
+        .imgContainer {
+          width: 100%;
+          height: 100%;
+          scale: 0.9;
+          // background-color: red;
+        }
+
+        img {
+          width: 90%;
+          height: 90%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
 }

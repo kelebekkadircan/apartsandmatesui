@@ -1,143 +1,133 @@
-@import '../../main.scss' ;
+@import "../../main.scss";
 
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // background-color: rgba(0, 0, 0, 0.907);
+  z-index: 9999;
+  color: white;
+  position: sticky;
+  top: 0;
+  transition: 0.5s all ease-in;
 
-.navbar{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    // background-color: rgba(0, 0, 0, 0.907);
-    z-index: 9999;
-    color: white;
-    position: sticky;
-    top: 0;
-    transition: 0.5s all ease-in;
-
-    &.active{
+  &.active {
     background-color: white;
     color: black;
 
-    .container{
-
-        .links{
-
-            .navlink{
-                color: black;
-            }
-            button{
-                color: black;
-                border: black 1px solid;
-
-                &:hover{
-                    background-color: black;
-                    color: white;
-                }
-            }
+    .container {
+      .links {
+        .navlink {
+          color: black;
         }
+        button {
+          color: black;
+          border: black 1px solid;
+
+          &:hover {
+            background-color: black;
+            color: white;
+          }
+        }
+      }
     }
-   }
-    
-    
-        .container{
-            width: 1200px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            // height: 100px;
-            // background-color: rgba(255, 0, 0, 0.300);
-            .logo{
-                    font-weight: bold;
-                    font-size: 34px;
-                    // color:white;
-                    .andSign{
-                        color: rgb(28, 92, 144);
-                    }
-            }
+  }
 
-            .links{
-                display: flex;
-                gap: 24px;
-                align-items: center;
-                // Font familysini değiştir
-                // position: relative;
-              
-                
-                .navlink{
-                        color: white;
-                        text-decoration: none;
-                        
-                }
+  .container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    // height: 100px;
+    // background-color: rgba(255, 0, 0, 0.300);
+    .logo {
+      font-weight: bold;
+      font-size: 34px;
+      // color:white;
+      .andSign {
+        color: rgb(28, 92, 144);
+      }
+    }
 
-                .user{
-                    display: flex;
-                    align-items: center;
-                    gap: 10px;
-                    cursor: pointer;
-                    position: relative;
+    .links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      // Font familysini değiştir
+      // position: relative;
 
-                    img{
-                        width: 32px;
-                        height: 32px;
-                        border-radius: 50%;
-                        object-fit: cover;
+      .navlink {
+        color: white;
+        text-decoration: none;
+      }
 
-                    }
+      .user {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        position: relative;
 
-                    .options{
-                        position: absolute;
-                        top: 60px;
-                        right: 0;
-                        padding: 20px;
-                        background-color: white;
-                        border-radius: 10px;
-                        z-index: 999;
-                        border: 1px solid lightgrey;
-                        display: flex;
-                        flex-direction: column;
-                        gap: 10px;
-                        width: 200px;
-                        font-weight: 300;
-                        color: gray;
-                    }
-                }
-
-                button{
-                    padding: 10px 15px;
-                    background-color: transparent;
-                    border: white 1px solid;
-                    border-radius: 8px;
-                    color: white;
-                    padding: 10px 20px;
-                    cursor: pointer;
-
-                    &:hover{
-                        background-color: green ;
-                        color: white;
-
-                        transition: all 0.4s ease-in-out;
-                    }
-
-                }
-
-            }
+        img {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          object-fit: cover;
         }
 
-        hr{
-            width: 100%;
-            height: 0;
-            border: 0.5px solid lightgray;
+        .options {
+          position: absolute;
+          top: 60px;
+          right: 0;
+          padding: 20px;
+          background-color: white;
+          border-radius: 10px;
+          z-index: 999;
+          border: 1px solid lightgrey;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          width: 200px;
+          font-weight: 300;
+          color: gray;
         }
+      }
 
-        .menu {
-            width: 1200px;
-            padding: 10px 0px;
-            display: flex;
-            justify-content: space-between;
-            font-weight: 300;
-            color: gray;
-        
-            // Font family linkle aynı yapılabilir
+      button {
+        padding: 10px 15px;
+        background-color: transparent;
+        border: white 1px solid;
+        border-radius: 8px;
+        color: white;
+        padding: 10px 20px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: green;
+          color: white;
+
+          transition: all 0.4s ease-in-out;
         }
+      }
+    }
+  }
 
+  hr {
+    width: 100%;
+    height: 0;
+    border: 0.5px solid lightgray;
+  }
 
+  .menu {
+    width: 1200px;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    color: gray;
+
+    // Font family linkle aynı yapılabilir
+  }
 }
