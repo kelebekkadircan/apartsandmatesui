@@ -10,6 +10,7 @@
   position: sticky;
   top: 0;
   transition: 0.5s all ease-in;
+  width: 100%;
 
   &.active {
     background-color: white;
@@ -39,7 +40,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 5px;
     // height: 100px;
     // background-color: rgba(255, 0, 0, 0.300);
     .logo {
@@ -78,6 +79,7 @@
         }
 
         .options {
+          // background-color: red;
           position: absolute;
           top: 60px;
           right: 0;
@@ -121,8 +123,9 @@
   }
 
   .menu {
-    width: 1200px;
-    padding: 10px 0px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 10px 5px;
     display: flex;
     justify-content: space-between;
     font-weight: 300;
