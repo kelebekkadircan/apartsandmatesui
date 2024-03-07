@@ -1,3 +1,5 @@
+@import "./responsive.scss";
+
 * {
   .link {
     text-decoration: none;
@@ -8,20 +10,70 @@
 .mainLayout {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  position: relative;
-  // overflow-x: hidden;
+  height: 100vh;
+  background-color: rgba(35, 32, 32, 0.389);
+  max-width: 1366px;
+  // justify-content: space-between;
+  // width: 100%;
+  // position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include xl {
+    background-color: gray;
+    max-width: 1166px;
+  }
+  @include lg {
+    background-color: rgb(104, 25, 161);
+    max-width: 966px;
+  }
+  @include md {
+    background-color: green;
+    max-width: 766px;
+  }
+  @include sm {
+    background-color: red;
+    max-width: 566px;
+  }
+  @include xs {
+    background-color: rgb(135, 183, 31);
+    max-width: 366px;
+  }
 
   .outlet {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    // justify-content: center;
     width: 100%;
     height: 100%;
+    // background-color: rgba(0, 0, 255, 0.142);
+    // background-color: red;
     // overflow: hidden;
-    margin: auto;
+    // margin: 0 auto;
+    // padding-left: 0.5rem;
+    // padding-right: 0.5rem;
+    // background-color: rgba(0, 0, 255, 0.314);
   }
 }
+// .layout {
+//   background-color: rebeccapurple;
+//   max-width: 1366px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding-left: 20px;
+//   padding-right: 20px;
+
+//   @include lg {
+//     background-color: gray;
+//     max-width: 1280px;
+//   }
+//   @include md {
+//     background-color: green;
+//     max-width: 768px;
+//   }
+//   @include sm {
+//     background-color: red;
+//     max-width: 640px;
+//   }
+// }

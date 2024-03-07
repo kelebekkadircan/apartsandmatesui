@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./navbar.scss";
 
 const Navbar = () => {
   const [active, setActive] = useState(false);
   const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
 
   const { pathname } = useLocation();
   const path = pathname.split("/")[1];
@@ -32,24 +33,24 @@ const Navbar = () => {
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
       <div className="container">
-        <Link className="link">
+        <Link className="left link">
           <div className="logo">
             Aparts<span className="andSign">&</span>Mates
           </div>
         </Link>
-        <div className="links">
-          <NavLink className="navlink" to="/about">
+        <div className="right">
+          <Link className="Link" to="/about">
             Hakkımızda
-          </NavLink>
-          <NavLink className="navlink" to="/favorites">
+          </Link>
+          <Link className="Link" to="/favorites">
             Favoriler
-          </NavLink>
-          <NavLink className="navlink" to="/contact">
+          </Link>
+          <Link className="Link" to="/contact">
             İletişim
-          </NavLink>
-          <NavLink className="navlink" to="/roommates">
+          </Link>
+          <Link className="Link" to="/roommates">
             Oda Arkadaşı Bul
-          </NavLink>
+          </Link>
           {!currentUser && (
             <Link to="/register">
               <button>Giriş Yap</button>
@@ -61,7 +62,7 @@ const Navbar = () => {
                 src="https://images.pexels.com/photos/4484954/pexels-photo-4484954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                 alt=""
               />
-              <span> {currentUser?.username} </span>
+              {/* <span> {currentUser?.username} </span> */}
               {open && (
                 <div className="options">
                   {currentUser?.isOwner ? (
@@ -86,18 +87,21 @@ const Navbar = () => {
             </div>
           )}
         </div>
+        <div className="menuIcon">
+          <img
+            src="/menu.png"
+            alt=""
+            onClick={() => setOpenMenu((prev) => !prev)}
+          />
+        </div>
+        <div className={openMenu ? "menu active" : "menu"}>
+          <a href="/">Home</a>
+          <a href="/">About</a>
+          <a href="/">Contact</a>
+          <a href="/">Agents</a>
+          <a href="/">Sign In</a>
+        </div>
       </div>
-      {active && (
-        <>
-          <hr />
-          <div className="menu">
-            <span>Kestel</span>
-            <span>Oba</span>
-            <span>Tosmur</span>
-            <span>Saray</span>
-          </div>
-        </>
-      )}
     </div>
   );
 };

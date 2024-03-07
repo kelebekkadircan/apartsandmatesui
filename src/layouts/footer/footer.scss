@@ -1,28 +1,26 @@
 .footer {
-    width: 100%;
-    max-width: 1200px;
-    font-size: 12px;
-    // background-color: red;
-    margin: 0 auto;
-}
+  width: 100%;
+  max-width: 1366px;
+  font-size: 12px;
+  // background-color: rgba(255, 0, 0, 0.664);
+  margin: 0 auto;
+  background-color: green;
 
-.fLists {
+  .fLists {
     width: 100%;
     display: flex;
     justify-content: space-between;
     margin-bottom: 50px;
     // color: white;
-}
-
-.fList {
-    list-style: none;
-    padding: 0;
-    // color: white;
-}
-
-.fListItem {
-    margin-bottom: 10px;
-    color: white;
-    cursor: pointer;
-
+    .fList {
+      list-style: none;
+      padding: 0;
+      // color: white;
+      .fListItem {
+        margin-bottom: 10px;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
 }
