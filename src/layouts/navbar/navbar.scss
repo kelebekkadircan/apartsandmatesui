@@ -13,39 +13,6 @@
   transition: 0.5s all ease-in;
   width: 100%;
 
-  &.active {
-    background-color: rgb(58, 49, 160);
-    color: black;
-
-    .container {
-      .left {
-        .logo {
-          color: white;
-        }
-        button {
-          color: black;
-          border: black 1px solid;
-
-          &:hover {
-            background-color: black;
-            color: white;
-          }
-        }
-      }
-
-      .right {
-        .Link {
-          color: white;
-        }
-        .user {
-          span {
-            color: white;
-          }
-        }
-      }
-    }
-  }
-
   .container {
     width: 90%;
     max-width: 1366px;
@@ -54,19 +21,17 @@
     align-items: center;
     padding: 20px 5px;
 
-    // background-color: rgba(0, 0, 255, 0.606);
-    // height: 100px;
-    // background-color: rgba(255, 0, 0, 0.300);
+    .left {
+      .logo {
+        font-weight: 300;
+        font-size: 2rem;
 
-    .logo {
-      font-weight: bold;
-      font-size: 34px;
-      @include sm {
-        font-size: 1rem;
-      }
-      // color:white;
-      .andSign {
-        color: rgb(28, 92, 144);
+        @include sm {
+          font-size: 1rem;
+        }
+        .andSign {
+          color: rgb(28, 92, 144);
+        }
       }
     }
 
@@ -75,125 +40,142 @@
       gap: 24px;
       align-items: center;
 
-      .findmate {
-        color: rgb(58, 49, 160);
-        text-decoration: none;
-        transition: all 0.4s ease-in;
+      .linkPart {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: center;
 
-        &:hover {
-          color: rgb(124, 120, 163);
-          scale: 1.05;
+        .RegButton {
+          padding: 10px 15px;
+          background-color: transparent;
+          border: white 1px solid;
+          border-radius: 8px;
+          color: white;
+          padding: 10px 20px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: white;
+            border: black 1px solid;
+            color: black;
+
+            transition: all 0.5s ease-in-out;
+          }
+        }
+
+        .favoriteIcon {
+          color: white;
+          background-color: transparent;
+        }
+
+        .findmate {
+          color: rgb(28, 92, 144);
+          text-decoration: none;
+          transition: all 0.5s ease-in;
+
+          button {
+            padding: 10px 15px;
+            background-color: rgb(28, 92, 144);
+            border: rgb(28, 92, 144) 1px solid;
+            border-radius: 8px;
+            color: white;
+            padding: 10px 20px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: rgba(28, 92, 144, 0.621);
+              color: white;
+
+              transition: all 0.6s ease-in-out;
+            }
+          }
+
+          &:hover {
+            color: rgb(80, 130, 170);
+          }
+        }
+
+        @include sm {
+          display: none;
+        }
+
+        @include md {
+          font-size: 14px;
+        }
+
+        .user {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          cursor: pointer;
+          position: relative;
+
+          img {
+            width: 2.2rem;
+            height: 2.2rem;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+
+          .options {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            z-index: 999;
+            border: 1px solid lightgrey;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 200px;
+            font-weight: 300;
+            color: gray;
+          }
         }
       }
 
-      @include sm {
+      .menuIcon {
         display: none;
-      }
-
-      @include md {
-        font-size: 14px;
-      }
-      // Font familysini değiştir
-      // position: relative;
-
-      .Link {
-        color: white;
-        text-decoration: none;
-      }
-
-      .user {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-        // position: relative;
+        z-index: 999;
 
         img {
           width: 32px;
           height: 32px;
-          border-radius: 50%;
-          object-fit: cover;
+          cursor: pointer;
         }
 
-        .options {
-          // background-color: red;
-          position: absolute;
-          top: 60px;
-          right: 0;
-          padding: 20px;
-          background-color: white;
-          border-radius: 10px;
-          z-index: 999;
-          border: 1px solid lightgrey;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          width: 200px;
-          font-weight: 300;
-          color: gray;
-        }
-      }
-
-      button {
-        padding: 10px 15px;
-        background-color: transparent;
-        border: white 1px solid;
-        border-radius: 8px;
-        color: white;
-        padding: 10px 20px;
-        cursor: pointer;
-
-        &:hover {
-          background-color: rgb(28, 92, 144);
-          color: white;
-
-          transition: all 0.4s ease-in-out;
+        @include sm {
+          display: inline;
         }
       }
     }
-  }
+    .menu {
+      position: absolute;
+      top: 0;
+      right: -50%;
+      background-color: rgb(0, 0, 0);
+      color: white;
+      height: 100vh;
+      width: 50%;
+      display: none;
+      justify-content: center;
+      transition: all 1s ease;
+      font-size: 1.5rem;
+      flex-direction: column;
+      align-items: center;
 
-  hr {
-    width: 100%;
-    height: 0;
-    border: 0.5px solid lightgray;
-  }
-
-  .menuIcon {
-    display: none;
-    z-index: 999;
-
-    img {
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-    }
-
-    @include sm {
-      display: inline;
-    }
-  }
-  .menu {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: rgb(0, 0, 0);
-    color: white;
-    height: 100vh;
-    width: 50%;
-    display: none;
-    justify-content: center;
-    transition: all 1s ease;
-    font-size: 1.5rem;
-    flex-direction: column;
-    align-items: center;
-    transition: 1s all ease-in-out;
-
-    @include sm {
-      a {
-        display: initial;
+      @include sm {
+        a {
+          display: initial;
+        }
+        transition: 1s all ease-in-out;
+        display: flex;
+        right: 0;
       }
-      display: flex;
     }
   }
 }
