@@ -12,23 +12,7 @@ const Navbar = () => {
 
   console.log(path);
 
-  const isActive = () => {
-    window.scrollY > 0 ? setActive(true) : setActive(false);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", isActive);
-
-    return () => {
-      window.removeEventListener("scroll", isActive);
-    };
-  }, []);
-
-  const currentUser = {
-    id: 1,
-    username: "Kadir",
-    isOwner: false,
-  };
+  const currentUser = false;
 
   return (
     <div className={active || pathname !== "/" ? "navbar active" : "navbar"}>
@@ -39,16 +23,11 @@ const Navbar = () => {
           </div>
         </Link>
         <div className="right">
-          <Link className="Link" to="/about">
-            Hakkımızda
-          </Link>
-          <Link className="Link" to="/favorites">
+          <Link className="link" to="/favorites">
             Favoriler
           </Link>
-          <Link className="Link" to="/contact">
-            İletişim
-          </Link>
-          <Link className="Link" to="/roommates">
+
+          <Link className="findmate" to="/roommates">
             Oda Arkadaşı Bul
           </Link>
           {!currentUser && (
@@ -94,13 +73,22 @@ const Navbar = () => {
             onClick={() => setOpenMenu((prev) => !prev)}
           />
         </div>
-        <div className={openMenu ? "menu active" : "menu"}>
-          <a href="/">Home</a>
-          <a href="/">About</a>
-          <a href="/">Contact</a>
-          <a href="/">Agents</a>
-          <a href="/">Sign In</a>
-        </div>
+        {openMenu ? (
+          <div className="menu">
+            <Link className="link" to="/about">
+              Hakkımızda
+            </Link>
+            <Link className="link" to="/favorites">
+              Favoriler
+            </Link>
+            <Link className="link" to="/contact">
+              İletişim
+            </Link>
+            <Link className="link" to="/roommates">
+              Oda Arkadaşı Bul
+            </Link>
+          </div>
+        ) : null}
       </div>
     </div>
   );

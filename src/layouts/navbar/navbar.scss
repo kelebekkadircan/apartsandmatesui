@@ -11,7 +11,6 @@
   position: sticky;
   top: 0;
   transition: 0.5s all ease-in;
-  // max-width: 1366px;
   width: 100%;
 
   &.active {
@@ -48,7 +47,8 @@
   }
 
   .container {
-    width: 100%;
+    width: 90%;
+    max-width: 1366px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -74,8 +74,24 @@
       display: flex;
       gap: 24px;
       align-items: center;
+
+      .findmate {
+        color: rgb(58, 49, 160);
+        text-decoration: none;
+        transition: all 0.4s ease-in;
+
+        &:hover {
+          color: rgb(124, 120, 163);
+          scale: 1.05;
+        }
+      }
+
       @include sm {
         display: none;
+      }
+
+      @include md {
+        font-size: 14px;
       }
       // Font familysini değiştir
       // position: relative;
@@ -128,7 +144,7 @@
         cursor: pointer;
 
         &:hover {
-          background-color: green;
+          background-color: rgb(28, 92, 144);
           color: white;
 
           transition: all 0.4s ease-in-out;
@@ -177,9 +193,6 @@
       a {
         display: initial;
       }
-    }
-
-    &.active {
       display: flex;
     }
   }

@@ -12,33 +12,12 @@
   flex-direction: column;
   height: 100vh;
   background-color: rgba(35, 32, 32, 0.389);
-  max-width: 1366px;
+  // max-width: 1366px;
   // justify-content: space-between;
   // width: 100%;
   // position: relative;
   margin-left: auto;
   margin-right: auto;
-
-  @include xl {
-    background-color: gray;
-    max-width: 1166px;
-  }
-  @include lg {
-    background-color: rgb(104, 25, 161);
-    max-width: 966px;
-  }
-  @include md {
-    background-color: green;
-    max-width: 766px;
-  }
-  @include sm {
-    background-color: red;
-    max-width: 566px;
-  }
-  @include xs {
-    background-color: rgb(135, 183, 31);
-    max-width: 366px;
-  }
 
   .outlet {
     // display: flex;
@@ -50,10 +29,30 @@
     // background-color: rgba(0, 0, 255, 0.142);
     // background-color: red;
     // overflow: hidden;
-    // margin: 0 auto;
+    margin: 0 auto;
     // padding-left: 0.5rem;
     // padding-right: 0.5rem;
     // background-color: rgba(0, 0, 255, 0.314);
+    @include xl {
+      background-color: rgb(183, 158, 18);
+      max-width: 1166px;
+    }
+    @include lg {
+      background-color: rgb(104, 25, 161);
+      max-width: 966px;
+    }
+    @include md {
+      background-color: green;
+      max-width: 766px;
+    }
+    @include sm {
+      background-color: red;
+      max-width: 566px;
+    }
+    @include xs {
+      background-color: rgb(135, 183, 31);
+      max-width: 366px;
+    }
   }
 }
 // .layout {
