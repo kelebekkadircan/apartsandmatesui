@@ -6,16 +6,17 @@
   height: 1000px;
 
   .container {
-    width: 1200px;
+    // width: 1200px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 
     .top {
       // background-color: purple;
       flex: 2;
 
       .slideContainer {
-        width: 90%;
+        width: 100%;
         // background-color: black;
         margin: 30px auto;
         height: 100%;

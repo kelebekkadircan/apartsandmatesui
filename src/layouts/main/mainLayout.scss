@@ -10,33 +10,19 @@
 .mainLayout {
   display: flex;
   flex-direction: column;
+  width: auto;
   height: 100vh;
   background-color: rgba(35, 32, 32, 0.389);
-  overflow-x: hidden;
-
-  // max-width: 1366px;
-  // justify-content: space-between;
-  // width: 100%;
-  // position: relative;
-  margin-left: auto;
-  margin-right: auto;
 
   .outlet {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    // justify-content: center;
     width: 100%;
-    height: 100%;
-    // background-color: rgba(0, 0, 255, 0.142);
+    height: auto;
     // background-color: red;
-    // overflow: hidden;
+    // flex: 1;
     margin: 0 auto;
-    // padding-left: 0.5rem;
-    // padding-right: 0.5rem;
-    // background-color: rgba(0, 0, 255, 0.314);
+
     @include xl {
-      background-color: rgb(183, 158, 18);
+      background-color: rgb(106, 18, 183);
       max-width: 1166px;
     }
     @include lg {
@@ -57,24 +43,3 @@
     }
   }
 }
-// .layout {
-//   background-color: rebeccapurple;
-//   max-width: 1366px;
-//   margin-left: auto;
-//   margin-right: auto;
-//   padding-left: 20px;
-//   padding-right: 20px;
-
-//   @include lg {
-//     background-color: gray;
-//     max-width: 1280px;
-//   }
-//   @include md {
-//     background-color: green;
-//     max-width: 768px;
-//   }
-//   @include sm {
-//     background-color: red;
-//     max-width: 640px;
-//   }
-// }

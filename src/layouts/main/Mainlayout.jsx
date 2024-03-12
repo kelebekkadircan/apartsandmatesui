@@ -6,13 +6,15 @@ import "./mainLayout.scss";
 
 const Mainlayout = () => {
   return (
-    <div className="mainLayout">
+    <>
       <Navbar />
-      <main className="outlet">
-        <Outlet />
-      </main>
+      <div className="mainLayout">
+        <main className="outlet">
+          <Outlet />
+        </main>
+      </div>
       <Footer />
-    </div>
+    </>
   );
 };
 

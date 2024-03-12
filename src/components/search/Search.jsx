@@ -13,7 +13,7 @@ const Search = () => {
             </span>{" "}
             Burada !
           </h1>
-          <p>
+          <p className="subText">
             Alanyanın ilk oda arkadaşı bulma uygulaması apartsandmates.com ile
             apart bulma sıkıntısı sona eriyor !
           </p>
