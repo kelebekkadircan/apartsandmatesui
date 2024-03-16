@@ -11,7 +11,6 @@ export const Hero = () => {
         bulma sıkıntısı sona eriyor !
       </p>
       <SearchBar />
-
       <HeroSlider />
     </div>
   );

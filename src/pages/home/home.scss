@@ -11,15 +11,15 @@
   max-width: 1366px;
 
   @include xl {
-    background-color: rgb(40, 18, 183);
+    // background-color: rgb(40, 18, 183);
     max-width: 1166px;
   }
   @include lg {
-    background-color: rgb(104, 25, 161);
+    // background-color: rgb(104, 25, 161);
     max-width: 966px;
   }
   @include md {
-    background-color: green;
+    // background-color: green;
     max-width: 766px;
   }
   @include sm {

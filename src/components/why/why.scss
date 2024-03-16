@@ -96,14 +96,15 @@
         width: 60%;
 
         @include md {
-          max-width: 100%;
           width: 100%;
           margin-bottom: 20px;
+          background-color: red;
         }
+
         img {
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover;
         }
       }
     }
