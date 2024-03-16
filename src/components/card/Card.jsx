@@ -6,7 +6,6 @@ const Card = ({ item }) => {
   return (
     <div className="card">
       <img src={item.img} alt="" />
-      <span className="desc">{item.desc}</span>
       <span className="title">{item.title}</span>
     </div>
   );

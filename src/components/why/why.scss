@@ -1,0 +1,111 @@
+@import "../../layouts/main/responsive.scss";
+
+.why {
+  // background: #4b5ba4;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 50px;
+
+  .customContainer {
+    padding-right: 35px;
+    padding-left: 35px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    // background-color: red;
+
+    .whyWrapper {
+      // background-color: yellow;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      gap: 5px;
+      align-items: center;
+      justify-content: center;
+
+      @include md {
+        flex-direction: column;
+      }
+
+      .whyContent {
+        max-width: 40%;
+        // background-color: green;
+        box-sizing: border-box;
+        color: white;
+
+        @include md {
+          max-width: 100%;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+
+        .title {
+          font-size: 37px;
+          line-height: 1.2em;
+          font-weight: 600;
+          margin-bottom: 25px;
+          .colorGreen {
+            color: #17d3a5;
+          }
+        }
+
+        .text {
+          letter-spacing: 0.3px;
+          font-weight: 600;
+          font-size: 17px;
+          line-height: 1.5rem;
+        }
+
+        .buttonMore {
+          text-decoration: none;
+          color: #17d3a5;
+          font-weight: 600;
+          font-size: 18px;
+          padding: 5px 0;
+          min-height: auto;
+          margin-top: 20px;
+          display: flex;
+          gap: 30px;
+          align-items: center;
+          justify-content: flex-start;
+
+          &:hover {
+            img {
+              animation: myAnim 1s ease infinite;
+              @keyframes myAnim {
+                to {
+                  transform: translateX(15px);
+                }
+              }
+            }
+          }
+
+          img {
+            width: 1rem;
+          }
+        }
+      }
+
+      .whyImages {
+        // background-color: purple;
+        height: auto;
+        width: 60%;
+
+        @include md {
+          max-width: 100%;
+          width: 100%;
+          margin-bottom: 20px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

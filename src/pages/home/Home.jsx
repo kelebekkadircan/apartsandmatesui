@@ -1,16 +1,24 @@
 import React from "react";
-import Search from "~/components/search/Search";
-import About from "~/components/about/About";
 import "./home.scss";
+import { Why, Hero } from "~/components";
 
 const Home = () => {
   return (
     <div className="home">
-      {/* <Search /> */}
-      {/* <About /> */}
-      {/* <Slide /> */}
+      <Hero />
+      <Why />
     </div>
   );
 };
 
 export default Home;
+
+{
+  /* <Search /> */
+}
+{
+  /* <About /> */
+}
+{
+  /* <Slide /> */
+}

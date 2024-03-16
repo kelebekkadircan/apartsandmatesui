@@ -7,39 +7,33 @@
   }
 }
 
-.mainLayout {
+.outlet {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
-  width: auto;
-  height: 100vh;
-  background-color: rgba(35, 32, 32, 0.389);
+  background-color: rgba(22, 21, 21, 0.583);
+  // flex: 1;
+  margin: 0 auto;
 
-  .outlet {
-    width: 100%;
-    height: auto;
+  @include xl {
+    // background-color: rgb(40, 18, 183);
+    // max-width: 1166px;
+  }
+  @include lg {
+    // background-color: rgb(104, 25, 161);
+    // max-width: 966px;
+  }
+  @include md {
+    // background-color: green;
+    // max-width: 766px;
+  }
+  @include sm {
     // background-color: red;
-    // flex: 1;
-    margin: 0 auto;
-
-    @include xl {
-      background-color: rgb(106, 18, 183);
-      max-width: 1166px;
-    }
-    @include lg {
-      background-color: rgb(104, 25, 161);
-      max-width: 966px;
-    }
-    @include md {
-      background-color: green;
-      max-width: 766px;
-    }
-    @include sm {
-      background-color: red;
-      max-width: 566px;
-    }
-    @include xs {
-      background-color: rgb(135, 183, 31);
-      max-width: 366px;
-    }
+    // max-width: 566px;
+  }
+  @include xs {
+    // background-color: rgb(135, 183, 31);
+    // max-width: 366px;
   }
 }

@@ -1,9 +1,9 @@
 export const cards = [
     {
         id: 1,
-        title: "AI Artists",
+        title: "Anfora",
         desc: "Add talent to AI",
-        img: "https://images.pexels.com/photos/7532110/pexels-photo-7532110.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load",
+        img: "https://imgkit.otelz.com/turkiye/antalya/alanya/anfora-club-otel_af3dd455.jpg?tr=w-300,h-199,fo-auto",
     },
     {
         id: 2,

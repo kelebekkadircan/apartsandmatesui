@@ -1,53 +1,17 @@
-// .card{
-//     width: 110px;
-//     height: 250px;
-//     background-color: red;
-
-//     .container{
-//         position: relative;
-//         width: 100%;
-//         height: 100%;
-
-//         .logo{
-//             width: 100%;
-//             height: 100%;
-
-//             .imgContainer{
-
-//                 img{
-
-//                     width: 100%;
-//                     height: 100%;
-//                     object-fit: cover;
-//                 }
-//             }
-
-//         }
-
-//         .title{
-
-//                 h1{
-//                     position: absolute;
-//                     top: 90%;
-//                 }
-//         }
-
-//     }
-// }
-
 .card {
-  width: 252px;
-  height: 344px;
+  width: 260px;
+  height: 320px;
   color: white;
   border-radius: 10px;
-  // position: relative;
+  position: relative;
+  padding: 10px;
   cursor: pointer;
-  overflow: hidden;
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
   }
 
   .desc {
@@ -58,10 +22,9 @@
   }
 
   .title {
+    font-weight: 300;
     position: absolute;
-    top: 40px;
-    left: 15px;
-    font-size: 24px;
-    font-weight: 500;
+    top: -55px;
+    left: 10px;
   }
 }

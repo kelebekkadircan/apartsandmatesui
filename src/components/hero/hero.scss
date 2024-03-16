@@ -1,0 +1,21 @@
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .title {
+    margin-top: 120px;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 50px;
+    color: #fff;
+  }
+
+  .description {
+    color: #fff;
+    opacity: 0.85;
+    font-size: 1rem;
+    letter-spacing: 0.6;
+    font-weight: 300;
+  }
+}

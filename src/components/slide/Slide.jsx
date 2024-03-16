@@ -15,6 +15,10 @@ const Slide = () => {
     slidesToShow: 4,
     slidesToScroll: 2,
     initialSlide: 0,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 2500,
+
     responsive: [
       {
         breakpoint: 1170,
