@@ -98,7 +98,10 @@
         @include md {
           width: 100%;
           margin-bottom: 20px;
-          background-color: red;
+        }
+
+        @include sm {
+          display: none;
         }
 
         img {
