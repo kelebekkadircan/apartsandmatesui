@@ -6,8 +6,7 @@ import { AuthContext } from "~/context/auth/AuthContext";
 import useFetch from "~/hooks/fetch/useFetch";
 
 import React from "react";
-import "./Login.scss";
-// import '../../App.css';
+import "./login.scss";
 import video from "/assets/login/video.mp4";
 import logo from "/assets/login/logo.png";
 import { Link } from "react-router-dom";
