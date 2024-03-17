@@ -24,11 +24,11 @@
     max-width: 766px;
   }
   @include sm {
-    background-color: red;
+    // background-color: red;
     max-width: 566px;
   }
   @include xs {
-    background-color: rgb(135, 183, 31);
+    // background-color: rgb(135, 183, 31);
     max-width: 366px;
   }
 }

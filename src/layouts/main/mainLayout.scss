@@ -9,10 +9,11 @@
 
 .outlet {
   width: 100%;
+  min-height: 100svh; // en azından ekranın yüksekliği kadar olacak hiç kod yazılmasa bile ansızın aklıma geldi yanlış olabilir
   height: auto;
   display: flex;
   flex-direction: column;
-  background-color: rgba(22, 21, 21, 0.583);
+  background-color: #3c3c3c;
   // flex: 1;
   margin: 0 auto;
 

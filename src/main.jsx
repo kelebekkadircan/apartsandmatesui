@@ -4,9 +4,10 @@ import { RouterProvider } from "react-router-dom";
 import routes from "./routes/Routes";
 import Routes from "./routes/Routes";
 import "./main.scss";
+import { AuthContextProvider } from "./context/auth/AuthContext";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.Fragment>
+  <AuthContextProvider>
     <Routes />
-  </React.Fragment>
+  </AuthContextProvider>
 );

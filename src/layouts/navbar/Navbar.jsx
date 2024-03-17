@@ -6,7 +6,12 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const currentUser = false;
+  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+  const handleOut = () => {
+    localStorage.removeItem("currentUser");
+    window.location.reload();
+  };
 
   return (
     <div className="navbar">
@@ -28,7 +33,7 @@ const Navbar = () => {
               <button className="">Oda Arkadaşı Bul</button>
             </Link>
             {!currentUser && (
-              <Link to="/register">
+              <Link to="/login">
                 <button className="RegButton">Giriş Yap</button>
               </Link>
             )}
@@ -56,6 +61,7 @@ const Navbar = () => {
                         <span>Profilim</span>
                         <span>Profilim</span>
                         <span>Profilim</span>
+                        <span onClick={handleOut}>Log out</span>
                       </>
                     )}
                   </div>
