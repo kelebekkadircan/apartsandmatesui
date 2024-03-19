@@ -1,0 +1,114 @@
+@import "../../layouts/main/responsive.scss";
+
+.popularSection {
+  // background-color: #3d4044;
+  padding: 0 35px 150px 35px;
+
+  .title-color {
+    color: #4b5ba4;
+  }
+
+  .popularContainer {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    width: auto;
+    margin: 0 auto;
+    // background-color: rgba(255, 0, 0, 0.357);
+
+    .headerSection {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #d7ddea;
+      overflow: hidden;
+
+      @include sm {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .leftTitle {
+        color: #fff;
+        font-size: 27px;
+        font-weight: 600;
+        @include sm {
+          font-size: 1.3rem;
+          margin-bottom: 2rem;
+        }
+      }
+      .rightOptions {
+        display: flex;
+        align-items: center;
+
+        @include sm {
+          display: none;
+        }
+
+        .subpageNav {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .navLink {
+            padding: 0 25px;
+            flex-direction: row;
+            display: flex;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              right: 0;
+              width: 1px;
+              height: 50%;
+              background: #c4c9d8;
+              top: 50%;
+              transform: translateY(-50%);
+            }
+
+            // sondaki item için border siler ve padding 0 lar
+            &:last-child {
+              padding-right: 0;
+              &::after {
+                display: none;
+              }
+            }
+            .navItem {
+              font-size: 20px;
+              padding: 30px 6px;
+              font-weight: 500;
+              color: #fff;
+              display: inline-flex;
+              margin-bottom: -1px;
+              line-height: 1em;
+              position: relative;
+              transition: all 0.3s ease-in-out;
+
+              @include sm {
+                font-size: 1rem;
+              }
+              &:hover {
+                color: #4b5ba4;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .apartCardSection {
+      // background-color: #5081c0;
+      padding-top: 1rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 0 1rem;
+      justify-content: center;
+    }
+  }
+}

@@ -1,15 +1,17 @@
 .test {
   max-width: 1366px;
   width: 100%;
-  // background-color: red;
-  .container {
-    margin: 0 auto;
-    width: 100%;
+  min-height: 100svh;
+  height: auto;
+  background-color: rgb(221, 202, 202);
+  margin: 0 auto;
 
+  .testCardSection {
+    width: auto;
+    height: auto;
+    background-color: #5081c0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 70vh;
-    // background-color: rgb(129, 62, 158);
+    align-items: flex-start;
+    flex-wrap: wrap;
   }
 }
