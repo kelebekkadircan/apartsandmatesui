@@ -1,0 +1,135 @@
+@import "../../layouts/main/responsive.scss";
+
+.BlogCard {
+  height: 340px;
+
+  .color-blue {
+    color: #1c5c90;
+  }
+
+  .container {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      .color-blue {
+        color: rgba(0, 0, 0, 0.683);
+      }
+      .top {
+        .popularCardOverlay {
+          opacity: 1;
+        }
+      }
+      .bottom {
+        background-color: #4c5ca4;
+        .title {
+          color: white;
+        }
+        .date {
+          color: white;
+        }
+        .infos {
+          color: white;
+        }
+      }
+    }
+
+    .top {
+      width: auto;
+      height: 60%;
+      border-radius: 10px;
+      position: relative;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+
+      .popularCardOverlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px 10px 0 0;
+        background-image: linear-gradient(
+          0deg,
+          #4c5ca4 6%,
+          rgba(76, 92, 164, 0.51)
+        );
+        opacity: 0;
+        transition: all 0.4s ease-in-out;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .overlayButton {
+          position: absolute;
+          top: 70%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: #4c5ca4;
+          background-color: white;
+          border: none;
+          padding: 14px 28px;
+          border-radius: 30px;
+          font-size: 1rem;
+          font-weight: 400;
+          cursor: pointer;
+          transition: all 0.4s ease-in-out;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          &:hover {
+            color: white;
+            background-color: #4c5ca4;
+          }
+        }
+      }
+    }
+    .bottom {
+      width: 100%;
+      height: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 8px;
+
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      transition: all 0.4s ease-in-out;
+      .date {
+        color: #9098b0;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .title {
+        color: #656e8d;
+        font-size: 1rem;
+        line-height: 1.3em;
+        font-weight: 500;
+        transition: all 0.3s ease-in-out;
+        display: flex;
+        align-items: center;
+        min-height: 4rem;
+      }
+
+      .infos {
+        border-top: 1px solid rgba(172, 179, 201, 0.3);
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+  }
+}

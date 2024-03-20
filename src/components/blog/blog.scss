@@ -1,0 +1,141 @@
+@import "../../layouts/main/responsive.scss";
+
+.blogSection {
+  padding: 35px 0px;
+  margin-bottom: 50px;
+  .title-color {
+    color: #17d3a5;
+  }
+
+  .blogContainer {
+    padding-right: 35px;
+    padding-left: 35px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include md {
+      padding-right: 2px;
+      padding-left: 2px;
+    }
+
+    .innerSection {
+      padding: 40px 0;
+      display: flex;
+      align-items: stretch;
+
+      @include md {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .blogContent {
+        width: 35%;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        @include md {
+          width: 100%;
+        }
+
+        @include sm {
+          padding: 0px 30px;
+          width: 100%;
+        }
+
+        .contentTitle {
+          text-align: left;
+          width: 100%;
+          margin-bottom: 35px;
+          border-bottom: 1px solid #d7ddea;
+          padding-bottom: 19px;
+          color: white;
+          font-size: 27px;
+          font-weight: 600;
+        }
+        .contentSubTitle {
+          color: #656e8d;
+          font-size: 20px;
+          line-height: 1.3em;
+          margin-bottom: 15px;
+          font-weight: 500;
+        }
+        .contentParagraph {
+          color: #9198b2;
+          font-weight: 300;
+          line-height: 1.4em;
+          font-size: 17px;
+          margin-bottom: 29px;
+        }
+      }
+      .blogNav {
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 5px 0;
+        min-height: auto;
+        margin-top: 20px;
+        color: #4b5ba4;
+        .navTitle {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+
+          @include md {
+            margin-bottom: 30px;
+          }
+
+          &:hover {
+            .navIcon {
+              animation: myAnim 1s ease infinite;
+              @keyframes myAnim {
+                to {
+                  transform: translateX(15px);
+                }
+              }
+            }
+          }
+
+          .navIcon {
+            font-size: 18px;
+            margin-top: 1px;
+            transition: transform 0.3s;
+            display: inline-flex;
+            margin-left: 20px;
+            height: 1rem;
+          }
+        }
+      }
+
+      .blogCardSection {
+        width: 65%;
+        padding-left: 35px;
+        position: relative;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 0 1rem;
+        justify-content: center;
+
+        @include md {
+          width: 100%;
+          gap: 0.5rem;
+        }
+
+        @include sm {
+          display: none;
+        }
+      }
+    }
+  }
+}

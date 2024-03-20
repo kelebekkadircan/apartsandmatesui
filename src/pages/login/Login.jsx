@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
+import Navbar from "~/layouts/navbar/Navbar";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -49,68 +50,71 @@ const Login = () => {
   console.log(credentials);
 
   return (
-    <div className="loginPage flex">
-      <div className="container flex">
-        <div className="videoDiv">
-          <video src={video} autoPlay muted loop></video>
+    <>
+      <Navbar />
+      <div className="loginPage flex">
+        <div className="container flex">
+          <div className="videoDiv">
+            <video src={video} autoPlay muted loop></video>
 
-          <div className="textDiv">
-            <h2 className="title">Find Aparts or Mates</h2>
-          </div>
-        </div>
-
-        <div className="formDiv flex">
-          <div className="headerDiv">
-            <img src={logo} alt="Logo Image" />
-            <h3>Welcome Aparts&Mates</h3>
+            <div className="textDiv">
+              <h2 className="title">Find Aparts or Mates</h2>
+            </div>
           </div>
 
-          <form action="" className="form grid">
-            <div className="inputDiv">
-              <label htmlFor="username">Username</label>
-              <div className="input flex">
-                <FaUserShield className="icon" />
-                <input
-                  type="text"
-                  id="username"
-                  placeholder="Enter Username"
-                  onChange={handleChange}
-                />
+          <div className="formDiv flex">
+            <div className="headerDiv">
+              <img src={logo} alt="Logo Image" />
+              <h3>Welcome Aparts&Mates</h3>
+            </div>
+
+            <form action="" className="form grid">
+              <div className="inputDiv">
+                <label htmlFor="username">Username</label>
+                <div className="input flex">
+                  <FaUserShield className="icon" />
+                  <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter Username"
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className="inputDiv">
-              <label htmlFor="password">Password</label>
-              <div className="input flex">
-                <BsFillShieldLockFill className="icon" />
-                <input
-                  type="password"
-                  id="password"
-                  placeholder="Enter Password"
-                  onChange={handleChange}
-                />
+              <div className="inputDiv">
+                <label htmlFor="password">Password</label>
+                <div className="input flex">
+                  <BsFillShieldLockFill className="icon" />
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter Password"
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
-            </div>
 
-            <button onClick={handleLogin} type="submit" className="btn flex">
-              <span>Login</span>
-              <AiOutlineSwapRight className="icon" />
-            </button>
+              <button onClick={handleLogin} type="submit" className="btn flex">
+                <span>Login</span>
+                <AiOutlineSwapRight className="icon" />
+              </button>
 
-            <span className="forgotPassword">
-              Forgot your Password?? <a href="">Click Here</a>
-            </span>
-            <div className="footerDiv flex">
-              <span className="text">Don't you have account?</span>
+              <span className="forgotPassword">
+                Forgot your Password?? <a href="">Click Here</a>
+              </span>
+              <div className="footerDiv flex">
+                <span className="text">Don't you have account?</span>
 
-              <Link to={"/register"}>
-                <button className="btn">Sign Up</button>
-              </Link>
-            </div>
-          </form>
+                <Link to={"/register"}>
+                  <button className="btn">Sign Up</button>
+                </Link>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
+    </>
     // <div className="login">
     //   <div className="lContainer">
     //     <input

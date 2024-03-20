@@ -92,7 +92,7 @@ video {
 }
 
 .loginPage {
-  height: 100svh;
+  height: calc(100svh - 82px);
   width: auto;
   margin: auto;
   overflow: hidden;

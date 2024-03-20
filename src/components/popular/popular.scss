@@ -4,6 +4,11 @@
   // background-color: #3d4044;
   padding: 0 35px 150px 35px;
 
+  // GEÇİCİ OLARAK TELEFON MODUNDAN ÇIKARILDI SLIDER YAPILACAK
+  @include sm {
+    display: none;
+  }
+
   .title-color {
     color: #4b5ba4;
   }

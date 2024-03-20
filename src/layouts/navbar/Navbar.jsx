@@ -17,7 +17,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="container">
         <div className="left">
-          <Link className=" link">
+          <Link to="/" className=" link">
             <div className="logo">
               Aparts<span className="andSign">&</span>Mates
             </div>

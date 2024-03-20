@@ -2,4 +2,6 @@ $primary-color: #0f4c75;
 
 html {
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
 }

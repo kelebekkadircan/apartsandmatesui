@@ -31,6 +31,7 @@ const Routes = () => {
           path: "test",
           element: <Test />,
         },
+
         {
           path: "*",
           element: <Notfound />,
