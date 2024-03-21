@@ -1,6 +1,6 @@
-import "./blog.scss";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { BlogCard } from "./BlogCard";
+import "./blog.scss";
 
 export const Blog = () => {
   return (

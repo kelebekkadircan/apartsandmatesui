@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import "./blogCard.scss";
+import { FaRegUserCircle } from "react-icons/fa";
 
 export const BlogCard = () => {
   return (
@@ -12,13 +14,18 @@ export const BlogCard = () => {
             alt="blogImage"
           />
           <div className="popularCardOverlay">
-            <p className="overlayButton">Yazıyı Oku</p>
+            <Link>
+              <p className="overlayButton">Yazıyı Oku</p>
+            </Link>
           </div>
         </div>
         <div className="bottom">
           <h1 className="date">20.03.2024</h1>
           <h3 className="title">Alanya Kalesi Hakkında Bilgiler</h3>
           <div className="infos">
+            <div className="iconContainer">
+              <FaRegUserCircle />
+            </div>
             <span>
               Aparts<span className="color-blue">&</span>Mates
             </span>

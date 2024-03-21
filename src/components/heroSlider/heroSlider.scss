@@ -5,8 +5,8 @@
   z-index: 3;
 
   .customContainer {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -14,6 +14,17 @@
     .slick-slider {
       .slick-dots {
         bottom: -50px;
+
+        button::before {
+          font-size: 0.5rem;
+        }
+
+        .slick-active {
+          button::before {
+            color: #1c5c90;
+            font-size: 0.65rem;
+          }
+        }
       }
     }
   }

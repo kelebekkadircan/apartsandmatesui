@@ -37,6 +37,9 @@
         color: #fff;
         font-size: 27px;
         font-weight: 600;
+        @include md {
+          font-size: 1.4rem;
+        }
         @include sm {
           font-size: 1.3rem;
           margin-bottom: 2rem;
@@ -91,6 +94,10 @@
               line-height: 1em;
               position: relative;
               transition: all 0.3s ease-in-out;
+
+              @include md {
+                font-size: 0.9rem;
+              }
 
               @include sm {
                 font-size: 1rem;

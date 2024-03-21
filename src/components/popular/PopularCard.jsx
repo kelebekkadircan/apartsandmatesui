@@ -1,6 +1,7 @@
 import "./popularcard.scss";
 import { FaBed } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export const PopularCard = () => {
   return (
@@ -13,7 +14,9 @@ export const PopularCard = () => {
             alt=""
           />
           <div className="popularCardOverlay">
-            <p className="overlayButton">İncele</p>
+            <Link>
+              <p className="overlayButton">İncele</p>
+            </Link>
           </div>
         </div>
         <div className="bottom">

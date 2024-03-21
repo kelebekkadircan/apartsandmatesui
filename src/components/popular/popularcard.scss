@@ -37,17 +37,17 @@
     }
 
     .top {
-      width: 285px;
+      width: 280px;
       height: 60%;
       border-radius: 10px;
       position: relative;
 
       @include xl {
-        width: 317px;
+        width: 305px;
       }
 
       @include lg {
-        width: 253px;
+        width: 243px;
       }
 
       @include md {
@@ -79,7 +79,7 @@
           rgba(76, 92, 164, 0.51)
         );
         opacity: 0;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.3s ease-in-out;
         .overlayButton {
           position: absolute;
           top: 70%;

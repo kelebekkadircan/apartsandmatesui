@@ -15,7 +15,7 @@ const Slide = () => {
     slidesToShow: 4,
     slidesToScroll: 2,
     initialSlide: 0,
-    arrows: false,
+    arrows: true,
     autoplay: true,
     autoplaySpeed: 2500,
 
