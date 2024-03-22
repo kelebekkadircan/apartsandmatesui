@@ -1,10 +1,19 @@
+@import "../../layouts/main/responsive.scss";
+
 .ApartSection {
   padding: 60px 0;
-  background-color: blueviolet;
   margin-top: 50px;
   position: relative;
   padding-bottom: 150px;
   margin-bottom: 50px;
+
+  .color-blue {
+    color: #4b5ba4;
+  }
+
+  .d-block {
+    display: block !important;
+  }
 
   .apartContainer {
     padding-right: 35px;
@@ -12,27 +21,141 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    background-color: red;
+
+    @include md {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+
+    @include sm {
+      padding-right: 0;
+      padding-left: 0;
+    }
+
     .apartWrapper {
       display: flex;
       align-items: center;
       position: relative;
       z-index: 12;
-      background-color: blue;
+
+      @include md {
+        flex-direction: column;
+      }
 
       .apartContent {
         display: block;
         width: 35%;
-        background-color: green;
+
+        @include md {
+          width: 100%;
+          margin-bottom: 2rem;
+        }
+
+        img {
+          height: 65px;
+          margin-bottom: 15px;
+          max-width: 120px;
+        }
+        .apartContentTitle {
+          color: #fff !important;
+          font-size: 25px;
+          line-height: 1.3em;
+          margin-bottom: 20px;
+          font-weight: 600;
+        }
+        .contentText {
+          font-weight: 300;
+          margin-bottom: 25px;
+          letter-spacing: 0.3px;
+          color: #fff !important;
+        }
+        .contentInfo {
+          position: relative;
+          padding-top: 30px;
+          margin-top: 35px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 5px;
+            background: #4263c9;
+            opacity: 0.5;
+          }
+
+          .infoTitle {
+            color: #fff;
+            font-size: 21px;
+            line-height: 1.5em;
+            margin-bottom: 15px;
+
+            strong {
+              display: block;
+              font-size: 1.5em;
+              font-weight: 600;
+              margin-bottom: 5px;
+            }
+          }
+        }
+        .apartNav {
+          width: 100%;
+          display: flex;
+          align-items: stretch;
+          justify-content: flex-start;
+          font-weight: 600;
+          font-size: 18px;
+          padding: 5px 0;
+          min-height: auto;
+          margin-top: 20px;
+          color: #4b5ba4;
+          .navTitle {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+
+            // @include md {
+            //   margin-bottom: 30px;
+            // }
+
+            &:hover {
+              .navIcon {
+                animation: myAnim 1s ease infinite;
+                @keyframes myAnim {
+                  to {
+                    transform: translateX(15px);
+                  }
+                }
+              }
+            }
+
+            .navIcon {
+              font-size: 18px;
+              margin-top: 1px;
+              transition: transform 0.3s;
+              display: inline-flex;
+              margin-left: 20px;
+              height: 1rem;
+            }
+          }
+        }
       }
       .apartCard {
-        background-color: yellow;
         width: 65%;
-        text-align: right;
-        display: grid;
+        justify-content: flex-end;
+        padding-top: 1rem;
+        margin-top: 1rem;
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
         gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        border-radius: 10px;
+        padding: 0 1rem;
+
+        @include md {
+          width: 100%;
+          justify-content: center;
+        }
       }
     }
   }
