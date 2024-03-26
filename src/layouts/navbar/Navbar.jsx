@@ -1,21 +1,21 @@
 import { useState } from "react";
 import "./navbar.scss";
-import { newRequest } from "~/utils/newRequest";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useLogout } from "~/hooks/auth/useLogout";
+import { useAuthContext } from "~/hooks/auth/useAuthContext";
+
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const currentUser = JSON.parse(localStorage.getItem("user"));
+  const { user } = useAuthContext();
 
-  const navigate = useNavigate();
+  const { logout } = useLogout();
+
+  // const currentUser = JSON.parse(localStorage.getItem("user"));
 
   const handleOut = async () => {
-    try {
-      await newRequest.post("/auth/logout");
-      localStorage.setItem("user", null);
-      navigate("/login");
-    } catch (err) {}
+    await logout();
   };
 
   return (
@@ -37,21 +37,21 @@ const Navbar = () => {
             <Link className="findmate" to="/roommates">
               <button className="">Oda Arkadaşı Bul</button>
             </Link>
-            {!currentUser && (
+            {!user && (
               <Link to="/login">
                 <button className="RegButton">Giriş Yap</button>
               </Link>
             )}
-            {currentUser && (
+            {user && (
               <div className="user" onClick={() => setOpen(!open)}>
                 <img
                   src="https://images.pexels.com/photos/4484954/pexels-photo-4484954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                   alt=""
                 />
-                {/* <span> {currentUser?.username} </span> */}
+                {/* <span> {user?.username} </span> */}
                 {open && (
                   <div className="options">
-                    {currentUser?.isOwner ? (
+                    {user?.isOwner ? (
                       <>
                         <span>otel Profilim</span>
                         <span>otel Profilim</span>

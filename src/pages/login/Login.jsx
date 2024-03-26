@@ -1,11 +1,5 @@
 import { useContext, useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-// import "./login.css";
 import { AuthContext } from "~/context/auth/AuthContext";
-import useFetch from "~/hooks/fetch/useFetch";
-
-import React from "react";
 import "./login.scss";
 import video from "/assets/login/video.mp4";
 import logo from "/assets/login/logo.png";
@@ -14,7 +8,7 @@ import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import Navbar from "~/layouts/navbar/Navbar";
-import { newRequest } from "~/utils/newRequest";
+import { useLogin } from "~/hooks/auth/useLogin";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -22,9 +16,9 @@ const Login = () => {
     password: undefined,
   });
 
-  // const { user, loading, error, dispatch } = useContext(AuthContext);
+  const { error, loading } = useContext(AuthContext);
+  const { login } = useLogin();
 
-  const navigate = useNavigate();
   const handleChange = (e) => {
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
@@ -32,15 +26,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // dispatch({ type: "LOGIN_START" });
-
-    try {
-      const res = await newRequest.post("/auth/login", credentials);
-      localStorage.setItem("user", JSON.stringify(res.data));
-      navigate("/");
-    } catch (error) {
-      dispatch({ type: "LOGIN_FAILURE", payload: error.response.data });
-    }
+    await login(credentials.username, credentials.password);
   };
 
   console.log(credentials);
@@ -91,16 +77,22 @@ const Login = () => {
                 </div>
               </div>
 
-              <button onClick={handleLogin} type="submit" className="btn flex">
+              <button
+                disabled={loading}
+                onClick={handleLogin}
+                type="submit"
+                className="btn flex"
+              >
                 <span>Login</span>
                 <AiOutlineSwapRight className="icon" />
               </button>
+              <div className="error">{error}</div>
 
               <span className="forgotPassword">
                 Forgot your Password?? <a href="">Click Here</a>
               </span>
               <div className="footerDiv flex">
-                <span className="text">Don't you have account?</span>
+                <span className="text">Don`t you have account?</span>
 
                 <Link to={"/register"}>
                   <button className="btn">Sign Up</button>

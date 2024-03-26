@@ -1,4 +1,3 @@
-import React from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "~/pages/home/Home";
 import Explore from "~/pages/explore/Explore";

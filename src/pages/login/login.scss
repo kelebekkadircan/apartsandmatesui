@@ -17,6 +17,11 @@
   --smallFontSize: 0.813rem;
   --smallestFontSize: 0.75rem;
 }
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
 
 .flex {
   display: flex;
