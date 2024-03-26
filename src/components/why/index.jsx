@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./why.scss";
-import More from "../../../public/img/more.svg";
+import More from "/img/more.svg";
 
 export const Why = () => {
   return (

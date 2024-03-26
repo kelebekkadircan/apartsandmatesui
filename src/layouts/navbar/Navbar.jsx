@@ -1,16 +1,21 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "./navbar.scss";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { newRequest } from "~/utils/newRequest";
+import { Link, useNavigate } from "react-router-dom";
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const currentUser = JSON.parse(localStorage.getItem("user"));
 
-  const handleOut = () => {
-    localStorage.removeItem("currentUser");
-    window.location.reload();
+  const navigate = useNavigate();
+
+  const handleOut = async () => {
+    try {
+      await newRequest.post("/auth/logout");
+      localStorage.setItem("user", null);
+      navigate("/login");
+    } catch (err) {}
   };
 
   return (
@@ -26,7 +31,7 @@ const Navbar = () => {
         <div className="right">
           <div className="linkPart">
             <Link className="favoriteIcon" to="/favorites">
-              <FavoriteBorderIcon />
+              {/* <FavoriteBorderIcon /> */}
             </Link>
 
             <Link className="findmate" to="/roommates">

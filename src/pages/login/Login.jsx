@@ -14,6 +14,7 @@ import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import Navbar from "~/layouts/navbar/Navbar";
+import { newRequest } from "~/utils/newRequest";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({
@@ -34,16 +35,11 @@ const Login = () => {
     // dispatch({ type: "LOGIN_START" });
 
     try {
-      const res = await axios.post(
-        "http://localhost:8800/api/auth/login",
-        credentials
-      );
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
-
-      // dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
+      const res = await newRequest.post("/auth/login", credentials);
+      localStorage.setItem("user", JSON.stringify(res.data));
       navigate("/");
     } catch (error) {
-      // dispatch({ type: "LOGIN_FAILURE", payload: error.response.data });
+      dispatch({ type: "LOGIN_FAILURE", payload: error.response.data });
     }
   };
 
