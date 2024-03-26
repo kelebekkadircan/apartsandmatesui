@@ -1,16 +1,24 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import "./navbar.scss";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './navbar.scss';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import newRequest from '~/utils/newRequest';
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+  const currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-  const handleOut = () => {
-    localStorage.removeItem("currentUser");
-    window.location.reload();
+  const navigate = useNavigate();
+
+  const handleOut = async () => {
+    try {
+      await newRequest.post('/auth/logout');
+      localStorage.setItem('currentUser', null);
+      navigate('/');
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -40,7 +48,7 @@ const Navbar = () => {
             {currentUser && (
               <div className="user" onClick={() => setOpen(!open)}>
                 <img
-                  src="https://images.pexels.com/photos/4484954/pexels-photo-4484954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                  src={currentUser.img || '/public/assets/login/logo.png'}
                   alt=""
                 />
                 {/* <span> {currentUser?.username} </span> */}

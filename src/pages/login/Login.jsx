@@ -1,53 +1,33 @@
-import { useContext, useState } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
-// import "./login.css";
-import { AuthContext } from "~/context/auth/AuthContext";
-import useFetch from "~/hooks/fetch/useFetch";
-
-import React from "react";
-import "./login.scss";
-import video from "/assets/login/video.mp4";
-import logo from "/assets/login/logo.png";
-import { Link } from "react-router-dom";
-import { FaUserShield } from "react-icons/fa";
-import { BsFillShieldLockFill } from "react-icons/bs";
-import { AiOutlineSwapRight } from "react-icons/ai";
-import Navbar from "~/layouts/navbar/Navbar";
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '~/context/auth/AuthContext';
+import useFetch from '~/hooks/fetch/useFetch';
+import './login.scss';
+import video from '/assets/login/video.mp4';
+import logo from '/assets/login/logo.png';
+import { FaUserShield } from 'react-icons/fa';
+import { BsFillShieldLockFill } from 'react-icons/bs';
+import { AiOutlineSwapRight } from 'react-icons/ai';
+import Navbar from '~/layouts/navbar/Navbar';
+import newRequest from '~/utils/newRequest';
 
 const Login = () => {
-  const [credentials, setCredentials] = useState({
-    username: undefined,
-    password: undefined,
-  });
-
-  // const { user, loading, error, dispatch } = useContext(AuthContext);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const navigate = useNavigate();
-  const handleChange = (e) => {
-    setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
-  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    // dispatch({ type: "LOGIN_START" });
-
     try {
-      const res = await axios.post(
-        "http://localhost:8800/api/auth/login",
-        credentials
-      );
-      localStorage.setItem("currentUser", JSON.stringify(res.data));
-
-      // dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-      navigate("/");
-    } catch (error) {
-      // dispatch({ type: "LOGIN_FAILURE", payload: error.response.data });
+      const res = await newRequest.post('/auth/login', { username, password });
+      localStorage.setItem('currentUser', JSON.stringify(res.data));
+      navigate('/');
+    } catch (err) {
+      console.log(err.response.data);
     }
   };
-
-  console.log(credentials);
 
   return (
     <>
@@ -77,7 +57,7 @@ const Login = () => {
                     type="text"
                     id="username"
                     placeholder="Enter Username"
-                    onChange={handleChange}
+                    onChange={(e) => setUsername(e.target.value)}
                   />
                 </div>
               </div>
@@ -90,7 +70,7 @@ const Login = () => {
                     type="password"
                     id="password"
                     placeholder="Enter Password"
-                    onChange={handleChange}
+                    onChange={(e) => setPassword(e.target.value)}
                   />
                 </div>
               </div>
@@ -106,7 +86,7 @@ const Login = () => {
               <div className="footerDiv flex">
                 <span className="text">Don't you have account?</span>
 
-                <Link to={"/register"}>
+                <Link to={'/register'}>
                   <button className="btn">Sign Up</button>
                 </Link>
               </div>
@@ -115,29 +95,6 @@ const Login = () => {
         </div>
       </div>
     </>
-    // <div className="login">
-    //   <div className="lContainer">
-    //     <input
-    //       type="text"
-    //       placeholder="username"
-    //       id="username"
-    //       className="lInput"
-    //       onChange={handleChange}
-    //     />
-    //     <input
-    //       type="password"
-    //       placeholder="password"
-    //       id="password"
-    //       className="lInput"
-    //       onChange={handleChange}
-    //     />
-    //     <button onClick={handleLogin} className="lButton">
-    //       {" "}
-    //       Login{" "}
-    //     </button>
-    //     {/* {error && <span>{error.message}</span>} */}
-    //   </div>
-    // </div>
   );
 };
 
