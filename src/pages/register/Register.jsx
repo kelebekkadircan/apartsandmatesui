@@ -6,7 +6,7 @@ import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
 import { MdAlternateEmail } from "react-icons/md";
-import Navbar from "~/layouts/navbar/Navbar";
+// import Navbar from "~/layouts/navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "~/context/auth/AuthContext";
 import { useRegister } from "~/hooks/auth/useRegister";
@@ -41,7 +41,7 @@ const Register = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="registerPage flex">
         <div className="container flex">
           <div className="videoDiv">

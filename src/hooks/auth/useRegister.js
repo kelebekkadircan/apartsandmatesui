@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 export const useRegister = () => {
 
-    const { dispatch } = useAuthContext()
+    const { dispatch, } = useAuthContext()
     const navigate = useNavigate();
 
 
@@ -17,6 +17,7 @@ export const useRegister = () => {
             console.log("USE REGISTER RES : 19.SATIR", res);
             // update the user  in the context
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+
             navigate("/login");
         } catch (err) {
             console.log("USE LOGIN ERR : 28.SATIR", err.response.data.message);

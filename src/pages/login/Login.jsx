@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { FaUserShield } from "react-icons/fa";
 import { BsFillShieldLockFill } from "react-icons/bs";
 import { AiOutlineSwapRight } from "react-icons/ai";
-import Navbar from "~/layouts/navbar/Navbar";
+// import Navbar from "~/layouts/navbar/Navbar";
 import { useLogin } from "~/hooks/auth/useLogin";
 
 const Login = () => {
@@ -33,7 +33,7 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="loginPage flex">
         <div className="container flex">
           <div className="videoDiv">

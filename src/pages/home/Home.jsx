@@ -1,4 +1,3 @@
-import React from "react";
 import "./home.scss";
 import { Why, Hero, Popular, Blog, Aparts } from "~/components";
 
