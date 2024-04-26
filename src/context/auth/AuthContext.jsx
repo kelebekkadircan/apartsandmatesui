@@ -1,7 +1,7 @@
 import { createContext, useEffect, useReducer } from "react";
 
 const INITIAL_STATE = {
-  user: null,
+  user: JSON.parse(localStorage.getItem("user")) || null,
   loading: false,
   error: null,
 };
@@ -47,9 +47,9 @@ export const AuthContextProvider = ({ children }) => {
     if (user) {
       dispatch({ type: "LOGIN_SUCCESS", payload: user });
     }
-  }, []);
+  }, [dispatch]);
 
-  console.log("AUTH CONTEXT : ", state);
+  // console.log("AUTH CONTEXT : ", state);
 
   return (
     <AuthContext.Provider

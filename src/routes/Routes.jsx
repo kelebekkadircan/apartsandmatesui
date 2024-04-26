@@ -1,10 +1,8 @@
 import {
   // RouterProvider,
-  // createBrowserRouter,
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
+  createBrowserRouter,
+  // BrowserRouter as createBrowserRouter,
+  RouterProvider,
 } from "react-router-dom";
 // import Footer from "~/layouts/footer/Footer";
 // import Navbar from "~/layouts/navbar/Navbar";
@@ -15,74 +13,91 @@ import Home from "~/pages/home/Home";
 // import Mainlayout from "~/layouts/main/Mainlayout";
 import Register from "~/pages/register/Register";
 import Login from "~/pages/login/Login";
-import Navbar from "~/layouts/navbar/Navbar";
-import Footer from "~/layouts/footer/Footer";
-import { useAuthContext } from "~/hooks/auth/useAuthContext";
+// import { useAuthContext } from "~/hooks/auth/useAuthContext";
+import { Mainlayout, RequireAuth } from "~/layouts/main/Mainlayout";
+import ListPage from "~/pages/explore/Explore";
+import SinglePage from "~/pages/hotel/Hotel";
+import { Test } from "~/pages/test/Test";
+import Notfound from "~/pages/not-found/Notfound";
+import { ProfilePage } from "~/pages/profile/ProfilePage";
+import { ProfileUpdatePage } from "~/pages/profileupdate/ProfileUpdatePage";
+import { NewPostPage } from "~/pages/newpost/NewPostPage";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
-  const { user } = useAuthContext();
+  // const { user } = useAuthContext();
 
-  console.log("ROUTES SAYFASI USER Contexten gelio", user);
+  // console.log("ROUTES SAYFASI USER Contexten gelio", user);
 
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route index element={!user ? <Navigate to="/login" /> : <Home />} />
-        <Route
-          path="/home"
-          element={!user ? <Navigate to="/login" /> : <Home />}
-        />
-        <Route path="/login" element={<Login />} />
-        <Route
-          path="/register"
-          element={user ? <Navigate to="/" /> : <Register />}
-        />
-      </Routes>
-      <Footer />
-    </Router>
-  );
+  // return (
+  //   <Router>
+  //     <Navbar />
+  //     <Routes>
+  //       <Route index element={<Home />} />
+  //       <Route path="/home" element={<Home />} />
+  //       <Route path="/login" element={<Login />} />
+  //       <Route path="/register" element={<Register />} />
+  //     </Routes>
+  //     <Footer />
+  //   </Router>
+  // );
 
-  // const routes = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <Mainlayout />,
-  //     children: [
-  //       {
-  //         path: "/",
-  //         element: <Home />,
-  //       },
-  //       {
-  //         path: "explore",
-  //         element: <Explore />,
-  //       },
-  //       {
-  //         path: "hotel",
-  //         element: <Hotel />,
-  //       },
-  //       {
-  //         path: "test",
-  //         element: <Test />,
-  //       },
+  const routes = createBrowserRouter([
+    {
+      path: "/",
+      element: <Mainlayout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "list",
+          element: <ListPage />,
+        },
+        {
+          path: ":id",
+          element: <SinglePage />,
+        },
+        {
+          path: "test",
+          element: <Test />,
+        },
+        {
+          path: "/register",
+          element: <Register />,
+        },
+        {
+          path: "/login",
+          element: <Login />,
+        },
+        {
+          path: "*",
+          element: <Notfound />,
+        },
+      ],
+    },
+    {
+      path: "/",
+      element: <RequireAuth />,
+      children: [
+        {
+          path: "/profile",
+          element: <ProfilePage />,
+        },
+        {
+          path: "/profile/update",
+          element: <ProfileUpdatePage />,
+        },
+        {
+          path: "/add",
+          element: <NewPostPage />,
+        },
+      ],
+    },
+  ]);
 
-  //       {
-  //         path: "*",
-  //         element: <Notfound />,
-  //       },
-  //     ],
-  //   },
-  //   {
-  //     path: "/register",
-  //     element: <Register />,
-  //   },
-  //   {
-  //     path: "/login",
-  //     element: <Login />,
-  //   },
-  // ]);
-
-  // return <RouterProvider router={routes} />;
+  return <RouterProvider router={routes} />;
 };
 
 export default App;

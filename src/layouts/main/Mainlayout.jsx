@@ -1,9 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import Navbar from "../navbar/Navbar";
 import "./mainLayout.scss";
 import Footer from "../footer/Footer";
+import { useAuthContext } from "~/hooks/auth/useAuthContext";
 
-const Mainlayout = ({ children }) => {
+export const Mainlayout = ({ children }) => {
   return (
     <>
       <Navbar />
@@ -12,5 +13,16 @@ const Mainlayout = ({ children }) => {
     </>
   );
 };
+export const RequireAuth = ({ children }) => {
+  const { user } = useAuthContext();
 
-export default Mainlayout;
+  return !user ? (
+    <Navigate to="/login" />
+  ) : (
+    <>
+      <Navbar />
+      {children ? children : <Outlet />}
+      <Footer />
+    </>
+  );
+};

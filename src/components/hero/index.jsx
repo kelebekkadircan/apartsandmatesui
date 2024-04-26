@@ -1,6 +1,6 @@
-import { HeroSlider } from '../heroSlider';
-import { SearchBar } from '../search';
-import './hero.scss';
+import { HeroSlider } from "../heroSlider";
+import { SearchBar } from "../search";
+import "./hero.scss";
 
 export const Hero = () => {
   return (
@@ -10,7 +10,9 @@ export const Hero = () => {
         Alanyanın ilk oda arkadaşı bulma uygulaması apartsandmates.com ile apart
         bulma sıkıntısı sona eriyor !
       </p>
+
       <SearchBar />
+
       <HeroSlider />
     </div>
   );

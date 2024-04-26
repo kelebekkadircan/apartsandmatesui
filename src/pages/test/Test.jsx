@@ -1,17 +1,12 @@
-import React from "react";
+// import SearchTestOne from "./searchTestOne";
+import SearchTestTwo from "./SearchTestTwo";
 import "./Test.scss";
-import { PopularCard } from "~/components/popular/PopularCard";
 
 export const Test = () => {
   return (
     <div className="test">
-      <div className="testCardSection">
-        <PopularCard />
-        <PopularCard />
-        <PopularCard />
-        <PopularCard />
-        <PopularCard />
-      </div>
+      {/* <SearchTestOne /> */}
+      <SearchTestTwo />
     </div>
   );
 };

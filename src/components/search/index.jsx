@@ -1,70 +1,151 @@
-import React from "react";
+import { useState } from "react";
 import "./search.scss";
-import Arrow from "/img/arrow.svg";
+// import Arrow from "/img/arrow.svg";
 import Search from "/img/search.svg";
 import { Link } from "react-router-dom";
-
-// export const Search = () => {
-//   return (
-//     <div className="search">
-//       <div className="container">
-//         <div className="heading">
-//           <h1>
-//             Alanyada Aradığın{" "}
-//             <span style={{ color: "rgb(24, 62, 92)", fontWeight: "700" }}>
-//               Apartlar
-//             </span>{" "}
-//             Burada !
-//           </h1>
-//           <p className="subText">
-//             Alanyanın ilk oda arkadaşı bulma uygulaması apartsandmates.com ile
-//             apart bulma sıkıntısı sona eriyor !
-//           </p>
-//         </div>
-//         <div className="searchBar">
-//           <div className="searchInput">
-//             <input type="text" placeholder="Aradığınız apartın adını yazınız" />
-//           </div>
-//           <button>
-//             <span>Ara</span>
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
+import { districtData, Aparttype } from "~/lib/dummydata";
+// import { FaSearch } from "react-icons/fa";
 
 export const SearchBar = () => {
+  const [query, setQuery] = useState({
+    district: "",
+    apartType: "",
+  });
+
+  const [districts, setDistricts] = useState({});
+  const [types, setTypes] = useState({});
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    console.log(e.target.attributes.value.nodeValue);
+    console.log(e.target.attributes.name.nodeValue);
+
+    setQuery((prev) => ({
+      ...prev,
+      [e.target.attributes.name.nodeValue]: e.target.attributes.value.nodeValue,
+    }));
+
+    setDistricts({});
+    setTypes({});
+  };
+
+  const handleChange = (e) => {
+    e.preventDefault();
+
+    if (e.target.attributes.name.nodeValue === "district") {
+      setDistricts(
+        districtData.filter((district) =>
+          district.name.toLowerCase().includes(e.target.value.toLowerCase())
+        )
+      );
+    }
+    if (e.target.attributes.name.nodeValue === "apartType") {
+      setTypes(
+        Aparttype.filter((type) =>
+          type.name.toLowerCase().includes(e.target.value.toLowerCase())
+        )
+      );
+    }
+
+    setQuery((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+    if (e.target.value === "") {
+      setDistricts({});
+    }
+  };
+
+  console.log(districts);
+  console.log(query);
+
   return (
     <div className="searchBar">
       <div className="leftBar">
         <div className="formContainer">
           <div className="selectMenu">
-            <div className="selectMenuTop">
-              <input type="text" placeholder="Bölgeyi Seçiniz" />
-              <div className="menuIcon">
-                <img src={Arrow} alt="" />
-              </div>
+            <div className="inputWrapper">
+              <input
+                type="text"
+                name="district"
+                placeholder="Mahalleyi Giriniz..."
+                onChange={handleChange}
+                value={query.district}
+                id="district"
+                onClick={(e) =>
+                  setDistricts(
+                    districtData.filter((district) =>
+                      district.name
+                        .toLowerCase()
+                        .includes(e.target.value.toLowerCase())
+                    )
+                  )
+                }
+              />
             </div>
-            <div className="selectMenuContent"></div>
+            {districts.length > 0 && (
+              <div className="listDistricts">
+                {districts.map((d, index) => (
+                  <div
+                    className="districtItem"
+                    key={index}
+                    name="district"
+                    value={d.value}
+                    onClick={(e) => handleClick(e)}
+                  >
+                    {d.name}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         <div className="formContainer">
           <div className="selectMenu">
-            <div className="selectMenuTop">
-              <input type="text" placeholder="Apart Tipini Seçiniz" />
-              <div className="menuIcon">
-                <img src={Arrow} alt="" />
-              </div>
+            <div className="inputWrapper">
+              <input
+                type="text"
+                name="apartType"
+                placeholder="Apart Tipini Giriniz..."
+                onChange={handleChange}
+                value={query.apartType}
+                id="apartType"
+                onClick={(e) =>
+                  setTypes(
+                    Aparttype.filter((type) =>
+                      type.name
+                        .toLowerCase()
+                        .includes(e.target.value.toLowerCase())
+                    )
+                  )
+                }
+              />
             </div>
-            <div className="selectMenuContent"></div>
+            {types.length > 0 && (
+              <div className="listDistricts">
+                {types.map((d, index) => (
+                  <div
+                    className="districtItem"
+                    key={index}
+                    name="apartType"
+                    value={d.value}
+                    onClick={(e) => handleClick(e)}
+                  >
+                    {d.name}
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>
-      <Link className="rightBar">
+      <Link
+        to={`/list?district=${query.district}&apartType=${query.apartType}`}
+        className="rightBar"
+      >
         <div className="iconContainer">
           <img src={Search} alt="" />
         </div>
+
         <p>APART ARA</p>
       </Link>
     </div>

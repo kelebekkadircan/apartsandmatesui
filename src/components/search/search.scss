@@ -3,31 +3,33 @@
 .searchBar {
   margin: 40px auto;
   width: 100%;
-  height: 85px;
+  height: 100px;
   background-color: #fff;
   display: flex;
-  padding: 13px 13px 13px 0;
+  padding: 5px 5px 5px 0;
   border-radius: 10px;
   gap: 10px;
   align-items: center;
   justify-content: space-between;
   color: white;
+  margin-bottom: 200px;
 
   .leftBar {
     flex: 3;
     height: 100%;
     display: flex;
     align-items: stretch;
-    justify-content: space-between;
+    justify-content: space-around;
     border-radius: 10px;
 
     .formContainer {
       padding-bottom: 5px;
       padding-top: 10px;
-      width: 45%;
+      width: 90%;
       margin-left: 10px;
       border-right: 1px solid #dee1e9;
       margin-bottom: 0;
+      border-radius: 10px;
 
       .selectMenu {
         padding-left: 15px !important;
@@ -36,49 +38,54 @@
         height: 100%;
         padding-bottom: none;
         position: relative;
+        // background-color: red;
+        position: relative;
 
-        .selectMenuTop {
-          height: 100%;
+        .inputWrapper {
+          // background-color: #a6a0a0;
           width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+          height: 100%;
           position: relative;
-          gap: 5px;
+          transition: all 0.3s ease-in;
+          border-radius: 10px;
 
           input {
-            height: 100%;
             width: 100%;
-            color: #656e8d;
-            outline: none;
+            height: 100%;
+            font-size: 1.5rem;
+            border-radius: 10px;
             border: none;
-          }
+            background-color: transparent;
+            text-transform: capitalize;
 
-          .menuIcon {
-            border-radius: 50%;
-            width: 35px;
-            height: 35px;
-            margin-right: 5px;
-            background: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #9198b2;
-            opacity: 0.8;
-            cursor: pointer;
-
-            img {
-              height: 1em;
+            &:focus {
+              outline: none;
             }
           }
         }
-        .selectMenuContent {
-          position: absolute;
-          opacity: 0;
 
-          &.active {
-            opacity: 1;
+        .listDistricts {
+          position: absolute;
+          top: 90px;
+          left: 0;
+          max-height: 200px;
+          overflow-y: scroll;
+          width: 100%;
+          border-radius: 10px;
+          background-color: #d3074848;
+          transition: all 0.3s ease-in;
+
+          .districtItem {
+            transition: all 0.3s ease-in;
+            width: 100%;
+            height: 100%;
+            display: block;
+            padding: 10px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #f4f4f44e;
+            }
           }
         }
       }

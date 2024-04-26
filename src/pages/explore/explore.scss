@@ -1,0 +1,36 @@
+.Explore {
+  min-height: 100svh;
+
+  .listPage {
+    display: flex;
+    height: 130svh;
+    max-width: 1366px;
+    margin: 0 auto;
+
+    .listContainer {
+      flex: 3;
+      height: 100%;
+
+      .wrapper {
+        height: 100%;
+        padding-right: 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        overflow-y: scroll;
+        padding-bottom: 50px;
+      }
+    }
+    .mapContainer {
+      flex: 2;
+      height: 80%;
+      position: sticky;
+      top: 0;
+      // background-color: #fcf5f3;
+
+      // @include md {
+      //   display: none;
+      // }
+    }
+  }
+}

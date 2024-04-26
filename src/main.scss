@@ -1,4 +1,7 @@
 $primary-color: #0f4c75;
+* {
+  scroll-behavior: smooth;
+}
 
 html {
   overflow-x: hidden;
@@ -14,3 +17,18 @@ body {
   text-decoration: none;
   color: inherit;
 }
+
+.iconMain {
+  width: 150%;
+  height: 150%;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+  object-fit: contain;
+}
+
+// Trivage Main Color
+// background-color: #c4e3f4;

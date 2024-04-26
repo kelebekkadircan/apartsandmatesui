@@ -1,0 +1,184 @@
+.header {
+  min-height: 480px;
+  display: flex;
+  align-items: stretch;
+  background-color: rgb(28, 92, 144);
+
+  //   padding-top: 87px;
+
+  .container {
+    padding-right: 35px;
+    padding-left: 35px;
+    width: 100%;
+    max-width: 1366px;
+    margin-left: auto;
+    margin-right: auto;
+
+    .wrapper {
+      display: flex;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      padding-bottom: 25px;
+
+      .left {
+        max-width: 55%;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-top: auto;
+
+        .breadcrumbs {
+          margin-top: 50px;
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-bottom: 1rem;
+
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: flex-start;
+              gap: 10px;
+
+              a {
+                color: white;
+              }
+            }
+          }
+        }
+
+        .title {
+          font-size: 49px;
+          margin-bottom: 10px;
+          font-weight: 600;
+          color: #fff;
+          span {
+            color: #17d3a5;
+          }
+        }
+        .headerText {
+          color: #fff !important;
+          font-size: 17px;
+          opacity: 0.75;
+          font-weight: 400;
+
+          p {
+            opacity: 0.75;
+          }
+        }
+        .headerInfos {
+          display: flex;
+          align-items: center;
+          margin-top: 1rem;
+
+          .infoItem {
+            display: flex;
+            align-items: center;
+            margin-right: 65px;
+
+            img {
+              font-size: 95px;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              user-select: none;
+              pointer-events: none;
+              width: 95px;
+              height: 95px;
+
+              &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                width: 1px;
+                height: 50%;
+                background: #c4c9d8;
+                top: 50%;
+                transform: translateY(-50%);
+              }
+            }
+
+            .infoText {
+              margin-left: 7px;
+              padding-left: 12px;
+              padding-top: 7px;
+              padding-bottom: 7px;
+              border-left: 2px solid hsla(0, 0%, 100%, 0.15);
+              color: #fff;
+              font-size: 19px;
+              display: flex;
+              flex-direction: column;
+
+              .infoNumber {
+                font-size: 23px;
+                line-height: 1em;
+                color: #17d3a5;
+                margin-bottom: 2px;
+              }
+            }
+          }
+        }
+      }
+
+      .right {
+        max-width: 45%;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 100%;
+        width: 45%;
+
+        img {
+          position: absolute;
+          width: 150px;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+          pointer-events: none;
+        }
+
+        .shapeOne {
+          top: 35%;
+          left: 75px;
+          z-index: 11;
+        }
+
+        .shapeTwo {
+          right: 0;
+          top: 20%;
+          z-index: 9;
+        }
+        .shapeThree {
+          position: absolute;
+          bottom: -1px;
+          width: 250px;
+          right: -65px;
+          z-index: 15;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+          pointer-events: none;
+        }
+
+        .shapeFour {
+          height: 100%;
+          margin-left: auto;
+          display: block;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+          pointer-events: none;
+          z-index: 10;
+          position: relative;
+          object-fit: contain;
+          object-position: bottom center;
+          width: 80%;
+        }
+      }
+    }
+  }
+}
