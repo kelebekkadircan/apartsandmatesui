@@ -187,12 +187,12 @@ export const Aparttype = [
         value: "erkek"
     },
     {
-        name: "Kadın",
-        value: "kadin"
+        name: "Kız",
+        value: "kiz"
     },
     {
-        name: "Karma",
-        value: "mixed"
+        name: "Karışık",
+        value: "karisik"
     },
 
 ]

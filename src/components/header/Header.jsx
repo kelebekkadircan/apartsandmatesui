@@ -2,7 +2,8 @@
 import { NavLink } from "react-router-dom";
 import "./header.scss";
 
-export const Header = () => {
+export const Header = ({ params }) => {
+  console.log(params);
   return (
     <div className="header">
       <div className="container">
@@ -12,40 +13,32 @@ export const Header = () => {
               <ul>
                 <li>
                   <NavLink className="link">
-                    <span>ApartsandMates</span>
+                    <span>Aparts&Mates</span>
                     <span> / </span>
                   </NavLink>
                 </li>
                 <li>
                   <NavLink className="link">
-                    <span>explore page</span>{" "}
+                    <span className="upperCase">
+                      {params ? params : "Alanya"} Öğrenci Apartları{" "}
+                    </span>
                   </NavLink>
                 </li>
               </ul>{" "}
             </div>
             <h1 className="title">
-              <span>Kestel</span> Özel Öğrenci Yurtları
+              {params ? <span> {params} </span> : <span>Alanya</span>} Öğrenci
+              Apartları{" "}
             </h1>
             <div className="headerText">
               <p>
-                İstanbul Özel Yurt Fiyatları ve İstanbul'daki en popüler kız ve
-                erkek öğrenci yurtları burada! İstanbul'daki Üniversitelere
+                Alanya Öğrenci Apart Fiyatları ve Alanya'daki en popüler Kız ve
+                Erkek öğrenci Apartları burada! Alanya'daki Üniversitelere
                 yakın, en iyi ve en rahat Özel Öğrenci Yurtları hakkında bilgi
                 al, en uygun oda fiyatlarını öğren!
               </p>
             </div>
             <div className="headerInfos">
-              <div className="infoItem">
-                <img
-                  className="iconMain"
-                  src="https://www.yurtlarburada.com/img/icon-uni.svg"
-                  alt=""
-                />
-                <div className="infoText">
-                  <span className="infoNumber">40</span>
-                  <span>Üniversite</span>
-                </div>
-              </div>
               <div className="infoItem">
                 <img
                   className="iconMain"

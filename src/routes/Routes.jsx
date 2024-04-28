@@ -22,6 +22,7 @@ import Notfound from "~/pages/not-found/Notfound";
 import { ProfilePage } from "~/pages/profile/ProfilePage";
 import { ProfileUpdatePage } from "~/pages/profileupdate/ProfileUpdatePage";
 import { NewPostPage } from "~/pages/newpost/NewPostPage";
+import { listPageLoader } from "~/utils/loaders.js";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -54,9 +55,10 @@ const App = () => {
         {
           path: "list",
           element: <ListPage />,
+          loader: listPageLoader,
         },
         {
-          path: ":id",
+          path: "list/:id",
           element: <SinglePage />,
         },
         {

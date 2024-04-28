@@ -3,25 +3,25 @@ import { FaBed } from "react-icons/fa";
 import { FaWifi } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-export const PopularCard = () => {
+export const PopularCard = ({ data }) => {
+  console.log(data);
   return (
     <div className="PopularCard">
       <div className="container">
         <div className="top">
-          <img
-            src="https://images.pexels.com/photos/189296/pexels-photo-189296.jpeg?auto=compress&cs=tinysrgb&w=400"
-            // src="https://images.pexels.com/photos/96444/pexels-photo-96444.jpeg?auto=compress&cs=tinysrgb&w=400"
-            alt=""
-          />
+          <img src={data.images[0]} alt="" />
           <div className="popularCardOverlay">
-            <Link>
+            <Link to={`/list/${data._id}`}>
               <p className="overlayButton">İncele</p>
             </Link>
           </div>
         </div>
         <div className="bottom">
-          <h1 className="location">Oba Mahallesi</h1>
-          <h3 className="title">Anfora Otel</h3>
+          <h1 className="location">
+            {" "}
+            {data.address.substring(0, 30) + "..."}{" "}
+          </h1>
+          <h3 className="title"> {data.title.substring(0, 20) + "..."} </h3>
           <div className="infos">
             <div className="infoCard">
               <div className="iconCard">

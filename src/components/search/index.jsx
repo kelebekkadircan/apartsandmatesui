@@ -108,7 +108,6 @@ export const SearchBar = () => {
                 placeholder="Apart Tipini Giriniz..."
                 onChange={handleChange}
                 value={query.apartType}
-                id="apartType"
                 onClick={(e) =>
                   setTypes(
                     Aparttype.filter((type) =>
@@ -139,7 +138,7 @@ export const SearchBar = () => {
         </div>
       </div>
       <Link
-        to={`/list?district=${query.district}&apartType=${query.apartType}`}
+        to={`/list?district=${query.district}&type=${query.apartType}`}
         className="rightBar"
       >
         <div className="iconContainer">

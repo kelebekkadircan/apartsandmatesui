@@ -3,6 +3,9 @@
 .cardListing {
   display: flex;
   gap: 20px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
 
   &:first-child {
     margin-top: 20px;

@@ -1,8 +1,22 @@
 import { NavLink } from "react-router-dom";
 import "./popular.scss";
 import { PopularCard } from "./PopularCard";
+import { useEffect, useState } from "react";
+import { newRequest } from "~/utils/newRequest";
 
 export const Popular = () => {
+  const [hotelData, setHotelData] = useState([]);
+
+  useEffect(() => {
+    const popular = async () => {
+      const response = await newRequest.get("hotels/popular");
+      setHotelData(response.data);
+    };
+    popular();
+  }, []);
+
+  console.log(hotelData);
+
   return (
     <div className="popularSection">
       <div className="popularContainer">
@@ -29,14 +43,9 @@ export const Popular = () => {
           </div>
         </div>
         <div className="apartCardSection">
-          <PopularCard />
-          <PopularCard />
-          <PopularCard />
-          <PopularCard />
-          <PopularCard />
-          <PopularCard />
-          <PopularCard />
-          <PopularCard />
+          {hotelData.map((data, i) => (
+            <PopularCard key={i} data={data} />
+          ))}
         </div>
       </div>
     </div>

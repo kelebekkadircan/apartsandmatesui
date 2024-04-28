@@ -12,8 +12,6 @@ const Navbar = () => {
 
   const { logout } = useLogout();
 
-  // const currentUser = JSON.parse(localStorage.getItem("user"));
-
   const handleOut = async () => {
     await logout();
   };

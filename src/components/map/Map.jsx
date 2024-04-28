@@ -6,8 +6,8 @@ import { MapContainer, TileLayer } from "react-leaflet";
 export const Map = ({ items }) => {
   return (
     <MapContainer
-      center={[52.4797, -1.90269]}
-      zoom={7}
+      center={[36.549362, 31.996994]}
+      zoom={14}
       scrollWheelZoom={true}
       className="map"
     >
@@ -16,7 +16,7 @@ export const Map = ({ items }) => {
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {items.map((item) => (
-        <Pin item={item} key={item.id} />
+        <Pin item={item} key={item._id} />
       ))}
     </MapContainer>
   );
