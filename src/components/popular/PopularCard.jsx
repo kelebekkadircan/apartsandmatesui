@@ -4,7 +4,6 @@ import { FaWifi } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export const PopularCard = ({ data }) => {
-  console.log(data);
   return (
     <div className="PopularCard">
       <div className="container">

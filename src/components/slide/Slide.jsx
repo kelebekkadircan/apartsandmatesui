@@ -1,11 +1,11 @@
-import React from "react";
 import "./slide.scss";
 import Slider from "react-slick";
 // Import css files
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Card from "../card/Card";
-import { cards } from "~/data";
+import { useEffect, useRef, useState } from "react";
+import { newRequest } from "~/utils/newRequest";
 
 const Slide = () => {
   var settings = {
@@ -48,12 +48,53 @@ const Slide = () => {
       },
     ],
   };
+  const [isLoading, setIsLoading] = useState(false);
+  const [paidHotels, setPaidHotels] = useState([]);
+  const [error, setError] = useState();
+
+  const abortControllerRef = useRef(null);
+
+  useEffect(() => {
+    const fetchPaidHotels = async () => {
+      abortControllerRef.current?.abort();
+      abortControllerRef.current = new AbortController();
+
+      setIsLoading(true);
+
+      try {
+        const response = await newRequest.get("hotels/paid", {
+          signal: abortControllerRef.current?.signal,
+        });
+        setPaidHotels(response.data);
+      } catch (e) {
+        if (e.name === "AbortError") {
+          console.log("Request was aborted");
+          return;
+        }
+        setError(e);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchPaidHotels();
+  }, []);
+
+  if (error) {
+    location.reload();
+  }
+
+  console.log(paidHotels);
 
   return (
     <Slider {...settings}>
-      {cards.map((item, i) => {
-        return <Card key={i} item={item} />;
-      })}
+      {isLoading ? (
+        <div>...Loading...</div>
+      ) : (
+        paidHotels.map((item, i) => {
+          return <Card key={i} item={item} />;
+        })
+      )}
     </Slider>
   );
 };

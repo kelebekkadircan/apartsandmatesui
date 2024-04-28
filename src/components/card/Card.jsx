@@ -1,12 +1,15 @@
-import React from "react";
-import { cards } from "~/data";
+import { Link } from "react-router-dom";
 import "./card.scss";
 
 const Card = ({ item }) => {
   return (
     <div className="card">
-      <img src={item.img} alt="" />
-      <span className="title">{item.title}</span>
+      <Link to={`list/${item._id}`}>
+        <div className="logoContainer">
+          <img src={item.logo} alt="" />
+        </div>
+        <div className="denemeName">OTEL ADI</div>
+      </Link>
     </div>
   );
 };

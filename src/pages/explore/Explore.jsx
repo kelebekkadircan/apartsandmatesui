@@ -32,7 +32,9 @@ const Explore = () => {
           <div className="mapAltiDeneme">
             <Filter />
           </div>
-          <Map items={deneme} />
+          <div className="mapInsideContainer">
+            <Map items={deneme} />
+          </div>
         </div>
       </div>
     </div>

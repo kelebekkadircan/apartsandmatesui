@@ -1,4 +1,3 @@
-import React from "react";
 import "./footer.scss";
 import { FaFacebook, FaSearch, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";

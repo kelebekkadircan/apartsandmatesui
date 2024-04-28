@@ -1,3 +1,5 @@
+@import "../../layouts/main/responsive.scss";
+
 .footer {
   // width: 100%;
   // font-size: 12px;
@@ -143,6 +145,10 @@
         display: flex;
         align-items: stretch;
         width: 100%;
+
+        @include md {
+          display: none;
+        }
 
         .footerCol {
           border-left: 1px solid rgba(172, 179, 201, 0.35);

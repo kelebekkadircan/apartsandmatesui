@@ -27,6 +27,7 @@
       justify-content: space-between;
       border-bottom: 1px solid #d7ddea;
       overflow: hidden;
+      cursor: pointer;
 
       @include sm {
         display: flex;
@@ -34,15 +35,17 @@
       }
 
       .leftTitle {
-        color: #fff;
-        font-size: 27px;
-        font-weight: 600;
-        @include md {
-          font-size: 1.4rem;
-        }
-        @include sm {
-          font-size: 1.3rem;
-          margin-bottom: 2rem;
+        a {
+          color: #fff;
+          font-size: 27px;
+          font-weight: 600;
+          @include md {
+            font-size: 1.4rem;
+          }
+          @include sm {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+          }
         }
       }
       .rightOptions {

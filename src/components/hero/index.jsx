@@ -1,5 +1,6 @@
+import SearchBarMobil from "~/pages/test/SearchBarMobil";
 import { HeroSlider } from "../heroSlider";
-import { SearchBar } from "../search";
+// import { SearchBar } from "../search";
 import "./hero.scss";
 
 export const Hero = () => {
@@ -11,7 +12,8 @@ export const Hero = () => {
         bulma sıkıntısı sona eriyor !
       </p>
 
-      <SearchBar />
+      {/* <SearchBar /> */}
+      <SearchBarMobil />
 
       <HeroSlider />
     </div>
