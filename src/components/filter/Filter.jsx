@@ -1,18 +1,18 @@
 import { useState } from "react";
-import "./filter.scss";
 import { useSearchParams } from "react-router-dom";
+import "./filter.scss";
 
 function Filter() {
   // query params for search filter and search results page
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [query, setQuery] = useState({
-    city: searchParams.get("city") || "",
+    district: searchParams.get("district") || "",
     type: searchParams.get("type") || "",
-    property: searchParams.get("property") || "",
-    minPrice: searchParams.get("minPrice") || 0,
-    maxPrice: searchParams.get("maxPrice") || 100000,
-    bedroom: searchParams.get("bedroom") || 1,
+    // property: searchParams.get("property") || "",
+    min: searchParams.get("min") || 1,
+    max: searchParams.get("max") || 100000,
+    // bedroom: searchParams.get("bedroom") || 1,
   });
 
   const handleChange = (e) => {
@@ -30,19 +30,33 @@ function Filter() {
   return (
     <div className="filter">
       <h1>
-        Search results for <b>{query.city || "All Places"}</b>
+        <b style={{ textTransform: "capitalize" }}>
+          {query.district || "Alanya  "}
+        </b>{" "}
+        <div> Arama Sonuçları</div>{" "}
       </h1>
       <div className="top">
         <div className="item">
-          <label htmlFor="city">Location</label>
-          <input
+          <label htmlFor="district">Location</label>
+          {/* <input
             onChange={handleChange}
             type="text"
-            id="city"
-            name="city"
-            placeholder="City Location"
-            defaultValue={query.city}
-          />
+            id="district"
+            name="district"
+            value={query.district}
+            placeholder="Mahalle Giriniz..."
+            defaultValue={query.district}
+          /> */}
+          <select
+            defaultValue={query.district}
+            onChange={handleChange}
+            name="district"
+            id="district"
+          >
+            <option value="">Alanya</option>
+            <option value="kestel">Kestel</option>
+            <option value="oba">Oba</option>
+          </select>
         </div>
       </div>
       <div className="bottom">
@@ -54,12 +68,12 @@ function Filter() {
             name="type"
             id="type"
           >
-            <option value="">any</option>
-            <option value="buy">Buy</option>
-            <option value="rent">Rent</option>
+            <option value="">Karışık</option>
+            <option value="erkek">Erkek</option>
+            <option value="kadin">Kadın</option>
           </select>
         </div>
-        <div className="item">
+        {/* <div className="item">
           <label htmlFor="property">Property</label>
           <select name="property" id="property" defaultValue={query.property}>
             <option value="">any</option>
@@ -68,30 +82,31 @@ function Filter() {
             <option value="condo">Condo</option>
             <option value="land">Land</option>
           </select>
-        </div>
+        </div> */}
         <div className="item">
-          <label htmlFor="minPrice">Min Price</label>
+          <label htmlFor="min">Min Price</label>
           <input
-            defaultValue={query.minPrice}
+            defaultValue={query.min}
             onChange={handleChange}
             type="number"
-            id="minPrice"
-            name="minPrice"
+            id="min"
+            name="min"
             placeholder="any"
+            min={1}
           />
         </div>
         <div className="item">
-          <label htmlFor="maxPrice">Max Price</label>
+          <label htmlFor="max">Max Price</label>
           <input
-            defaultValue={query.maxPrice}
+            defaultValue={query.max}
             onChange={handleChange}
             type="text"
-            id="maxPrice"
-            name="maxPrice"
+            id="max"
+            name="max"
             placeholder="any"
           />
         </div>
-        <div className="item">
+        {/* <div className="item">
           <label htmlFor="bedroom">Bedroom</label>
           <input
             defaultValue={query.bedroom}
@@ -101,7 +116,7 @@ function Filter() {
             name="bedroom"
             placeholder="any"
           />
-        </div>
+        </div> */}
         <button onClick={handleFilter}>
           <img src="/search.png" alt="" />
         </button>

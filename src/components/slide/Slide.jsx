@@ -81,17 +81,17 @@ const Slide = () => {
   }, []);
 
   if (error) {
-    location.reload();
+    // location.reload();
   }
 
-  console.log(paidHotels);
+  // console.log(paidHotels);
 
   return (
     <Slider {...settings}>
       {isLoading ? (
         <div>...Loading...</div>
       ) : (
-        paidHotels.map((item, i) => {
+        paidHotels?.map((item, i) => {
           return <Card key={i} item={item} />;
         })
       )}

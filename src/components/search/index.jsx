@@ -3,7 +3,7 @@ import "./search.scss";
 // import Arrow from "/img/arrow.svg";
 import Search from "/img/search.svg";
 import { Link } from "react-router-dom";
-import { districtData, Aparttype } from "~/lib/dummydata";
+import { districtData, apartTypes } from "~/lib/dummydata";
 // import { FaSearch } from "react-icons/fa";
 
 export const SearchBar = () => {
@@ -42,7 +42,7 @@ export const SearchBar = () => {
     }
     if (e.target.attributes.name.nodeValue === "apartType") {
       setTypes(
-        Aparttype.filter((type) =>
+        apartTypes.filter((type) =>
           type.name.toLowerCase().includes(e.target.value.toLowerCase())
         )
       );
@@ -55,8 +55,8 @@ export const SearchBar = () => {
     }
   };
 
-  console.log(districts);
-  console.log(query);
+  // console.log(districts);
+  //  console.log(query);
 
   return (
     <div className="searchBar">
@@ -110,7 +110,7 @@ export const SearchBar = () => {
                 value={query.apartType}
                 onClick={(e) =>
                   setTypes(
-                    Aparttype.filter((type) =>
+                    apartTypes.filter((type) =>
                       type.name
                         .toLowerCase()
                         .includes(e.target.value.toLowerCase())

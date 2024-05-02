@@ -7,12 +7,12 @@ function Slider({ images }) {
   const changeSlide = (direction) => {
     if (direction === "left") {
       if (imageIndex === 0) {
-        setImageIndex(images.length - 1);
+        setImageIndex(images?.length - 1);
       } else {
         setImageIndex(imageIndex - 1);
       }
     } else {
-      if (imageIndex === images.length - 1) {
+      if (imageIndex === images?.length - 1) {
         setImageIndex(0);
       } else {
         setImageIndex(imageIndex + 1);
@@ -39,10 +39,14 @@ function Slider({ images }) {
         </div>
       )}
       <div className="bigImage">
-        <img src={images[0]} alt="" onClick={() => setImageIndex(0)} />
+        <img
+          src={images && images[0]}
+          alt=""
+          onClick={() => setImageIndex(0)}
+        />
       </div>
       <div className="smallImages">
-        {images.slice(1).map((image, index) => (
+        {images?.slice(1, 4).map((image, index) => (
           <img
             src={image}
             alt=""

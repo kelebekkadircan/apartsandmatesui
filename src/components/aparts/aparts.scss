@@ -110,33 +110,36 @@
           min-height: auto;
           margin-top: 20px;
           color: #4b5ba4;
-          .navTitle {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
+          a {
+            .navTitle {
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              text-decoration: none;
 
-            // @include md {
-            //   margin-bottom: 30px;
-            // }
+              // @include md {
+              //   margin-bottom: 30px;
+              // }
 
-            &:hover {
-              .navIcon {
-                animation: myAnim 1s ease infinite;
-                @keyframes myAnim {
-                  to {
-                    transform: translateX(15px);
+              &:hover {
+                .navIcon {
+                  animation: myAnim 1s ease infinite;
+                  @keyframes myAnim {
+                    to {
+                      transform: translateX(15px);
+                    }
                   }
                 }
               }
-            }
 
-            .navIcon {
-              font-size: 18px;
-              margin-top: 1px;
-              transition: transform 0.3s;
-              display: inline-flex;
-              margin-left: 20px;
-              height: 1rem;
+              .navIcon {
+                font-size: 18px;
+                margin-top: 1px;
+                transition: transform 0.3s;
+                display: inline-flex;
+                margin-left: 20px;
+                height: 1rem;
+              }
             }
           }
         }

@@ -4,7 +4,7 @@ import { newRequest } from './newRequest.js'
 
 
 export const singlePageLoader = async ({ request, params }) => {
-    const res = await newRequest("/posts/" + params.id)
+    const res = await newRequest("/hotels/single/" + params.id)
     return res.data
 }
 
@@ -12,11 +12,22 @@ export const singlePageLoader = async ({ request, params }) => {
 export const listPageLoader = async ({ request, params }) => {
     const query = request.url.split("?")[1]
     console.log("LOADER QUERY : ", query)
-    const postPromise = await newRequest("/hotels?" + query)
-    return postPromise.data
-    // return defer({
-    //     postResponse: postPromise
-    // })
+    try {
+        const postPromise = await newRequest("/hotels?" + query)
+        console.log("LOADER RESPONSE : ", postPromise.data);
+        return defer({
+            postResponse: postPromise
+        })
+
+    } catch (e) {
+        console.log(e);
+        // const postPromise = await newRequest("/hotels?")
+        // console.log("LOADER RESPONSE : ", postPromise.data);
+        // return defer({
+        //     postResponse: postPromise
+        // })
+    }
+
 }
 
 export const profilePageLoader = async () => {

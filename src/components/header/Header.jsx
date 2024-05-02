@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./header.scss";
 
 export const Header = ({ params }) => {
-  console.log(params);
+  // console.log(params);
   return (
     <div className="header">
       <div className="container">
@@ -39,7 +39,7 @@ export const Header = ({ params }) => {
               </p>
             </div>
             <div className="headerInfos">
-              <div className="infoItem">
+              {/* <div className="infoItem">
                 <img
                   className="iconMain"
                   src="https://www.yurtlarburada.com/img/icon-dorm.svg"
@@ -49,7 +49,7 @@ export const Header = ({ params }) => {
                   <span className="infoNumber">20</span>
                   <span>Aktif Yurt</span>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="right">

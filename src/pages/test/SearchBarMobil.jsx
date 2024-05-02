@@ -1,16 +1,20 @@
 /* eslint-disable no-unused-vars */
 
-import { Aparttype, districtData } from "~/lib/dummydata";
+// import { apartTypes, districtData } from "~/lib/dummydata";
 import "./searchBarMobil.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { newRequest } from "~/utils/newRequest";
 
 const SearchBarMobil = () => {
   const [query, setQuery] = useState({
     district: "",
     apartType: "",
   });
-
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
+  const [districtData, setDistrictData] = useState([]);
+  const [apartTypes, setApartTypes] = useState([]);
   const [districts, setDistricts] = useState({});
   const [types, setTypes] = useState({});
 
@@ -41,7 +45,7 @@ const SearchBarMobil = () => {
     }
     if (e.target.attributes.name.nodeValue === "apartType") {
       setTypes(
-        Aparttype.filter((type) =>
+        apartTypes.filter((type) =>
           type.name.toLowerCase().includes(e.target.value.toLowerCase())
         )
       );
@@ -54,6 +58,32 @@ const SearchBarMobil = () => {
       setTypes({});
     }
   };
+
+  useEffect(() => {
+    const dataFetch = async () => {
+      setLoading(true);
+      try {
+        const resDistrict = await newRequest.get("hotels/districts");
+        // const { districts } = resDistrict.data;
+        setDistrictData(resDistrict.data);
+        const resTypes = await newRequest.get("hotels/types");
+        // const { types } = resTypes.data;
+        setApartTypes(resTypes.data);
+      } catch (e) {
+        setError(e);
+      } finally {
+        setLoading(false);
+      }
+    };
+    dataFetch();
+  }, []);
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
+  console.log(districtData);
+  console.log(apartTypes);
 
   return (
     <div className="containerMobilBar">
@@ -77,20 +107,24 @@ const SearchBarMobil = () => {
             }
           />
         </div>
-        {districts.length > 0 && (
-          <div className="listDistricts">
-            {districts.map((d, index) => (
-              <div
-                className="districtItem"
-                key={index}
-                name="district"
-                value={d.value}
-                onClick={(e) => handleClick(e)}
-              >
-                {d.name}
-              </div>
-            ))}
-          </div>
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          districts.length > 0 && (
+            <div className="listDistricts">
+              {districts?.map((d, index) => (
+                <div
+                  className="districtItem"
+                  key={index}
+                  name="district"
+                  value={d.value}
+                  onClick={(e) => handleClick(e)}
+                >
+                  {d.name}
+                </div>
+              ))}
+            </div>
+          )
         )}
       </div>
       <div className="mobilType">
@@ -103,7 +137,7 @@ const SearchBarMobil = () => {
             value={query.apartType}
             onClick={(e) =>
               setTypes(
-                Aparttype.filter((type) =>
+                apartTypes.filter((type) =>
                   type.name.toLowerCase().includes(e.target.value.toLowerCase())
                 )
               )
@@ -112,7 +146,7 @@ const SearchBarMobil = () => {
         </div>
         {types.length > 0 && (
           <div className="listDistricts">
-            {types.map((d, index) => (
+            {types?.map((d, index) => (
               <div
                 className="districtItem"
                 key={index}

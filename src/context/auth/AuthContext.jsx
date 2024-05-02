@@ -1,3 +1,4 @@
+import Cookies from "js-cookie";
 import { createContext, useEffect, useReducer } from "react";
 
 const INITIAL_STATE = {
@@ -41,13 +42,19 @@ const AuthReducer = (state, action) => {
 
 export const AuthContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AuthReducer, INITIAL_STATE);
+  const x = Cookies.get("accessToken");
 
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
     if (user) {
       dispatch({ type: "LOGIN_SUCCESS", payload: user });
     }
-  }, [dispatch]);
+    //  console.log(x);
+    if (x === undefined || !x) {
+      //      console.log(x);
+      dispatch({ type: "LOGOUT" });
+    }
+  }, [dispatch, x]);
 
   // console.log("AUTH CONTEXT : ", state);
 

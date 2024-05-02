@@ -10,7 +10,9 @@ html {
 }
 
 body {
-  background-color: #a4aec0;
+  // background-color: #a4aec0;
+  // background-color: #f3f6fc;
+  background-color: rgb(222, 225, 227);
 }
 
 .link {
@@ -32,6 +34,13 @@ body {
   stroke: currentColor;
   fill: currentColor;
   object-fit: contain;
+}
+
+p {
+  color: #6f7693;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.5em;
 }
 
 // Trivage Main Color

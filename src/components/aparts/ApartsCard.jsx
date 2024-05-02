@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import "./apartsCard.scss";
 
-export const ApartsCard = () => {
+export const ApartsCard = ({ data }) => {
   return (
     <div className="apartsCard">
       <img
@@ -8,12 +9,14 @@ export const ApartsCard = () => {
         alt=""
       />
       <div className="cardOverlay">
-        <div className="title">Kestel</div>
+        <div className="title">{data.district}</div>
         <div className="subTitle">Kayıtlı Öğrenci Apartı</div>
-        <div className="apartNumber">12</div>
+        <div className="apartNumber">{data.hotelCount}</div>
       </div>
       <div className="cardContent">
-        <button className="btn">Apartları Görüntüle</button>
+        <Link to={`/list?district=${data.district}`}>
+          <button className="btn">Apartları Görüntüle</button>
+        </Link>
       </div>
     </div>
   );

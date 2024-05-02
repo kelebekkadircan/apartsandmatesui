@@ -44,7 +44,8 @@ export const Popular = () => {
 
   // hata olursa sayfayı yenile
   if (error) {
-    location.reload();
+    return <div>Error</div>;
+    // location.reload();
     // navigate("/login", { replace: true });
   }
 
@@ -87,7 +88,7 @@ export const Popular = () => {
           {isLoading ? (
             <div>Loading...</div>
           ) : (
-            hotelData.map((data, i) => <PopularCard key={i} data={data} />)
+            hotelData?.map((data, i) => <PopularCard key={i} data={data} />)
           )}
         </div>
       </div>

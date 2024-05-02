@@ -56,6 +56,7 @@ const App = () => {
           path: "list",
           element: <ListPage />,
           loader: listPageLoader,
+          errorElement: <div>error</div>,
         },
         {
           path: "list/:id",

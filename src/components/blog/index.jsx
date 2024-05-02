@@ -1,8 +1,35 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import { BlogCard } from "./BlogCard";
 import "./blog.scss";
+import { useEffect, useState } from "react";
+import { newRequest } from "~/utils/newRequest";
 
 export const Blog = () => {
+  const [blogData, setBlogData] = useState([]);
+  const [error, setError] = useState();
+  const [loading, isLoading] = useState(false);
+
+  useEffect(() => {
+    const blogDataFetch = async () => {
+      isLoading(true);
+      try {
+        const response = await newRequest.get("/blogs/popular");
+        setBlogData(response.data);
+      } catch (e) {
+        setError(e);
+      } finally {
+        isLoading(false);
+      }
+    };
+    blogDataFetch();
+  }, []);
+
+  if (error) {
+    return <div>There is an error</div>;
+  }
+
+  // console.log(blogData);
+
   return (
     <div className="blogSection">
       <div className="blogContainer">
@@ -33,9 +60,11 @@ export const Blog = () => {
             </div>
           </div>
           <div className="blogCardSection">
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+            {loading ? (
+              <div>Loading Blog</div>
+            ) : (
+              blogData.map((data, i) => <BlogCard key={i} data={data} />)
+            )}
           </div>
         </div>
       </div>

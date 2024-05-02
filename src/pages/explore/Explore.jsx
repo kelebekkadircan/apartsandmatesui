@@ -4,36 +4,58 @@ import "./explore.scss";
 import { CardListing } from "~/components/cardListing/CardListing";
 import { Map } from "~/components/map/Map";
 import Filter from "~/components/filter/Filter";
-import { useLoaderData, useSearchParams } from "react-router-dom";
+import { Await, useLoaderData, useSearchParams } from "react-router-dom";
+import { Suspense } from "react";
 
 const Explore = () => {
   // const data = listData;
 
-  const deneme = useLoaderData();
+  const data = useLoaderData();
   // eslint-disable-next-line no-unused-vars
   const [params, setParams] = useSearchParams();
 
   const headerDistrict = params.get("district");
 
-  console.log(deneme);
-
+  if (data.response) {
+    console.log(data.response);
+  }
   return (
     <div className="Explore">
       <Header params={headerDistrict} />
       <div className="listPage">
         <div className="listContainer">
           <div className="wrapper">
-            {deneme.map((item) => (
+            <Suspense fallback={<div>Loading...</div>}>
+              <Await
+                resolve={data.postResponse}
+                errorElement={<div>Error</div>}
+              >
+                {(postResponse) =>
+                  postResponse.data.map((item) => (
+                    <CardListing key={item._id} item={item} />
+                  ))
+                }
+              </Await>
+            </Suspense>
+            {/* {data.map((item) => (
               <CardListing key={item._id} item={item} />
-            ))}
+            ))} */}
           </div>
         </div>
         <div className="mapContainer">
+          <div className="mapInsideContainer">
+            {/* <Map items={data} /> */}
+            <Suspense fallback={<div>Loading...</div>}>
+              <Await
+                resolve={data.postResponse}
+                errorElement={<div>Error</div>}
+              >
+                {(postResponse) => <Map items={postResponse.data} />}
+              </Await>
+            </Suspense>
+          </div>
           <div className="mapAltiDeneme">
             <Filter />
-          </div>
-          <div className="mapInsideContainer">
-            <Map items={deneme} />
           </div>
         </div>
       </div>

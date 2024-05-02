@@ -181,7 +181,7 @@ export const districtData = [
 
 ]
 
-export const Aparttype = [
+export const apartTypes = [
     {
         name: "Erkek",
         value: "erkek"

@@ -47,6 +47,8 @@
         border: none;
         background-color: transparent;
         text-transform: capitalize;
+        color: rgb(130, 127, 127);
+        font-weight: 900;
 
         &:focus {
           outline: none;
@@ -65,6 +67,7 @@
       background-color: white;
       transition: all 0.3s ease-in;
       z-index: 1000;
+      text-transform: capitalize;
 
       .districtItem {
         transition: all 0.3s ease-in;
@@ -107,6 +110,8 @@
         border: none;
         background-color: transparent;
         text-transform: capitalize;
+        color: rgb(130, 127, 127);
+        font-weight: 900;
 
         &:focus {
           outline: none;
@@ -125,6 +130,7 @@
       background-color: white;
       transition: all 0.3s ease-in;
       z-index: 999;
+      text-transform: capitalize;
 
       @include sm {
         top: 90px;
@@ -192,7 +198,8 @@
         }
       }
       p {
-        font-weight: 500;
+        color: white;
+        font-weight: 900;
         text-decoration: none;
       }
     }

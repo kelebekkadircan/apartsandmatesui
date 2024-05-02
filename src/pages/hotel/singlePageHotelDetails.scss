@@ -1,0 +1,293 @@
+.details {
+  // flex: 5;
+  height: 100%;
+  width: 100%;
+  // overflow-y: scroll;
+
+  // @include md {
+  //   flex: none;
+  //   height: max-content;
+  //   margin-bottom: 50px;
+  // }
+
+  .wrapper {
+    max-width: 1366px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    //   @include lg {
+    //     padding-right: 20px;
+    //   }
+    //   @include md {
+    //     padding-right: 0px;
+    //   }
+
+    .hotelDetailBreadcrumb {
+      // background-color: rgba(0, 0, 255, 0.174);
+      margin-bottom: 20px;
+      margin-left: 10px;
+
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+
+        li {
+          color: #656e8d !important;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 10px;
+
+          a {
+            span {
+              color: #656e8d !important;
+            }
+          }
+
+          span {
+            color: #656e8d !important;
+          }
+        }
+      }
+    }
+
+    .hotelDetailTop {
+      // background-color: red;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding: 25px 0;
+      .hotelDetailLogo {
+        // background-color: blue;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 8px 60px 0 rgba(62, 62, 141, 0.05);
+        padding: 15px 19px;
+        margin-right: 20px;
+
+        img {
+          height: 3rem;
+          max-width: 100%;
+          object-fit: contain;
+        }
+      }
+      .hotelDetailContent {
+        // background-color: yellow;
+        margin-right: 20px;
+
+        .hotelDetailContentTitle {
+          color: #4a5aa3;
+          font-weight: 600;
+          font-size: 23px;
+          line-height: 1.3em;
+          margin-bottom: 5px;
+        }
+        .hotelDetailContentLocation {
+          display: flex;
+          align-items: center;
+          color: #727a96;
+          font-size: 17px;
+          font-weight: 600;
+
+          .hotelDetailContentLocationIcon {
+            display: inline-flex;
+            color: #eb6081;
+            font-size: 18px;
+            margin-right: 7px;
+            position: relative;
+            top: -1px;
+          }
+          .hotelDetailContentLocationTitle {
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+
+    .hotelDetailBottom {
+      // background-color: red;
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(172, 179, 201, 0.45);
+      margin-top: auto;
+
+      .hotelDetailBottomInfo {
+        display: flex;
+        align-items: center;
+        .hotelDetailBottomInfoItem {
+          padding: 0 25px;
+          border-right: 1px solid #c8d0e3;
+          color: #727a96;
+          font-weight: 700;
+          font-size: 17px;
+          line-height: 1em;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          .hotelDetailBottomInfoItemIcon {
+            display: inline-flex;
+            font-size: 32px;
+            color: #eb6081;
+            margin-right: 13px;
+          }
+          .hotelDetailBottomInfoItemText {
+            position: relative;
+            top: 1px;
+          }
+        }
+      }
+      .hotelDetailBottomCustomer {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        text-align: right;
+
+        .hotelDetailBottomCustomerContent {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .hotelDetailBottomCustomerContentName {
+            color: #727a96;
+            font-weight: 700;
+            font-size: 19px;
+          }
+          .hotelDetailBottomCustomerContentBranch {
+            font-size: 17px;
+            color: #656e8d;
+            opacity: 0.8;
+          }
+        }
+        .hotelDetailBottomCustomerIcon {
+          display: inline-flex;
+          font-size: 40px;
+          margin-left: 23px;
+          color: #eb6081;
+        }
+      }
+    }
+
+    .hotelInfoContent {
+      padding-top: 20px;
+      margin-bottom: 40px;
+      .hotelInfoAddress {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: flex-start;
+        .hotelInfoAddressIcon {
+          margin-right: 10px;
+          font-size: 19px;
+          color: #eb6081;
+          display: inline-flex;
+          position: relative;
+        }
+        .hotelInfoAddressTitle {
+          color: #6f7693;
+          font-weight: 700;
+          font-size: 17px;
+          line-height: 1.3em;
+        }
+      }
+      .hotelInfoDoubleContent {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 40px;
+        .hotelInfoDoubleContentAddress {
+          margin-bottom: 15px;
+          display: flex;
+          align-items: flex-start;
+          .hotelInfoDoubleContentAddressIcon {
+            margin-right: 10px;
+            font-size: 19px;
+            color: #eb6081;
+            display: inline-flex;
+            position: relative;
+          }
+          .hotelInfoDoubleContentAddressTitle {
+            color: #6f7693;
+            font-weight: 700;
+            font-size: 17px;
+            line-height: 1.3em;
+          }
+        }
+      }
+    }
+
+    .info {
+      margin-top: 50px;
+      width: 100%;
+      height: 100%;
+      .top {
+        display: flex;
+        justify-content: space-between;
+
+        //   @include sm {
+        //     flex-direction: column;
+        //     gap: 20px;
+        //   }
+
+        .post {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          h1 {
+            font-weight: 400;
+          }
+          .address {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            color: #888;
+            font-size: 14px;
+
+            img {
+              width: 16px;
+              height: 16px;
+            }
+          }
+          .price {
+            padding: 5px;
+            background-color: rgba(254, 205, 81, 0.438);
+            border-radius: 5px;
+            width: max-content;
+            font-size: 20px;
+            font-weight: 300;
+          }
+        }
+        .user {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 20px;
+          padding: 0px 50px;
+          border-radius: 10px;
+          background-color: rgba(254, 205, 81, 0.209);
+          font-weight: 600;
+
+          // @include sm {
+          //   padding: 20px 50px;
+          // }
+
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+          }
+        }
+      }
+      .bottom {
+        margin-top: 50px;
+        color: #555;
+        line-height: 20px;
+      }
+    }
+  }
+}
