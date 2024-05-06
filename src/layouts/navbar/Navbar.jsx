@@ -51,19 +51,29 @@ const Navbar = () => {
                   <div className="options">
                     {user?.isOwner ? (
                       <>
-                        <span>otel Profilim</span>
-                        <span>otel Profilim</span>
-                        <span>otel Profilim</span>
-                        <span>otel Profilim</span>
-                        <span>otel Profilim</span>
+                        <Link to="profile">
+                          <span> Profilim</span>
+                        </Link>
+                        <Link to="profile">
+                          <span> Profilim</span>
+                        </Link>
+                        <Link to="profile">
+                          <span> Profilim</span>
+                        </Link>
+                        <span onClick={handleOut}>Log out</span>
                       </>
                     ) : (
                       <>
-                        <span>Profilim</span>
-                        <span>Profilim</span>
-                        <span>Profilim</span>
-                        <span>Profilim</span>
-                        <span>Profilim</span>
+                        <Link to="profile">
+                          <span> Profilim</span>
+                        </Link>
+                        <Link to="profile">
+                          <span> Profilim</span>
+                        </Link>
+                        <Link to="profile">
+                          <span> Profilim</span>
+                        </Link>
+
                         <span onClick={handleOut}>Log out</span>
                       </>
                     )}

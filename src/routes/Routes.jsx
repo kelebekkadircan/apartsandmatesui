@@ -20,9 +20,9 @@ import SinglePage from "~/pages/hotel/Hotel";
 import { Test } from "~/pages/test/Test";
 import Notfound from "~/pages/not-found/Notfound";
 import { ProfilePage } from "~/pages/profile/ProfilePage";
-import { ProfileUpdatePage } from "~/pages/profileupdate/ProfileUpdatePage";
-import { NewPostPage } from "~/pages/newpost/NewPostPage";
+import CreateHotelPage from "~/pages/newpost/NewPostPage";
 import { listPageLoader } from "~/utils/loaders.js";
+import UpdateProfile from "~/pages/updateProfile/UpdateProfile";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -56,7 +56,7 @@ const App = () => {
           path: "list",
           element: <ListPage />,
           loader: listPageLoader,
-          errorElement: <div>error</div>,
+          errorElement: <div style={{ minHeight: "100svh" }}>error</div>,
         },
         {
           path: "list/:id",
@@ -90,11 +90,11 @@ const App = () => {
         },
         {
           path: "/profile/update",
-          element: <ProfileUpdatePage />,
+          element: <UpdateProfile />,
         },
         {
-          path: "/add",
-          element: <NewPostPage />,
+          path: "profile/addHotel",
+          element: <CreateHotelPage />,
         },
       ],
     },

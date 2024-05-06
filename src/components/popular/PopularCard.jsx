@@ -32,20 +32,20 @@ export const PopularCard = ({ data }) => {
             </div>
             <div style={{ borderRight: "none" }} className="infoCard">
               <div className="iconCard">
-                {data.tags.includes("kahvalti") ? (
+                {/* {data.tags.includes("kahvalti") ? (
                   <FaBowlFood />
                 ) : data.tags.includes("yuzmehavuzu") ? (
                   <FaSwimmingPool />
                 ) : (
                   <FaWifi />
-                )}
+                )} */}
               </div>
               <div className="infoTxt">
-                {data.tags.includes("kahvalti")
+                {/* {data.tags.includes("kahvalti")
                   ? "Kahvaltı"
                   : data.tags.includes("yuzmehavuzu")
                   ? "Havuz"
-                  : "Wifi"}
+                  : "Wifi"} */}
               </div>
             </div>
           </div>

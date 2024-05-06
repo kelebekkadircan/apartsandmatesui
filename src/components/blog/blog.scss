@@ -1,18 +1,42 @@
 @import "../../layouts/main/responsive.scss";
 
 .blogSection {
-  padding: 35px 0px;
+  padding: 65px 0px;
   margin-bottom: 50px;
   .title-color {
     color: #17d3a5;
   }
-
   .blogContainer {
     padding-right: 35px;
     padding-left: 35px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 1366px;
+    margin: 0 auto;
+    // background-color: #a4aec0;
+
+    // margin: 0 auto;
+    // background-color: red;
+
+    @include xl {
+      // background-color: rgb(40, 18, 183);
+      max-width: 1166px;
+    }
+    @include lg {
+      // background-color: rgb(104, 25, 161);
+      max-width: 966px;
+    }
+    @include md {
+      // background-color: green;
+      max-width: 766px;
+    }
+    @include sm {
+      // background-color: red;
+      max-width: 566px;
+    }
+    @include xs {
+      // background-color: rgb(135, 183, 31);
+      max-width: 366px;
+    }
 
     @include md {
       padding-right: 2px;

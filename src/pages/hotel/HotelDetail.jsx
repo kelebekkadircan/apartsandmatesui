@@ -1,5 +1,5 @@
 import Slider from "~/components/singlePageSlider/SinglePageSlider";
-import { userData } from "~/lib/dummydata";
+// import { userData } from "~/lib/dummydata";
 import "./singlePageHotelDetails.scss";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -11,22 +11,31 @@ import {
 } from "react-icons/fa6";
 import { FaBed, FaHeadphones, FaPhone } from "react-icons/fa";
 
-const HotelDetail = ({ setLoading, loading, singlePostData }) => {
+const HotelDetail = ({
+  setLoading,
+  loading,
+  singlePostData,
+  setError,
+  error,
+}) => {
   const [detailData, setDetailData] = useState(singlePostData || []);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     try {
       setDetailData(singlePostData);
     } catch (e) {
-      console.log(e);
+      setError(e);
     } finally {
       setLoading(false);
     }
-  }, [singlePostData, setLoading]);
+  }, [singlePostData, setLoading, setError]);
   // console.log(singlePostData, "HotelDetailSINGLEPOSTDATA");
-
-  console.log(detailData, "HotelDetailDETAILDATA");
+  if (error) {
+    return <div>Error</div>;
+  }
+  // console.log(detailData, "HotelDetailDETAILDATA");
   return !loading ? (
     <>
       <div className="details">
@@ -56,7 +65,7 @@ const HotelDetail = ({ setLoading, loading, singlePostData }) => {
           ) : (
             <Slider images={detailData.images} />
           )} */}
-          <Slider images={detailData.images} />
+          <Slider images={detailData?.images} />
           <div className="hotelDetailTop">
             <div className="hotelDetailLogo">
               <img src={detailData?.logo} alt="" />
@@ -140,8 +149,56 @@ const HotelDetail = ({ setLoading, loading, singlePostData }) => {
                 </div>
               </div>
             </div>
+            <div className={`hotelInfoCollapse  ${isOpen && "uncollapse"} `}>
+              <div className="hotelInfoCollapseContent">
+                <p>
+                  Vatan Caddesi’nde bulunan kendi binasında ilk şubesini 2020
+                  yılında açmıştır. Amacı bu ülkenin geleceğini belirleyecek
+                  öğrencilerin güler yüzle, konforlu, korunaklı ve okullarına
+                  yakın olabilecekleri bir yer temin etmektir. Bu üstün
+                  standartları sağlamak adına uzun ve kapsamlı bir sürecin
+                  sonunda geleceğimizi birlikte değiştirmeye hazırlandık.
+                </p>
+                <p>
+                  <br />
+                </p>
+                <p style={{ fontWeight: "900" }}>Konum</p>
+                <p>
+                  Binamızın mevcut konumu metro(1 dk.), tramvay(5 dk.),
+                  Marmaray(10 dk.), otobüs(2 dk.), minibüs(1 dk.) ve
+                  üniversitelere kısa yürüme mesafesindedir. Bu sayede
+                  öğrencilerimiz İstanbul’un yoğun trafiğinde zaman kaybedip
+                  yorulmayarak derslerine odaklanabilirler. Aksaray konum olarak
+                  da İstanbul’un merkezindedir ve öğrenciler boş zamanlarında bu
+                  kültür dolu şehri toplu taşımaya rahatça ulaşarak
+                  gezebilirler.{" "}
+                  {!isOpen && (
+                    <span
+                      onClick={() => setIsOpen(true)}
+                      style={{ fontWeight: "900", cursor: "pointer" }}
+                    >
+                      Devamını Oku...
+                    </span>
+                  )}
+                </p>
+                <p>
+                  <br />
+                </p>
+                <p style={{ fontWeight: "900" }}>Odalar</p>
+                <p>
+                  Odalarımız her öğrenci için en az 12 m3 alan ayrılacak şekilde
+                  1, 2, 4 ve 6 kişilik olarak organize edilmiştir. Her oda kendi
+                  içinde bir aydınlık ve ferah bir yaşam alanıdır. Mimarlarımız
+                  odaları öğrencilerin hem huzur içinde uyuyabilecekleri, hem
+                  konforlu bir şekilde ders çalışabileceği, hem de boş
+                  zamanlarında rahatlayabilecekleri şekilde düzenlemiştir.
+                  Odalardaki tüm mobilyalar sipariş üzerine üretilmiş ve
+                  öğrencilerin memnuniyeti için özel tasarlanmıştır.
+                </p>
+              </div>
+            </div>
           </div>
-          <div className="info">
+          {/* <div className="info">
             <div className="top">
               <div className="post">
                 <h1>{detailData?.title}</h1>
@@ -159,7 +216,7 @@ const HotelDetail = ({ setLoading, loading, singlePostData }) => {
               </div>
             </div>
             <div className="bottom">{detailData?.desc}</div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

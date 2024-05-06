@@ -37,11 +37,11 @@ const Hotel = () => {
     return <div>Error</div>;
   }
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  //  console.log(data);
+  console.log(data);
 
   return (
     <div className="denemeSinglePage">
@@ -49,16 +49,22 @@ const Hotel = () => {
         {loading ? (
           <div>Loading...</div>
         ) : (
-          <HotelDetail
-            loading={loading}
-            setLoading={setLoading}
-            singlePostData={data}
-          />
-        )}
-        {loading ? (
-          <div>Loading...</div>
-        ) : (
-          <HotelFeatures singlePostData={data} />
+          <>
+            <HotelDetail
+              singlePostData={data}
+              loading={loading}
+              setLoading={setLoading}
+              error={error}
+              setError={setError}
+            />
+            <HotelFeatures
+              loading={loading}
+              setLoading={setLoading}
+              error={error}
+              setError={setError}
+              singlePostData={data}
+            />
+          </>
         )}
       </div>
     </div>

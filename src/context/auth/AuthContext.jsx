@@ -52,7 +52,8 @@ export const AuthContextProvider = ({ children }) => {
     //  console.log(x);
     if (x === undefined || !x) {
       //      console.log(x);
-      dispatch({ type: "LOGOUT" });
+      localStorage.setItem("user", null);
+      dispatch({ type: "LOGOUT", payload: null });
     }
   }, [dispatch, x]);
 

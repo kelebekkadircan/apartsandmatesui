@@ -10,7 +10,7 @@ export const CardListing = ({ item }) => {
       </Link>
       <div className="textContainer">
         <h2 className="title">
-          <Link to={`/${item.id}`}>{item.title}</Link>
+          <Link to={`${item._id}`}>{item.title}</Link>
         </h2>
         <p className="address">
           <img src="/pin.png" alt="" />

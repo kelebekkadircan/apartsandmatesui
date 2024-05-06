@@ -19,7 +19,7 @@ export const Map = ({ items }) => {
     }
   }, [items]);
 
-  // console.log(mapData[0], "MAPDATA");
+  //console.log(mapData[0], "MAPDATA");
   return (
     !isLoading && (
       <MapContainer

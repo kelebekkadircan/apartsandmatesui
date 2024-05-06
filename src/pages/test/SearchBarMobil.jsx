@@ -84,6 +84,7 @@ const SearchBarMobil = () => {
 
   console.log(districtData);
   console.log(apartTypes);
+  console.log(districts, "districts");
 
   return (
     <div className="containerMobilBar">
@@ -94,16 +95,17 @@ const SearchBarMobil = () => {
             name="district"
             placeholder="Mahalleyi Giriniz..."
             onChange={handleChange}
-            value={query.district}
+            value={query.district && query.district}
             id="district"
-            onClick={(e) =>
-              setDistricts(
-                districtData.filter((district) =>
-                  district.name
-                    .toLowerCase()
-                    .includes(e.target.value.toLowerCase())
-                )
-              )
+            onClick={
+              (e) => setDistricts(districtData)
+              // setDistricts(
+              //   districtData.filter((district) =>
+              //     district.name
+              //       .toLowerCase()
+              //       .includes(e.target.value.toLowerCase())
+              //   )
+              // )
             }
           />
         </div>
@@ -135,12 +137,13 @@ const SearchBarMobil = () => {
             placeholder="Apart Tipini Giriniz..."
             onChange={handleChange}
             value={query.apartType}
-            onClick={(e) =>
-              setTypes(
-                apartTypes.filter((type) =>
-                  type.name.toLowerCase().includes(e.target.value.toLowerCase())
-                )
-              )
+            onClick={
+              (e) => setTypes(apartTypes)
+              // setTypes(
+              //   apartTypes.filter((type) =>
+              //     type.name.toLowerCase().includes(e.target.value.toLowerCase())
+              //   )
+              // )
             }
           />
         </div>

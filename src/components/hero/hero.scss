@@ -1,23 +1,58 @@
+@import "../../layouts/main/responsive.scss";
+
 .heroSection {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   height: 100%;
-  padding: 5px;
-  margin-top: 100px;
+  margin-top: 80px;
 
-  .title {
-    margin-top: 120px;
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-    font-size: 50px;
-    color: #fff;
-  }
+  .heroWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
 
-  .description {
-    color: #fff;
-    opacity: 0.85;
-    font-size: 1rem;
-    letter-spacing: 0.6;
-    font-weight: 300;
+    max-width: 1366px;
+    margin: 0 auto;
+    // background-color: #a4aec0;
+
+    // margin: 0 auto;
+    // background-color: red;
+
+    @include xl {
+      // background-color: rgb(40, 18, 183);
+      max-width: 1166px;
+    }
+    @include lg {
+      // background-color: rgb(104, 25, 161);
+      max-width: 966px;
+    }
+    @include md {
+      // background-color: green;
+      max-width: 766px;
+    }
+    @include sm {
+      // background-color: red;
+      max-width: 566px;
+    }
+    @include xs {
+      // background-color: rgb(135, 183, 31);
+      max-width: 366px;
+    }
+
+    .title {
+      margin-top: 120px;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 50px;
+      color: #fff;
+    }
+
+    .description {
+      color: #fff;
+      opacity: 0.85;
+      font-size: 1rem;
+      letter-spacing: 0.6;
+      font-weight: 300;
+    }
   }
 }
