@@ -49,7 +49,7 @@ export const Popular = () => {
     // navigate("/login", { replace: true });
   }
 
-  // console.log(hotelData);
+  console.log(hotelData);
 
   return (
     <div className="popularSection">

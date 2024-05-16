@@ -2,71 +2,72 @@ $primary-color: #0f4c75;
 
 * {
   scroll-behavior: smooth;
+  // color: black;
 }
 
-:root {
-  --box-shadow-x: var(--abs-0);
-  --box-shadow-y: var(--abs-4);
-  --box-shadow-blur: var(--abs-16);
-  --box-shadow-15: var(--box-shadow-x) var(--box-shadow-y)
-    var(--box-shadow-blur) var(--black-a15);
-  --box-shadow-30: var(--box-shadow-x) var(--box-shadow-y)
-    var(--box-shadow-blur) var(--black-a30);
-  --box-shadow-45: var(--box-shadow-x) var(--box-shadow-y)
-    var(--box-shadow-blur) var(--black-a45);
-  --transparent: #0000;
-  --black: #000;
-  --black-a15: rgb(0 0 0 / var(--alpha-15));
-  --black-a30: rgb(0 0 0 / var(--alpha-30));
-  --black-a45: rgb(0 0 0 / var(--alpha-45));
-  --white: #fff;
-  --white-a15: rgb(255 255 255 / var(--alpha-15));
-  --white-a25: rgb(255 255 255 / var(--alpha-25));
-  --white-a45: rgb(255 255 255 / var(--alpha-45));
-  --grey-a15: rgb(10 17 33 / var(--alpha-15));
-  --grey-a25: rgb(10 17 33 / var(--alpha-25));
-  --grey-a45: rgb(10 17 33 / var(--alpha-45));
-  --blue-100: #f3f9fd;
-  --blue-200: #e7f4fa;
-  --blue-300: #c4e3f4;
-  --blue-400: #89c8e8;
-  --blue-500: #4da9da;
-  --blue-600: #1391d2;
-  --blue-700: #007cc2;
-  --blue-800: #005fa3;
-  --orange-100: #fffaf3;
-  --orange-200: #fef5e7;
-  --orange-300: #fee7c4;
-  --orange-400: #fdce8a;
-  --orange-600: #fc9e15;
-  --orange-700: #d47e00;
-  --orange-800: #9e6100;
-  --red-100: #fff9f8;
-  --red-200: #fff2f2;
-  --red-300: #ffe0df;
-  --red-400: #ffc1c0;
-  --red-500: #ff9e9c;
-  --red-600: #ff8381;
-  --red-700: #db3734;
-  --red-800: #b30018;
-  --green-100: #f1f8ea;
-  --green-200: #e9f4de;
-  --green-300: #cce5b2;
-  --green-400: #9c6;
-  --green-500: #7bcf3d;
-  --green-600: #62a30f;
-  --green-700: #028000;
-  --green-800: #005f00;
-  --green-900: #075f0a;
-  --grey-100: #f9fafa;
-  --grey-200: #f3f4f5;
-  --grey-300: #dbdde1;
-  --grey-400: #afb3bc;
-  --grey-500: #8c929e;
-  --grey-600: #6c707a;
-  --grey-700: #4d5059;
-  --grey-800: #0a1121;
-}
+// :root {
+//   --box-shadow-x: var(--abs-0);
+//   --box-shadow-y: var(--abs-4);
+//   --box-shadow-blur: var(--abs-16);
+//   --box-shadow-15: var(--box-shadow-x) var(--box-shadow-y)
+//     var(--box-shadow-blur) var(--black-a15);
+//   --box-shadow-30: var(--box-shadow-x) var(--box-shadow-y)
+//     var(--box-shadow-blur) var(--black-a30);
+//   --box-shadow-45: var(--box-shadow-x) var(--box-shadow-y)
+//     var(--box-shadow-blur) var(--black-a45);
+//   --transparent: #0000;
+//   --black: #000;
+//   --black-a15: rgb(0 0 0 / var(--alpha-15));
+//   --black-a30: rgb(0 0 0 / var(--alpha-30));
+//   --black-a45: rgb(0 0 0 / var(--alpha-45));
+//   --white: #fff;
+//   --white-a15: rgb(255 255 255 / var(--alpha-15));
+//   --white-a25: rgb(255 255 255 / var(--alpha-25));
+//   --white-a45: rgb(255 255 255 / var(--alpha-45));
+//   --grey-a15: rgb(10 17 33 / var(--alpha-15));
+//   --grey-a25: rgb(10 17 33 / var(--alpha-25));
+//   --grey-a45: rgb(10 17 33 / var(--alpha-45));
+//   --blue-100: #f3f9fd;
+//   --blue-200: #e7f4fa;
+//   --blue-300: #c4e3f4;
+//   --blue-400: #89c8e8;
+//   --blue-500: #4da9da;
+//   --blue-600: #1391d2;
+//   --blue-700: #007cc2;
+//   --blue-800: #005fa3;
+//   --orange-100: #fffaf3;
+//   --orange-200: #fef5e7;
+//   --orange-300: #fee7c4;
+//   --orange-400: #fdce8a;
+//   --orange-600: #fc9e15;
+//   --orange-700: #d47e00;
+//   --orange-800: #9e6100;
+//   --red-100: #fff9f8;
+//   --red-200: #fff2f2;
+//   --red-300: #ffe0df;
+//   --red-400: #ffc1c0;
+//   --red-500: #ff9e9c;
+//   --red-600: #ff8381;
+//   --red-700: #db3734;
+//   --red-800: #b30018;
+//   --green-100: #f1f8ea;
+//   --green-200: #e9f4de;
+//   --green-300: #cce5b2;
+//   --green-400: #9c6;
+//   --green-500: #7bcf3d;
+//   --green-600: #62a30f;
+//   --green-700: #028000;
+//   --green-800: #005f00;
+//   --green-900: #075f0a;
+//   --grey-100: #f9fafa;
+//   --grey-200: #f3f4f5;
+//   --grey-300: #dbdde1;
+//   --grey-400: #afb3bc;
+//   --grey-500: #8c929e;
+//   --grey-600: #6c707a;
+//   --grey-700: #4d5059;
+//   --grey-800: #0a1121;
+// }
 
 html {
   overflow-x: hidden;
@@ -76,9 +77,9 @@ html {
 
 body {
   // background-color: #a4aec0;
-  // background-color: #c2c5cb;
+  background-color: #c2c5cb;
   // background-color: #f6f7f7;
-  background-color: var(--grey-400);
+  // background-color: var(--grey-600);
 }
 
 .link {

@@ -5,14 +5,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: transparent;
+  // background-color: transparent;
+  background: #f5f8fc;
+
   border-bottom: 1px solid white;
   z-index: 9999;
-  color: white;
+  color: black;
   position: absolute;
   top: 0;
   transition: 0.5s all ease-in;
   width: 100%;
+  height: 80px;
 
   .container {
     width: 90%;
@@ -134,7 +137,11 @@
             gap: 10px;
             width: 200px;
             font-weight: 300;
-            color: gray;
+            color: rgb(211, 11, 11);
+
+            a {
+              color: black;
+            }
           }
         }
       }

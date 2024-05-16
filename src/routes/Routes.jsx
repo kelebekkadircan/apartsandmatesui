@@ -85,15 +85,15 @@ const App = () => {
       element: <RequireAuth />,
       children: [
         {
-          path: "/profile",
+          path: "/profile/:id",
           element: <ProfilePage />,
         },
         {
-          path: "/profile/update",
+          path: "/profile/:id/update",
           element: <UpdateProfile />,
         },
         {
-          path: "profile/addHotel",
+          path: "profile/:id/addHotel",
           element: <CreateHotelPage />,
         },
       ],

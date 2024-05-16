@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UploadWidget from "~/components/uploadWidget/UploadWidget";
 import { newRequest } from "~/utils/newRequest";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import "./newPostPage.scss";
 
 const NewPostPage = () => {
-  // const [value, setValue] = useState("");
+  const [value, setValue] = useState("");
   const [images, setImages] = useState([]);
   const [error, setError] = useState("");
   const [isLatitude, setIsLatitude] = useState("");
@@ -16,39 +18,83 @@ const NewPostPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
+    console.log(formData);
     const inputs = Object.fromEntries(formData);
-
-    try {
-      const res = await newRequest.post("/posts", {
-        postData: {
-          title: inputs.title,
-          price: parseInt(inputs.price),
-          address: inputs.address,
-          city: inputs.city,
-          bedroom: parseInt(inputs.bedroom),
-          bathroom: parseInt(inputs.bathroom),
-          type: inputs.type,
-          property: inputs.property,
-          latitude: inputs.latitude,
-          longitude: inputs.longitude,
-          images: images,
-        },
-        postDetail: {
-          // desc: value,
-          utilities: inputs.utilities,
-          pet: inputs.pet,
-          income: inputs.income,
-          size: parseInt(inputs.size),
-          school: parseInt(inputs.school),
-          bus: parseInt(inputs.bus),
-          restaurant: parseInt(inputs.restaurant),
-        },
-      });
-      navigate("/" + res.data.id);
-    } catch (err) {
-      console.log(err);
-      setError(error);
-    }
+    console.log(inputs, images);
+    console.log({
+      name: inputs.name,
+      type: inputs.type,
+      ownerName: inputs.ownerName,
+      city: inputs.city,
+      district: inputs.district,
+      title: inputs.title,
+      desc: value,
+      address: inputs.address,
+      shortDesc: inputs.shortDesc,
+      email: inputs.email,
+      phoneNumber: inputs.phoneNumber,
+      images: images,
+      // logo : logo,
+      isPaid: inputs.isPaid,
+      bedCount: parseInt(inputs.bedCount),
+      distances: {
+        busStop: parseInt(inputs.busStop),
+        university: parseInt(inputs.university),
+        market: parseInt(inputs.market),
+      },
+      priceRange: {
+        min: parseInt(inputs.min),
+        max: parseInt(inputs.max),
+      },
+      hotelContent: {
+        aboutHotel: inputs.aboutHotel,
+        standoutFeatures: inputs.standoutFeatures,
+        locationInfo: inputs.locationInfo,
+        roomInfo: inputs.roomInfo,
+      },
+      receptionNumber: inputs.receptionNumber,
+      guestPolicy: inputs.guestPolicy,
+    });
+    // try {
+    //   const res = await newRequest.post("/hotels", {
+    //     name: inputs.name,
+    //     type: inputs.type,
+    //     ownerName: inputs.ownerName,
+    //     city: inputs.city,
+    //     district: inputs.district,
+    //     title: inputs.title,
+    //     desc: value,
+    //     address: inputs.address,
+    //     shortDesc: inputs.shortDesc,
+    //     email: inputs.email,
+    //     phoneNumber: inputs.phoneNumber,
+    //     images: images,
+    //     // logo : logo,
+    //     isPaid: inputs.isPaid,
+    //     bedCount: parseInt(inputs.bedCount),
+    //     distances: {
+    //       busStop: parseInt(inputs.busStop),
+    //       university: parseInt(inputs.university),
+    //       market: parseInt(inputs.market),
+    //     },
+    //     priceRange: {
+    //       min: parseInt(inputs.min),
+    //       max: parseInt(inputs.max),
+    //     },
+    //     hotelContent: {
+    //       aboutHotel: inputs.aboutHotel,
+    //       standoutFeatures: inputs.standoutFeatures,
+    //       locationInfo: inputs.locationInfo,
+    //       roomInfo: inputs.roomInfo,
+    //     },
+    //     receptionNumber: inputs.receptionNumber,
+    //     guestPolicy: inputs.guestPolicy,
+    //   });
+    //   navigate("/" + res.data.id);
+    // } catch (err) {
+    //   console.log(err);
+    //   setError(err.response.data.message);
+    // }
   };
 
   const handleLatitude = (e) => {
@@ -83,21 +129,79 @@ const NewPostPage = () => {
         <div className="wrapper">
           <form onSubmit={handleSubmit}>
             <div className="item">
+              <label htmlFor="name">Name</label>
+              <input id="name" name="name" type="text" />
+            </div>
+            <div className="item">
+              <label htmlFor="type">Type</label>
+              <select name="type">
+                <option value="kiz" defaultChecked>
+                  Kız
+                </option>
+                <option value="erkek">Erkek</option>
+                <option value="karma">Karma</option>
+              </select>
+            </div>
+            <div className="item">
+              <label htmlFor="ownerName">ownerName</label>
+              <input id="ownerName" name="ownerName" type="text" />
+            </div>
+            <div className="item">
+              <label htmlFor="city">city</label>
+              <select name="city">
+                <option value="Alanya" defaultChecked>
+                  Alanya
+                </option>
+                <option value="Manavgat">Manavgat</option>
+                <option value="Gazipaşa">Gazipaşa</option>
+              </select>
+            </div>
+            <div className="item">
+              <label htmlFor="district">district</label>
+              <select name="district">
+                <option value="oba" defaultChecked>
+                  Oba
+                </option>
+                <option value="cikcilli">Cikcilli</option>
+                <option value="kestel">Kestel</option>
+                <option value="saray">Saray</option>
+                <option value="gullerpinari">Güllerpınarı</option>
+              </select>
+            </div>
+
+            <div className="item">
               <label htmlFor="title">Title</label>
               <input id="title" name="title" type="text" />
             </div>
-            <div className="item">
-              <label htmlFor="price">Price</label>
-              <input id="price" name="price" type="number" />
+            <div className="item description">
+              <label htmlFor="desc">Description</label>
+              <ReactQuill theme="snow" onChange={setValue} value={value} />
             </div>
             <div className="item">
               <label htmlFor="address">Address</label>
               <input id="address" name="address" type="text" />
             </div>
-            {/* <div className="item description">
-          <label htmlFor="desc">Description</label>
-          <ReactQuill theme="snow" onChange={setValue} value={value} />
-        </div> */}
+            <div className="item">
+              <label htmlFor="shortDesc">shortDesc</label>
+              <input id="shortDesc" name="shortDesc" type="text" />
+            </div>
+            <div className="item">
+              <label htmlFor="email">email</label>
+              <input id="email" name="email" type="email" />
+            </div>
+            <div className="item">
+              <label htmlFor="phoneNumber">phoneNumber</label>
+              <input id="phoneNumber" name="phoneNumber" type="text" />
+            </div>
+
+            <div className="item">
+              <label htmlFor="minPrice">minPrice </label>
+              <input id="minPrice" name="minPrice" type="number" />
+            </div>
+            <div className="item">
+              <label htmlFor="maxPrice">maxPrice </label>
+              <input id="maxPrice" name="maxPrice" type="number" />
+            </div>
             <div className="item">
               <label htmlFor="city">City</label>
               <input id="city" name="city" type="text" />
@@ -143,10 +247,11 @@ const NewPostPage = () => {
             <div className="item">
               <label htmlFor="type">Type</label>
               <select name="type">
-                <option value="rent" defaultChecked>
-                  Rent
+                <option value="kiz" defaultChecked>
+                  Kız
                 </option>
-                <option value="buy">Buy</option>
+                <option value="erkek">Erkek</option>
+                <option value="karma">Karma</option>
               </select>
             </div>
             <div className="item">
@@ -200,7 +305,7 @@ const NewPostPage = () => {
               <input min={0} id="restaurant" name="restaurant" type="number" />
             </div>
             <button className="sendButton">Add</button>
-            {error && <span>error</span>}
+            {error && <span> {error} </span>}
           </form>
         </div>
       </div>
@@ -212,7 +317,7 @@ const NewPostPage = () => {
           uwConfig={{
             cloudName: "debzpp4al",
             uploadPreset: "apartsandmates",
-            multiple: false,
+            multiple: true,
             maxImageFileSize: 2000000,
             folder: "hotels",
           }}

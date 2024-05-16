@@ -1,12 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./CardListing.scss";
 
 export const CardListing = ({ item }) => {
   // console.log(item);
+
+  const location = useLocation();
+  const isProfilePage = location.pathname.split("/")[1];
+
   return (
     <div className="cardListing">
-      <Link to={`${item._id}`} className="imageContainer">
-        <img src={item.images[0]} alt="" />
+      <Link
+        to={isProfilePage === "profile" ? `/list/${item._id}` : `${item._id}`}
+        className="imageContainer"
+      >
+        <img src={item?.images[0] || "/bg.png"} alt="" />
       </Link>
       <div className="textContainer">
         <h2 className="title">

@@ -7,6 +7,7 @@ import { useState } from "react";
 
 const UpdateProfile = () => {
   const { user } = useAuthContext();
+
   const [error, setError] = useState("");
   const [avatar, setAvatar] = useState([]);
 
@@ -26,14 +27,14 @@ const UpdateProfile = () => {
         avatar: avatar[0],
       });
       localStorage.setItem("user", JSON.stringify(res?.data));
-      navigate("/profile");
+      navigate(`/profile/${user?.details?._id}`);
     } catch (err) {
       console.log(err);
       setError(err.response.data.message);
     }
   };
 
-  console.log(user.details);
+  console.log(user);
 
   return (
     <div className="profileUpdatePage">
@@ -46,7 +47,7 @@ const UpdateProfile = () => {
               id="username"
               name="username"
               type="text"
-              defaultValue={user.details.username}
+              defaultValue={user?.details?.username}
             />
           </div>
           <div className="item">
@@ -55,12 +56,12 @@ const UpdateProfile = () => {
               id="email"
               name="email"
               type="email"
-              defaultValue={user.details.email}
+              defaultValue={user?.details?.email}
             />
           </div>
           <div className="item">
             <label htmlFor="password">Password</label>
-            <input id="password" name="password" type="password" />
+            <input id="password" required name="password" type="password" />
           </div>
           <button>Update</button>
           {error && <span>error</span>}
@@ -68,7 +69,7 @@ const UpdateProfile = () => {
       </div>
       <div className="sideContainer">
         <img
-          src={avatar[0] || user.details.avatar || "/noavatar.jpg"}
+          src={avatar[0] || user?.details?.avatar || "/noavatar.jpg"}
           alt=""
           className="avatar"
         />

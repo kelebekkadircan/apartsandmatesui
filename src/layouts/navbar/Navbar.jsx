@@ -16,6 +16,8 @@ const Navbar = () => {
     await logout();
   };
 
+  console.log(user);
+  console.log(user?._id);
   return (
     <div className="navbar">
       <div className="container">
@@ -49,31 +51,33 @@ const Navbar = () => {
                 {/* <span> {user?.username} </span> */}
                 {open && (
                   <div className="options">
-                    {user?.isOwner ? (
+                    {user?.isHotelOwner ? (
                       <>
-                        <Link to="profile">
+                        <Link to={`profile/${user?._id}`}>
+                          <span> Profilim Hotel owner</span>
+                        </Link>
+                        <Link to={`profile/${user?._id}`}>
                           <span> Profilim</span>
                         </Link>
-                        <Link to="profile">
+                        <Link to={`profile/${user?._id}`}>
                           <span> Profilim</span>
                         </Link>
-                        <Link to="profile">
+                        <Link to={`profile/${user?._id}`}>
                           <span> Profilim</span>
                         </Link>
                         <span onClick={handleOut}>Log out</span>
                       </>
                     ) : (
                       <>
-                        <Link to="profile">
+                        <Link to={`profile/${user?.details?._id}`}>
                           <span> Profilim</span>
                         </Link>
-                        <Link to="profile">
+                        <Link to={`profile/${user?._id}`}>
                           <span> Profilim</span>
                         </Link>
-                        <Link to="profile">
+                        <Link to={`profile/${user?._id}`}>
                           <span> Profilim</span>
                         </Link>
-
                         <span onClick={handleOut}>Log out</span>
                       </>
                     )}
