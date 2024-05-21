@@ -63,6 +63,14 @@
       }
     }
 
+    .userInfoPart {
+      background-color: red;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+      align-items: center;
+    }
+
     .address {
       font-size: 14px;
       display: flex;

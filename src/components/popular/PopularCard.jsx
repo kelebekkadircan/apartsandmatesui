@@ -20,7 +20,7 @@ export const PopularCard = ({ data }) => {
         <div className="bottom">
           <h1 className="location">
             {" "}
-            {data.address.substring(0, 30) + "..."}{" "}
+            {data.address.substring(0, 20) + "..."}{" "}
           </h1>
           <h3 className="title"> {data.title.substring(0, 20) + "..."} </h3>
           <div className="infos">

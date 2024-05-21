@@ -18,7 +18,7 @@ function Pin({ item }) {
     }
   }, [item]);
 
-  //  console.log(itemData, "ITEM");
+  // console.log(itemData, "ITEM");
   // console.log(itemData?.latitude, itemData?.longitude, "LATLONG");
   if (loading) return <div>Loading...</div>;
 
@@ -32,11 +32,11 @@ function Pin({ item }) {
       >
         <Popup>
           <div className="popupContainer">
-            {/* <img src={itemData && itemData?.images[0]} alt="" /> */}
+            <img src={itemData?.images[0] || "/noLogo.png"} alt="" />
             <div className="textContainer">
               <Link to={`/list/${itemData._id}`}>{itemData.title}</Link>
 
-              <b>$ {itemData.price}</b>
+              <b>$ {itemData.min}</b>
             </div>
           </div>
         </Popup>

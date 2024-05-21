@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import "./filter.scss";
 import { newRequest } from "~/utils/newRequest";
 
@@ -19,6 +19,11 @@ function Filter() {
     // max: searchParams.get("max") || 100000,
     // bedroom: searchParams.get("bedroom") || 1,
   });
+
+  const location = useLocation();
+
+  const loc = location.pathname.split("/")[1];
+  console.log(loc);
 
   const handleChange = (e) => {
     e.preventDefault();
@@ -85,11 +90,18 @@ function Filter() {
             name="type"
             id="type"
           >
-            {apartTypes.map((type, i) => (
-              <option key={i} value={type.value}>
-                {type.name}
-              </option>
-            ))}
+            {loc !== "roommates" ? (
+              apartTypes.map((type, i) => (
+                <option key={i} value={type.value}>
+                  {type.name}
+                </option>
+              ))
+            ) : (
+              <>
+                <option value="erkek">Erkek</option>
+                <option value="kadin">Kadın</option>
+              </>
+            )}
           </select>
         </div>
 

@@ -41,15 +41,17 @@ export const Map = ({ items }) => {
     !isLoading && (
       <>
         <MapContainer
-          center={
-            mapData.length > 1
-              ? [36.549362, 31.996994]
-              : [
-                  mapData[0].latitude ? mapData[0]?.latitude : 36.549362,
-                  mapData[0].longitude ? mapData[0]?.longitude : 31.996994,
-                ]
-          }
-          zoom={mapData.length > 1 ? 14 : 16}
+          // center={
+          //   mapData.length > 1
+          //     ? [36.549362, 31.996994]
+          //     : [
+          //         mapData[0].latitude ? mapData[0]?.latitude : 36.549362,
+          //         mapData[0].longitude ? mapData[0]?.longitude : 31.996994,
+          //       ]
+          // }
+          // zoom={mapData.length > 1 ? 14 : 16}
+          center={[36.549362, 31.996994]}
+          zoom={14}
           scrollWheelZoom={true}
           className="map"
         >
@@ -64,7 +66,7 @@ export const Map = ({ items }) => {
                 <Marker position={[clickPosition.lat, clickPosition.lng]} />
               )}
 
-          {items?.map((item, i) => (
+          {mapData?.map((item, i) => (
             <Pin item={item} key={i} />
           ))}
         </MapContainer>
