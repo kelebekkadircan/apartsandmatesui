@@ -24,6 +24,7 @@ import CreateHotelPage from "~/pages/newpost/NewPostPage";
 import { listPageLoader } from "~/utils/loaders.js";
 import UpdateProfile from "~/pages/updateProfile/UpdateProfile";
 import MatesPage from "~/pages/mates/MatesPage";
+import MatesPostPage from "~/pages/matesPostPage/MatesPostPage";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -100,6 +101,10 @@ const App = () => {
         {
           path: "/roommates",
           element: <MatesPage />,
+        },
+        {
+          path: "/roommates/:id",
+          element: <MatesPostPage />,
         },
       ],
     },

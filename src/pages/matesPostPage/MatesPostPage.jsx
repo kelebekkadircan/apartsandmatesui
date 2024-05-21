@@ -1,15 +1,11 @@
-// import { Map } from "~/components/map/Map";
-// import { singlePostData, userData } from "~/lib/dummydata";
-// import Slider from "../../components/singlePageSlider/SinglePageSlider";
-// import { useLoaderData } from "react-router-dom";
-import HotelFeatures from "./HotelFeatures";
-import "./singlePage.scss";
-import HotelDetail from "./HotelDetail";
 import { useEffect, useState } from "react";
-import { newRequest } from "~/utils/newRequest";
 import { useParams } from "react-router-dom";
+import { newRequest } from "~/utils/newRequest";
+import "./PostsinglePage.scss";
+import PostDetail from "./PostDetail";
+// import PostFeatures from "./PostFeatures";
 
-const Hotel = () => {
+const MatesPostPage = () => {
   // const data = useLoaderData();
   // console.log(data);
   const { id } = useParams();
@@ -21,7 +17,7 @@ const Hotel = () => {
     const fetchSingleHotel = async () => {
       setLoading(true);
       try {
-        const response = await newRequest(`/hotels/single/${id}`);
+        const response = await newRequest(`/posts/single/${id}`);
         setData(response.data);
       } catch (e) {
         setError(e);
@@ -44,28 +40,26 @@ const Hotel = () => {
   console.log(data);
 
   return (
-    <div className="denemeSinglePage">
+    <div className="PostdenemeSinglePage">
       <div className="singlePage">
-        {data.length > 0 && loading ? (
+        {loading ? (
           <div>Loading...</div>
-        ) : error ? (
-          <div>error</div>
         ) : (
           <>
-            <HotelDetail
+            <PostDetail
               singlePostData={data}
               loading={loading}
               setLoading={setLoading}
               error={error}
               setError={setError}
             />
-            <HotelFeatures
+            {/* <PostFeatures
               loading={loading}
               setLoading={setLoading}
               error={error}
               setError={setError}
               singlePostData={data}
-            />
+            /> */}
           </>
         )}
       </div>
@@ -73,4 +67,4 @@ const Hotel = () => {
   );
 };
 
-export default Hotel;
+export default MatesPostPage;

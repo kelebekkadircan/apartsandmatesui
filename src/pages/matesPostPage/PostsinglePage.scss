@@ -1,0 +1,15 @@
+.PostdenemeSinglePage {
+  .singlePage {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    margin: 0 auto;
+    min-height: 100svh;
+    //   @include md {
+    //     flex-direction: column;
+    //     overflow: scroll;
+    //   }
+  }
+}

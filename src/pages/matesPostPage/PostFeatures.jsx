@@ -1,19 +1,19 @@
 /* eslint-disable no-unused-vars */
 import { Map } from "~/components/map/Map";
-import "./singlePageHotelFeatures.scss";
+import "./singlePagePostFeatures.scss";
 import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { newRequest } from "~/utils/newRequest";
 import { FaArrowRight } from "react-icons/fa";
 
-const HotelFeatures = ({
+const PostFeatures = ({
   singlePostData,
   loading,
   setError,
   error,
   setLoading,
 }) => {
-  const [hotelFeatures, setHotelFeatures] = useState(singlePostData || []);
+  const [hotelFeatures, setHotelFeatures] = useState([]);
   const [tags, setTags] = useState([]);
   const [buildingFeatures, setBuildingFeatures] = useState([]);
   const [roomFeatures, setRoomFeatures] = useState([]);
@@ -21,43 +21,43 @@ const HotelFeatures = ({
 
   const { id } = useParams();
 
-  useEffect(() => {
-    setLoading(true);
-    try {
-      setHotelFeatures(singlePostData);
-    } catch (e) {
-      setError(e);
-    } finally {
-      setLoading(false);
-    }
-    const tagsFetching = async () => {
-      try {
-        const tagsRes = await newRequest.get(`/hotels/tags/${id}`);
-        const { buildingFeatures, roomFeatures, services } = tagsRes.data;
-        setBuildingFeatures(buildingFeatures);
-        setRoomFeatures(roomFeatures);
-        setServicesFeatures(services);
-        setTags(tagsRes.data);
-      } catch (e) {
-        setError(e);
-      } finally {
-        setLoading(false);
-      }
-    };
-    tagsFetching();
-  }, [singlePostData, setError, setLoading, id]);
+  // useEffect(() => {
+  //   setLoading(true);
+  //   try {
+  //     setHotelFeatures(singlePostData);
+  //   } catch (e) {
+  //     setError(e);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  //   const tagsFetching = async () => {
+  //     try {
+  //       const tagsRes = await newRequest.get(`/posts/tags/${id}`);
+  //       const { buildingFeatures, roomFeatures, services } = tagsRes.data;
+  //       setBuildingFeatures(buildingFeatures);
+  //       setRoomFeatures(roomFeatures);
+  //       setServicesFeatures(services);
+  //       setTags(tagsRes.data);
+  //     } catch (e) {
+  //       setError(e);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //   tagsFetching();
+  // }, [singlePostData, setError, setLoading, id]);
 
   // if (error) {
   //   return <div>Error</div>;
   // }
-  console.log(hotelFeatures);
+
   console.log(buildingFeatures, roomFeatures, servicesFeatures);
 
   return loading ? (
     <div>Loading...</div>
   ) : (
-    <div className="features">
-      <div className="wrapper">
+    <div className="Postfeatures">
+      <div className="Postwrapper">
         <div className="contentNavbar">
           <div className="contentNavbarContainer">
             <div className="navbarList">
@@ -147,17 +147,10 @@ const HotelFeatures = ({
         </div>
       </div>
       <div className="mapContainer">
-        {/* {loading ? (
-          <div> loading </div>
-        ) : error ? (
-          <div> Error</div>
-        ) : (
-          <Map items={[singlePostData]} />
-        )} */}
-        <Map items={[hotelFeatures]} />
+        <Map items={[singlePostData]} />
       </div>
     </div>
   );
 };
 
-export default HotelFeatures;
+export default PostFeatures;

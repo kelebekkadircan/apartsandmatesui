@@ -28,7 +28,6 @@ const MatesPage = () => {
           signal: abortControllerRef.current?.signal,
         });
         const data = response.data;
-        console.log(data.map((item) => item.userId));
         setMatesData(data);
       } catch (e) {
         if (e.name == "AbortError") {

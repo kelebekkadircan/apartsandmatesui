@@ -34,7 +34,7 @@ export const Map = ({ items }) => {
     }
   }, [items]);
 
-  // console.log(mapData[0], "MAPDATA");
+  console.log(mapData, "MAPDATA");
   // console.log(clickPosition, "CLICKPOSITION");
   // console.log(location);
   return (
@@ -66,7 +66,7 @@ export const Map = ({ items }) => {
                 <Marker position={[clickPosition.lat, clickPosition.lng]} />
               )}
 
-          {mapData?.map((item, i) => (
+          {items?.map((item, i) => (
             <Pin item={item} key={i} />
           ))}
         </MapContainer>
