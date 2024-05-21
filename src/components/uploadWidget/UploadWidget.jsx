@@ -55,7 +55,7 @@ function UploadWidget({ uwConfig, setState }) {
         className="cloudinary-button"
         onClick={initializeCloudinaryWidget}
       >
-        Upload
+        Görsel Yüklemek için Tıkla
       </button>
     </CloudinaryScriptContext.Provider>
   );

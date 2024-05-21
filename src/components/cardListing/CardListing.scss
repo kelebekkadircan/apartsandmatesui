@@ -5,6 +5,7 @@
   gap: 10px;
   background-color: whitesmoke;
   border-radius: 10px;
+  box-shadow: 3px 3px 20px rgb(0 0 0 / 0.2);
 
   &:first-child {
     margin-top: 15px;
@@ -66,17 +67,22 @@
       font-size: 14px;
       display: flex;
       align-items: center;
-      gap: 5px;
+      gap: 7px;
       color: #888;
     }
 
     .price {
-      font-size: 20px;
-      font-weight: 300;
-      padding: 5px;
-      border-radius: 5px;
-      background-color: rgba(254, 205, 81, 0.438);
-      width: max-content;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      p {
+        font-size: 20px;
+        font-weight: 300;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(254, 205, 81, 0.438);
+        width: max-content;
+      }
     }
 
     .bottom {
@@ -88,6 +94,7 @@
         display: flex;
         gap: 20px;
         font-size: 14px;
+
         .featureList {
           display: flex;
           align-items: center;
@@ -95,6 +102,10 @@
           background-color: whitesmoke;
           padding: 5px;
           border-radius: 5px;
+          img {
+            width: 25px;
+            height: 25px;
+          }
         }
       }
 

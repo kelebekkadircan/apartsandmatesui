@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import "./card.scss";
 
 const Card = ({ item }) => {
+  console.log(item);
   return (
-    <div className="card">
+    <div className="cardHeroSlider">
       <Link to={`list/${item._id}`}>
         <div className="logoContainer">
           <img src={item.logo} alt="" />

@@ -7,9 +7,11 @@ import {
   FaLocationDot,
   FaBowlFood,
   FaWifi,
-  FaInternetExplorer,
+  FaPerson,
+  // FaInternetExplorer,
 } from "react-icons/fa6";
 import { FaBed, FaHeadphones, FaPhone } from "react-icons/fa";
+// import { newRequest } from "~/utils/newRequest";
 
 const HotelDetail = ({
   setLoading,
@@ -19,12 +21,21 @@ const HotelDetail = ({
   error,
 }) => {
   const [detailData, setDetailData] = useState(singlePostData || []);
-  const [isOpen, setIsOpen] = useState(false);
+  // const [features, setFeatures] = useState([]);
+
+  // const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     setLoading(true);
     try {
       setDetailData(singlePostData);
+      // const fetchFeatures = async () => {
+      //   const res = await newRequest.get(
+      //     `/hotels/priority/${singlePostData._id}`
+      //   );
+      //   setFeatures(res.data);
+      // };
+      // fetchFeatures();
     } catch (e) {
       setError(e);
     } finally {
@@ -35,7 +46,9 @@ const HotelDetail = ({
   if (error) {
     return <div>Error</div>;
   }
-  // console.log(detailData, "HotelDetailDETAILDATA");
+  console.log(detailData, "HotelDetailDETAILDATA");
+
+  // console.log(features, "HotelDetailFEATURES");
   return !loading ? (
     <>
       <div className="details">
@@ -67,18 +80,28 @@ const HotelDetail = ({
           )} */}
           <Slider images={detailData?.images} />
           <div className="hotelDetailTop">
-            <div className="hotelDetailLogo">
-              <img src={detailData?.logo} alt="" />
-            </div>
-            <div className="hotelDetailContent">
-              <div className="hotelDetailContentTitle">{detailData?.name}</div>
-              <div className="hotelDetailContentLocation">
-                <span className="hotelDetailContentLocationIcon">
-                  <FaLocationDot />
-                </span>
-                <div className="hotelDetailContentLocationTitle">
-                  {detailData?.district}
+            <div className="leftDetailTop">
+              <div className="hotelDetailLogo">
+                <img src={detailData?.logo || "/noLogo.png"} alt="" />
+              </div>
+              <div className="hotelDetailContent">
+                <div className="hotelDetailContentTitle">
+                  {detailData?.name}
                 </div>
+                <div className="hotelDetailContentLocation">
+                  <span className="hotelDetailContentLocationIcon">
+                    <FaLocationDot />
+                  </span>
+                  <div className="hotelDetailContentLocationTitle">
+                    {detailData?.district}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="rightDetailTop">
+              <div className="hotelDetailPrice">
+                {" "}
+                {detailData?.min} - {detailData?.max} ₺ Arasında Fiyatlar
               </div>
             </div>
           </div>
@@ -133,12 +156,27 @@ const HotelDetail = ({
               <div className="hotelInfoDoubleContentAddress">
                 <div className="hotelInfoDoubleContentAddressIcon">
                   {" "}
+                  <FaPerson />{" "}
+                </div>
+                <div className="hotelInfoDoubleContentAddressTitle">
+                  {detailData?.guestPolicy === "gelebilirucretli"
+                    ? "ÜCRETLİ BİR ŞEKİLDE MİSAFİR KONAKLAYABİLİR"
+                    : detailData?.guestPolicy === "gelebilirucretsiz"
+                    ? "ÜCRETSİZ BİR ŞEKİLDE MİSAFİR KONAKLAYABİLİR"
+                    : "MİSAFİR KONAKLAYAMAZ"}
+                </div>
+              </div>
+            </div>
+            <div className="hotelInfoDoubleContent">
+              {/* <div className="hotelInfoDoubleContentAddress">
+                <div className="hotelInfoDoubleContentAddressIcon">
+                  {" "}
                   <FaInternetExplorer />{" "}
                 </div>
                 <div className="hotelInfoDoubleContentAddressTitle">
                   www.kadircan.com
                 </div>
-              </div>
+              </div> */}
               <div className="hotelInfoDoubleContentAddress">
                 <div className="hotelInfoDoubleContentAddressIcon">
                   {" "}
@@ -149,74 +187,28 @@ const HotelDetail = ({
                 </div>
               </div>
             </div>
-            <div className={`hotelInfoCollapse  ${isOpen && "uncollapse"} `}>
+            <div className={`hotelInfoCollapse `}>
               <div className="hotelInfoCollapseContent">
-                <p>
-                  Vatan Caddesi’nde bulunan kendi binasında ilk şubesini 2020
-                  yılında açmıştır. Amacı bu ülkenin geleceğini belirleyecek
-                  öğrencilerin güler yüzle, konforlu, korunaklı ve okullarına
-                  yakın olabilecekleri bir yer temin etmektir. Bu üstün
-                  standartları sağlamak adına uzun ve kapsamlı bir sürecin
-                  sonunda geleceğimizi birlikte değiştirmeye hazırlandık.
-                </p>
+                <h1>Otel Hakkında</h1>
+                <p>{detailData?.aboutHotel}</p>
                 <p>
                   <br />
                 </p>
-                <p style={{ fontWeight: "900" }}>Konum</p>
-                <p>
-                  Binamızın mevcut konumu metro(1 dk.), tramvay(5 dk.),
-                  Marmaray(10 dk.), otobüs(2 dk.), minibüs(1 dk.) ve
-                  üniversitelere kısa yürüme mesafesindedir. Bu sayede
-                  öğrencilerimiz İstanbul’un yoğun trafiğinde zaman kaybedip
-                  yorulmayarak derslerine odaklanabilirler. Aksaray konum olarak
-                  da İstanbul’un merkezindedir ve öğrenciler boş zamanlarında bu
-                  kültür dolu şehri toplu taşımaya rahatça ulaşarak
-                  gezebilirler.{" "}
-                  {!isOpen && (
-                    <span
-                      onClick={() => setIsOpen(true)}
-                      style={{ fontWeight: "900", cursor: "pointer" }}
-                    >
-                      Devamını Oku...
-                    </span>
-                  )}
-                </p>
+                <h1>Odalar Hakkında</h1>
+                <p>{detailData?.roomInfo}</p>
                 <p>
                   <br />
                 </p>
-                <p style={{ fontWeight: "900" }}>Odalar</p>
+                <h1>Konumu Hakkında</h1>
+                <p>{detailData?.locationInfo}</p>
                 <p>
-                  Odalarımız her öğrenci için en az 12 m3 alan ayrılacak şekilde
-                  1, 2, 4 ve 6 kişilik olarak organize edilmiştir. Her oda kendi
-                  içinde bir aydınlık ve ferah bir yaşam alanıdır. Mimarlarımız
-                  odaları öğrencilerin hem huzur içinde uyuyabilecekleri, hem
-                  konforlu bir şekilde ders çalışabileceği, hem de boş
-                  zamanlarında rahatlayabilecekleri şekilde düzenlemiştir.
-                  Odalardaki tüm mobilyalar sipariş üzerine üretilmiş ve
-                  öğrencilerin memnuniyeti için özel tasarlanmıştır.
+                  <br />
                 </p>
+                <h1>Öne Çıkan Özellikleri Hakkında</h1>
+                <p>{detailData?.standoutFeatures}</p>
               </div>
             </div>
           </div>
-          {/* <div className="info">
-            <div className="top">
-              <div className="post">
-                <h1>{detailData?.title}</h1>
-                <div className="address">
-                  <img src="/pin.png" alt="" />
-                  <span>{detailData.address}</span>
-                </div>
-                <div className="price">
-                  $ {detailData?.priceRange?.min} Başlayan Fiyatlarla...
-                </div>
-              </div>
-              <div className="user">
-                <img src={userData?.img} alt="" />
-                <span>{userData?.name}</span>
-              </div>
-            </div>
-            <div className="bottom">{detailData?.desc}</div>
-          </div> */}
         </div>
       </div>
     </>

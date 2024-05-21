@@ -1,7 +1,13 @@
+@import "../../layouts/main/responsive.scss";
+
 .formInput {
   display: flex;
   flex-direction: column;
-  width: 280px;
+  width: 48%;
+
+  @include md {
+    width: 100%;
+  }
   input {
     padding: 15px;
     margin: 10px 0px;

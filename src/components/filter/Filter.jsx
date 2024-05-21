@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import "./filter.scss";
+import { newRequest } from "~/utils/newRequest";
 
 function Filter() {
   // query params for search filter and search results page
   const [searchParams, setSearchParams] = useSearchParams();
+  const [districtData, setDistrictData] = useState([]);
+  const [apartTypes, setApartTypes] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState();
 
   const [query, setQuery] = useState({
     district: searchParams.get("district") || "",
     type: searchParams.get("type") || "",
     // property: searchParams.get("property") || "",
     min: searchParams.get("min") || 1,
-    max: searchParams.get("max") || 100000,
+    // max: searchParams.get("max") || 100000,
     // bedroom: searchParams.get("bedroom") || 1,
   });
 
@@ -27,7 +32,30 @@ function Filter() {
     setSearchParams(query);
   };
 
-  return (
+  useEffect(() => {
+    const dataFetch = async () => {
+      setLoading(true);
+      try {
+        const resDistrict = await newRequest.get("hotels/districts");
+        // const { districts } = resDistrict.data;
+        setDistrictData(resDistrict.data);
+        const resTypes = await newRequest.get("hotels/types");
+        // const { types } = resTypes.data;
+        setApartTypes(resTypes.data);
+      } catch (e) {
+        setError(e);
+      } finally {
+        setLoading(false);
+      }
+    };
+    dataFetch();
+  }, []);
+
+  return loading ? (
+    <div>Loading</div>
+  ) : error ? (
+    <div>error occured</div>
+  ) : (
     <div className="filter">
       <h1>
         <b style={{ textTransform: "capitalize" }}>
@@ -37,54 +65,36 @@ function Filter() {
       </h1>
       <div className="top">
         <div className="item">
-          <label htmlFor="district">Location</label>
-          {/* <input
-            onChange={handleChange}
-            type="text"
-            id="district"
-            name="district"
-            value={query.district}
-            placeholder="Mahalle Giriniz..."
-            defaultValue={query.district}
-          /> */}
-          <select
-            defaultValue={query.district}
-            onChange={handleChange}
-            name="district"
-            id="district"
-          >
-            <option value="">Alanya</option>
-            <option value="kestel">Kestel</option>
-            <option value="oba">Oba</option>
+          <label htmlFor="district">Mahalle</label>
+
+          <select onChange={handleChange} name="district" id="district">
+            {districtData.map((mahalle, i) => (
+              <option key={i} value={mahalle.value}>
+                {mahalle.name}
+              </option>
+            ))}
           </select>
         </div>
       </div>
       <div className="bottom">
         <div className="item">
-          <label htmlFor="type">Type</label>
+          <label htmlFor="type">Tip</label>
           <select
             defaultValue={query.type}
             onChange={handleChange}
             name="type"
             id="type"
           >
-            <option value="">Karışık</option>
-            <option value="erkek">Erkek</option>
-            <option value="kadin">Kadın</option>
+            {apartTypes.map((type, i) => (
+              <option key={i} value={type.value}>
+                {type.name}
+              </option>
+            ))}
           </select>
         </div>
-        {/* <div className="item">
-          <label htmlFor="property">Property</label>
-          <select name="property" id="property" defaultValue={query.property}>
-            <option value="">any</option>
-            <option value="apartment">Apartment</option>
-            <option value="house">House</option>
-            <option value="condo">Condo</option>
-            <option value="land">Land</option>
-          </select>
-        </div> */}
+
         <div className="item">
-          <label htmlFor="min">Min Price</label>
+          <label htmlFor="min">Fiyat</label>
           <input
             defaultValue={query.min}
             onChange={handleChange}
@@ -95,28 +105,7 @@ function Filter() {
             min={1}
           />
         </div>
-        <div className="item">
-          <label htmlFor="max">Max Price</label>
-          <input
-            defaultValue={query.max}
-            onChange={handleChange}
-            type="text"
-            id="max"
-            name="max"
-            placeholder="any"
-          />
-        </div>
-        {/* <div className="item">
-          <label htmlFor="bedroom">Bedroom</label>
-          <input
-            defaultValue={query.bedroom}
-            onChange={handleChange}
-            type="text"
-            id="bedroom"
-            name="bedroom"
-            placeholder="any"
-          />
-        </div> */}
+
         <button onClick={handleFilter}>
           <img src="/search.png" alt="" />
         </button>

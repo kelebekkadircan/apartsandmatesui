@@ -84,9 +84,9 @@ const Slide = () => {
     // location.reload();
   }
 
-  // console.log(paidHotels);
+  console.log(paidHotels);
 
-  return (
+  return paidHotels.length === 0 ? null : (
     <Slider {...settings}>
       {isLoading ? (
         <div>...Loading...</div>

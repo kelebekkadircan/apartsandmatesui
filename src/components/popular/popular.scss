@@ -21,6 +21,7 @@
     width: auto;
     max-width: 1366px;
     margin: 0 auto;
+
     // background-color: #a4aec0;
 
     // margin: 0 auto;
@@ -63,9 +64,10 @@
 
       .leftTitle {
         a {
-          color: #fff;
           font-size: 27px;
           font-weight: 600;
+          color: #333;
+
           @include md {
             font-size: 1.4rem;
           }
@@ -118,7 +120,7 @@
               font-size: 20px;
               padding: 30px 6px;
               font-weight: 500;
-              color: #fff;
+              color: #333;
               display: inline-flex;
               margin-bottom: -1px;
               line-height: 1em;

@@ -16,8 +16,8 @@ const Navbar = () => {
     await logout();
   };
 
-  console.log(user);
-  console.log(user?._id);
+  // console.log(user);
+
   return (
     <div className="navbar">
       <div className="container">
@@ -44,10 +44,7 @@ const Navbar = () => {
             )}
             {user && (
               <div className="user" onClick={() => setOpen(!open)}>
-                <img
-                  src="https://images.pexels.com/photos/4484954/pexels-photo-4484954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                  alt=""
-                />
+                <img src={user?.details?.avatar || "/favicon.png"} alt="" />
                 {/* <span> {user?.username} </span> */}
                 {open && (
                   <div className="options">

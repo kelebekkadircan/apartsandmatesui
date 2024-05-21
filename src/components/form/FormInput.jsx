@@ -13,7 +13,7 @@ const FormInput = (props) => {
   };
   return (
     <div className="formInput">
-      <label>{label}</label>
+      <label style={{ fontSize: "1.3rem" }}>{label}</label>
       <input
         {...inputProps}
         onChange={onChange}

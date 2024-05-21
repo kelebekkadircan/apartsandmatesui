@@ -82,9 +82,9 @@ const SearchBarMobil = () => {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log(districtData);
-  console.log(apartTypes);
-  console.log(districts, "districts");
+  // console.log(districtData);
+  // console.log(apartTypes);
+  // console.log(districts, "districts");
 
   return (
     <div className="containerMobilBar">

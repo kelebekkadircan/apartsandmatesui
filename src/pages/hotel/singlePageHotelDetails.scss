@@ -70,57 +70,82 @@
       align-items: center;
       padding: 25px 0;
       transition: all 0.3s ease-in-out;
-
-      .hotelDetailLogo {
-        // background-color: blue;
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 8px 60px 0 rgba(62, 62, 141, 0.05);
-        padding: 15px 19px;
-        margin-right: 20px;
+      justify-content: space-between;
+      .leftDetailTop {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding: 25px 0;
         transition: all 0.3s ease-in-out;
 
-        img {
-          height: 3rem;
-          max-width: 100%;
-          object-fit: contain;
+        .hotelDetailLogo {
+          // background-color: blue;
+          background: #fff;
+          border-radius: 10px;
+          box-shadow: 0 8px 60px 0 rgba(62, 62, 141, 0.05);
+          padding: 15px 19px;
+          margin-right: 20px;
           transition: all 0.3s ease-in-out;
+
+          img {
+            height: 3rem;
+            max-width: 100%;
+            object-fit: contain;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+        .hotelDetailContent {
+          // background-color: yellow;
+          margin-right: 20px;
+          transition: all 0.3s ease-in-out;
+
+          .hotelDetailContentTitle {
+            color: #4a5aa3;
+            font-weight: 600;
+            font-size: 23px;
+            line-height: 1.3em;
+            margin-bottom: 5px;
+            transition: all 0.3s ease-in-out;
+          }
+          .hotelDetailContentLocation {
+            display: flex;
+            align-items: center;
+            color: #727a96;
+            font-size: 17px;
+            font-weight: 600;
+            transition: all 0.3s ease-in-out;
+
+            .hotelDetailContentLocationIcon {
+              display: inline-flex;
+              color: #eb6081;
+              font-size: 18px;
+              margin-right: 7px;
+              position: relative;
+              top: -1px;
+              transition: all 0.3s ease-in-out;
+            }
+            .hotelDetailContentLocationTitle {
+              text-transform: capitalize;
+              transition: all 0.3s ease-in-out;
+            }
+          }
         }
       }
-      .hotelDetailContent {
-        // background-color: yellow;
-        margin-right: 20px;
+      .rightDetailTop {
+        display: flex;
+        background-color: #fff;
+        align-items: center;
+        height: 5rem;
+        padding: 20px 10px;
         transition: all 0.3s ease-in-out;
-
-        .hotelDetailContentTitle {
+        width: 300px;
+        justify-content: center;
+        border-radius: 10px;
+        .hotelDetailPrice {
+          font-size: 1rem;
+          font-weight: 600;
           color: #4a5aa3;
-          font-weight: 600;
-          font-size: 23px;
-          line-height: 1.3em;
-          margin-bottom: 5px;
           transition: all 0.3s ease-in-out;
-        }
-        .hotelDetailContentLocation {
-          display: flex;
-          align-items: center;
-          color: #727a96;
-          font-size: 17px;
-          font-weight: 600;
-          transition: all 0.3s ease-in-out;
-
-          .hotelDetailContentLocationIcon {
-            display: inline-flex;
-            color: #eb6081;
-            font-size: 18px;
-            margin-right: 7px;
-            position: relative;
-            top: -1px;
-            transition: all 0.3s ease-in-out;
-          }
-          .hotelDetailContentLocationTitle {
-            text-transform: capitalize;
-            transition: all 0.3s ease-in-out;
-          }
         }
       }
     }
@@ -211,10 +236,11 @@
         display: flex;
         align-items: flex-start;
         transition: all 0.3s ease-in-out;
+        gap: 20px;
 
         .hotelInfoAddressIcon {
           margin-right: 10px;
-          font-size: 19px;
+          font-size: 1.7rem;
           color: #eb6081;
           display: inline-flex;
           position: relative;
@@ -226,6 +252,7 @@
           font-size: 17px;
           line-height: 1.3em;
           transition: all 0.3s ease-in-out;
+          margin-bottom: 20px;
         }
       }
       .hotelInfoDoubleContent {
@@ -235,16 +262,18 @@
         gap: 40px;
         border-bottom: 1px solid rgba(172, 179, 201, 0.45);
         transition: all 0.3s ease-in-out;
+        margin-bottom: 20px;
 
         .hotelInfoDoubleContentAddress {
           margin-bottom: 15px;
           display: flex;
           align-items: flex-start;
           transition: all 0.3s ease-in-out;
+          gap: 20px;
 
           .hotelInfoDoubleContentAddressIcon {
             margin-right: 10px;
-            font-size: 19px;
+            font-size: 1.7rem;
             color: #eb6081;
             display: inline-flex;
             position: relative;
@@ -262,7 +291,7 @@
       .hotelInfoCollapse {
         margin-top: 30px;
         height: 240px;
-        // height: auto;
+        height: auto;
         overflow: hidden;
         transition: all 0.3s ease-in-out;
 
@@ -278,6 +307,14 @@
           line-height: 1.5em;
           font-size: 18px;
           transition: all 0.3s ease-in-out;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          p {
+            line-height: 2rem;
+            font-size: 1rem;
+          }
         }
       }
     }

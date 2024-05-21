@@ -2,11 +2,14 @@
 
 .PopularCard {
   height: 450px;
+  box-shadow: 3px 3px 20px rgb(0 0 0 / 0.2);
+  border-radius: 10px;
 
   .container {
     height: 100%;
     width: 100%;
     background-color: white;
+
     border-radius: 10px;
     display: inline-block;
     box-shadow: 0 8px 60px 0 rgba(62, 62, 141, 0.05);

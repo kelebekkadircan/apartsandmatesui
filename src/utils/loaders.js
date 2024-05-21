@@ -11,10 +11,10 @@ export const singlePageLoader = async ({ request, params }) => {
 
 export const listPageLoader = async ({ request, params }) => {
     const query = request.url.split("?")[1]
-    console.log("LOADER QUERY : ", query)
+    // console.log("LOADER QUERY : ", query)
     try {
         const postPromise = await newRequest("/hotels?" + query)
-        console.log("LOADER RESPONSE : ", postPromise.data);
+        // console.log("LOADER RESPONSE : ", postPromise.data);
         return defer({
             postResponse: postPromise
         })

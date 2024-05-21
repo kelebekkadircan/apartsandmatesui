@@ -12,6 +12,7 @@
   margin: 40px auto;
   align-items: center;
   margin-bottom: 200px;
+  box-shadow: 3px 3px 20px rgb(0 0 0 / 0.2);
 
   //   justify-content: space-between;
 
@@ -69,6 +70,7 @@
       transition: all 0.3s ease-in;
       z-index: 1000;
       text-transform: capitalize;
+      box-shadow: 3px 3px 20px rgb(0 0 0 / 0.2);
 
       .districtItem {
         transition: all 0.3s ease-in;
@@ -132,6 +134,7 @@
       transition: all 0.3s ease-in;
       z-index: 999;
       text-transform: capitalize;
+      box-shadow: 3px 3px 20px rgb(0 0 0 / 0.2);
 
       @include sm {
         top: 90px;

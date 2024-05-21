@@ -3,7 +3,8 @@
 .BlogCard {
   height: 340px;
   width: 100%;
-
+  box-shadow: 3px 3px 20px rgb(0 0 0 / 0.2);
+  border-radius: 10px;
   .color-blue {
     color: #1c5c90;
     transition: all 0.3s ease-in-out;

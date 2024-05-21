@@ -23,6 +23,7 @@ import { ProfilePage } from "~/pages/profile/ProfilePage";
 import CreateHotelPage from "~/pages/newpost/NewPostPage";
 import { listPageLoader } from "~/utils/loaders.js";
 import UpdateProfile from "~/pages/updateProfile/UpdateProfile";
+import MatesPage from "~/pages/mates/MatesPage";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -95,6 +96,10 @@ const App = () => {
         {
           path: "profile/:id/addHotel",
           element: <CreateHotelPage />,
+        },
+        {
+          path: "/roommates",
+          element: <MatesPage />,
         },
       ],
     },
