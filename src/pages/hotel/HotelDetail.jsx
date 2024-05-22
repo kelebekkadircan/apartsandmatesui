@@ -8,6 +8,7 @@ import {
   FaBowlFood,
   FaWifi,
   FaPerson,
+  FaAddressCard,
   // FaInternetExplorer,
 } from "react-icons/fa6";
 import { FaBed, FaHeadphones, FaPhone } from "react-icons/fa";
@@ -143,69 +144,92 @@ const HotelDetail = ({
             </div>
           </div>
           <div className="hotelInfoContent">
-            <div className="hotelInfoAddress">
-              <div className="hotelInfoAddressIcon">
-                {" "}
-                <FaLocationDot />{" "}
+            <div className="tryhotelDetailBottomPreferredWrapper">
+              <div className="hotelDetailBottomPreferredItem">
+                <div className="hotelDetailBottomPreferredIcon">
+                  <div className="hotelDetailBottomPreferredIconContainer">
+                    <FaAddressCard />
+                  </div>
+                </div>
+                <div className="hotelDetailBottomPreferredContent">
+                  <div className="hotelDetailBottomPreferredContentQuestion">
+                    Adres Bilgileri
+                  </div>
+                  <div className="hotelDetailBottomPreferredContentAnswer">
+                    {detailData?.address?.substring(0, 30)}...
+                  </div>
+                </div>
               </div>
-              <div className="hotelInfoAddressTitle">
-                {detailData?.address}{" "}
+              <div className="hotelDetailBottomPreferredItem">
+                <div className="hotelDetailBottomPreferredIcon">
+                  <div className="hotelDetailBottomPreferredIconContainer">
+                    <FaPerson />
+                  </div>
+                </div>
+                <div className="hotelDetailBottomPreferredContent">
+                  <div className="hotelDetailBottomPreferredContentQuestion">
+                    Misafir Uygunluk Durumu
+                  </div>
+                  <div className="hotelDetailBottomPreferredContentAnswer">
+                    {detailData?.guestPolicy === "gelebilirucretli"
+                      ? "ÜCRETLİ BİR ŞEKİLDE  KONAKLAYABİLİR"
+                      : detailData?.guestPolicy === "gelebilirucretsiz"
+                      ? "ÜCRETSİZ BİR ŞEKİLDE  KONAKLAYABİLİR"
+                      : " KONAKLAYAMAZ"}
+                  </div>
+                </div>
+              </div>
+              <div className="hotelDetailBottomPreferredItem">
+                <div className="hotelDetailBottomPreferredIcon">
+                  <div className="hotelDetailBottomPreferredIconContainer">
+                    <FaPhone />
+                  </div>
+                </div>
+                <div className="hotelDetailBottomPreferredContent">
+                  <div className="hotelDetailBottomPreferredContentQuestion">
+                    İletişim Bilgileri
+                  </div>
+                  <div className="hotelDetailBottomPreferredContentAnswer">
+                    {detailData?.phoneNumber}
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="hotelInfoDoubleContent">
-              <div className="hotelInfoDoubleContentAddress">
-                <div className="hotelInfoDoubleContentAddressIcon">
-                  {" "}
-                  <FaPerson />{" "}
+
+            <div className="hotelInfoCollapse">
+              <div className="hotelInfoCollapseWrapper">
+                <div className="hotelInfoCollapseSections">
+                  <h1 className="hotelInfoCollapseSectionsTitle">
+                    Otel Hakkında
+                  </h1>
+                  <p className="hotelInfoCollapseSectionsContent">
+                    {detailData?.aboutHotel}
+                  </p>
                 </div>
-                <div className="hotelInfoDoubleContentAddressTitle">
-                  {detailData?.guestPolicy === "gelebilirucretli"
-                    ? "ÜCRETLİ BİR ŞEKİLDE MİSAFİR KONAKLAYABİLİR"
-                    : detailData?.guestPolicy === "gelebilirucretsiz"
-                    ? "ÜCRETSİZ BİR ŞEKİLDE MİSAFİR KONAKLAYABİLİR"
-                    : "MİSAFİR KONAKLAYAMAZ"}
+                <div className="hotelInfoCollapseSections">
+                  <h1 className="hotelInfoCollapseSectionsTitle">
+                    Odalar Hakkında
+                  </h1>
+                  <p className="hotelInfoCollapseSectionsContent">
+                    {detailData?.roomInfo}
+                  </p>
                 </div>
-              </div>
-            </div>
-            <div className="hotelInfoDoubleContent">
-              {/* <div className="hotelInfoDoubleContentAddress">
-                <div className="hotelInfoDoubleContentAddressIcon">
-                  {" "}
-                  <FaInternetExplorer />{" "}
+                <div className="hotelInfoCollapseSections">
+                  <h1 className="hotelInfoCollapseSectionsTitle">
+                    Konumu Hakkında
+                  </h1>
+                  <p className="hotelInfoCollapseSectionsContent">
+                    {detailData?.locationInfo}
+                  </p>
                 </div>
-                <div className="hotelInfoDoubleContentAddressTitle">
-                  www.kadircan.com
+                <div className="hotelInfoCollapseSections">
+                  <h1 className="hotelInfoCollapseSectionsTitle">
+                    Öne Çıkan Özellikleri Hakkında
+                  </h1>
+                  <p className="hotelInfoCollapseSectionsContent">
+                    {detailData?.standoutFeatures}
+                  </p>
                 </div>
-              </div> */}
-              <div className="hotelInfoDoubleContentAddress">
-                <div className="hotelInfoDoubleContentAddressIcon">
-                  {" "}
-                  <FaPhone />{" "}
-                </div>
-                <div className="hotelInfoDoubleContentAddressTitle">
-                  {detailData?.phoneNumber}{" "}
-                </div>
-              </div>
-            </div>
-            <div className={`hotelInfoCollapse `}>
-              <div className="hotelInfoCollapseContent">
-                <h1>Otel Hakkında</h1>
-                <p>{detailData?.aboutHotel}</p>
-                <p>
-                  <br />
-                </p>
-                <h1>Odalar Hakkında</h1>
-                <p>{detailData?.roomInfo}</p>
-                <p>
-                  <br />
-                </p>
-                <h1>Konumu Hakkında</h1>
-                <p>{detailData?.locationInfo}</p>
-                <p>
-                  <br />
-                </p>
-                <h1>Öne Çıkan Özellikleri Hakkında</h1>
-                <p>{detailData?.standoutFeatures}</p>
               </div>
             </div>
           </div>

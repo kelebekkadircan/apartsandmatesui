@@ -83,6 +83,7 @@
 
         .buildingProperty {
           margin-bottom: 2rem;
+
           .buildingPropertyTitle {
             color: #4a5aa3;
             border-bottom: 1px solid #c4c9d8;
@@ -99,6 +100,7 @@
             line-height: 1.6;
             padding: 10px;
             gap: 20px;
+
             // list-style-type: none;
             li {
               margin-bottom: 2rem;
@@ -116,7 +118,10 @@
               span {
                 font-weight: 500;
                 font-size: 1.1rem;
-                color: #eb60819c;
+                color: #4a5aa3;
+                background-color: white;
+                padding: 5px;
+                border-radius: 10px;
               }
             }
           }

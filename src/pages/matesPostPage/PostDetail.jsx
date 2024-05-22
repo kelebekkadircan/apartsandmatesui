@@ -3,6 +3,7 @@ import Slider from "~/components/singlePageSlider/SinglePageSlider";
 import "./singlePagePostDetails.scss";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { IoMdPerson } from "react-icons/io";
 
 import { newRequest } from "~/utils/newRequest";
 // import { newRequest } from "~/utils/newRequest";
@@ -108,21 +109,28 @@ const PostDetail = ({
 
           <div className="hotelDetailBottom">
             <div className="hotelDetailBottomLocation">
-              <div className="hotelDetailBottomLocationOne">
-                <div className="hotelDetailBottomLocationTitle">
-                  Evin Konumu
+              {/* <h1 className="hotelDetailBottomLocationTitle" >Genel Bilgiler</h1> */}
+              <div className="bottomDetailed">
+                <div className="hotelDetailBottomLocationOne">
+                  <div className="hotelDetailBottomLocationTitle">
+                    Evin Konumu
+                  </div>
+                  <p>{detailData?.address?.substring(0, 40)}...</p>
                 </div>
-                <p>{detailData?.address}</p>
-              </div>
-              <div className="hotelDetailBottomLocationOne">
-                <div className="hotelDetailBottomLocationTitle">İlan Türü</div>
-                <p>{detailData?.address}</p>
-              </div>
-              <div className="hotelDetailBottomLocationOne">
-                <div className="hotelDetailBottomLocationTitle">
-                  Uygun Olduğu Tarih
+                <div className="hotelDetailBottomLocationOne">
+                  <div className="hotelDetailBottomLocationTitle">
+                    İlan Türü
+                  </div>
+                  {/* <p>{detailData?.rentType}</p> */}
+                  <p>Bir Oda Kiraya Veriyor</p>
                 </div>
-                <p>{detailData?.address}</p>
+                <div className="hotelDetailBottomLocationOne">
+                  <div className="hotelDetailBottomLocationTitle">
+                    Uygun Olduğu Tarih
+                  </div>
+                  {/* <p>{detailData?.dateOfEntry}</p> */}
+                  <p>Hemen</p>
+                </div>
               </div>
             </div>
             <div className="hotelDetailBottomDesc">
@@ -135,8 +143,118 @@ const PostDetail = ({
               </p>
             </div>
             <div className="hotelDetailBottomPreferred">
-              <div className="hotelDetailBottomPreferredTitle">
-                Tercih Edilenler
+              <h1 className="hotelDetailBottomPreferredTitle">
+                Ev Arkadaşı Tercihi
+              </h1>
+              <div className="hotelDetailBottomPreferredWrapper">
+                <div className="hotelDetailBottomPreferredItem">
+                  <div className="hotelDetailBottomPreferredIcon">
+                    <div className="hotelDetailBottomPreferredIconContainer">
+                      <IoMdPerson />
+                    </div>
+                  </div>
+                  <div className="hotelDetailBottomPreferredContent">
+                    <div className="hotelDetailBottomPreferredContentQuestion">
+                      İdeal Ev Arkadaşının Cinsiyeti
+                    </div>
+                    <div className="hotelDetailBottomPreferredContentAnswer">
+                      {detailData?.sexSituation === "kadinolabilir"
+                        ? "Kadın"
+                        : "Erkek"}
+                    </div>
+                  </div>
+                </div>
+                <div className="hotelDetailBottomPreferredItem">
+                  <div className="hotelDetailBottomPreferredIcon">
+                    <div className="hotelDetailBottomPreferredIconContainer">
+                      <IoMdPerson />
+                    </div>
+                  </div>
+                  <div className="hotelDetailBottomPreferredContent">
+                    <div className="hotelDetailBottomPreferredContentQuestion">
+                      Alkol Durumu
+                    </div>
+                    <div className="hotelDetailBottomPreferredContentAnswer">
+                      Evde{" "}
+                      {detailData?.alcohol === "kullanabilir"
+                        ? "Alkol Kullanabilir"
+                        : "Alkol Kullanamaz"}
+                    </div>
+                  </div>
+                </div>
+                <div className="hotelDetailBottomPreferredItem">
+                  <div className="hotelDetailBottomPreferredIcon">
+                    <div className="hotelDetailBottomPreferredIconContainer">
+                      <IoMdPerson />
+                    </div>
+                  </div>
+                  <div className="hotelDetailBottomPreferredContent">
+                    <div className="hotelDetailBottomPreferredContentQuestion">
+                      İdeal Ev Arkadaşının Cinsiyeti
+                    </div>
+                    <div className="hotelDetailBottomPreferredContentAnswer">
+                      Erkek
+                    </div>
+                  </div>
+                </div>
+                <div className="hotelDetailBottomPreferredItem">
+                  <div className="hotelDetailBottomPreferredIcon">
+                    <div className="hotelDetailBottomPreferredIconContainer">
+                      <IoMdPerson />
+                    </div>
+                  </div>
+                  <div className="hotelDetailBottomPreferredContent">
+                    <div className="hotelDetailBottomPreferredContentQuestion">
+                      İdeal Ev Arkadaşının Cinsiyeti
+                    </div>
+                    <div className="hotelDetailBottomPreferredContentAnswer">
+                      Erkek
+                    </div>
+                  </div>
+                </div>
+                <div className="hotelDetailBottomPreferredItem">
+                  <div className="hotelDetailBottomPreferredIcon">
+                    <div className="hotelDetailBottomPreferredIconContainer">
+                      <IoMdPerson />
+                    </div>
+                  </div>
+                  <div className="hotelDetailBottomPreferredContent">
+                    <div className="hotelDetailBottomPreferredContentQuestion">
+                      İdeal Ev Arkadaşının Cinsiyeti
+                    </div>
+                    <div className="hotelDetailBottomPreferredContentAnswer">
+                      Erkek
+                    </div>
+                  </div>
+                </div>
+                <div className="hotelDetailBottomPreferredItem">
+                  <div className="hotelDetailBottomPreferredIcon">
+                    <div className="hotelDetailBottomPreferredIconContainer">
+                      <IoMdPerson />
+                    </div>
+                  </div>
+                  <div className="hotelDetailBottomPreferredContent">
+                    <div className="hotelDetailBottomPreferredContentQuestion">
+                      İdeal Ev Arkadaşının Cinsiyeti
+                    </div>
+                    <div className="hotelDetailBottomPreferredContentAnswer">
+                      Erkek
+                    </div>
+                  </div>
+                </div>
+                <div className="hotelDetailBottomPreferredItem">
+                  <div className="hotelDetailBottomPreferredIcon">
+                    <div className="hotelDetailBottomPreferredIconContainer">
+                      <IoMdPerson />
+                    </div>
+                  </div>
+                  <div className="hotelDetailBottomPreferredContent">
+                    <div className="hotelDetailBottomPreferredContentQuestion">
+                      İdeal Ev Arkadaşının Cinsiyeti
+                    </div>
+                    <div className="hotelDetailBottomPreferredContentAnswer"></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

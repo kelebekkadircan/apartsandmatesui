@@ -197,6 +197,32 @@
         display: flex;
         align-items: center;
         gap: 20px;
+        flex-direction: column;
+        .hotelDetailBottomLocationTitle {
+          color: #4a5aa3;
+          font-size: 1.5rem;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+
+        .bottomDetailed {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          // background-color: red;
+          padding: 10px;
+          .hotelDetailBottomLocationOne {
+            // background-color: blue;
+            padding: 10px;
+            flex: 1 1 calc(33.333% - 20px); /* 3'e bölmek için hesaplama */
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-direction: column;
+            height: 100%;
+          }
+        }
       }
 
       .hotelDetailBottomDesc {
@@ -217,6 +243,7 @@
         }
       }
       .hotelDetailBottomPreferred {
+        width: 100%;
         background-color: white;
         padding: 20px;
         border-radius: 10px;
@@ -225,6 +252,53 @@
           font-size: 1.5rem;
           font-weight: 600;
           margin-bottom: 20px;
+        }
+        .hotelDetailBottomPreferredWrapper {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          padding: 10px;
+
+          .hotelDetailBottomPreferredItem {
+            flex: 1 1 calc(33.333% - 20px); /* 3'e bölmek için hesaplama */
+            display: flex;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px;
+            .hotelDetailBottomPreferredIcon {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: whitesmoke;
+              padding: 20px;
+              border-radius: 20px;
+
+              .hotelDetailBottomPreferredIconContainer {
+                color: blue;
+              }
+            }
+            .hotelDetailBottomPreferredContent {
+              display: flex;
+              flex-direction: column;
+              gap: 2px;
+              .hotelDetailBottomPreferredContentQuestion {
+                color: #4a5aa3;
+                font-size: 1.2rem;
+                font-weight: 600;
+              }
+              .hotelDetailBottomPreferredContentAnswer {
+                color: #727a96;
+                font-size: 1rem;
+                line-height: 2rem;
+              }
+            }
+          }
         }
       }
     }
