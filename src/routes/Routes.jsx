@@ -25,6 +25,7 @@ import { listPageLoader } from "~/utils/loaders.js";
 import UpdateProfile from "~/pages/updateProfile/UpdateProfile";
 import MatesPage from "~/pages/mates/MatesPage";
 import MatesPostPage from "~/pages/matesPostPage/MatesPostPage";
+import CreateMatesPage from "~/pages/createMates/CreateMatesPage";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -105,6 +106,10 @@ const App = () => {
         {
           path: "/roommates/:id",
           element: <MatesPostPage />,
+        },
+        {
+          path: "/profile/:id/addPost",
+          element: <CreateMatesPage />,
         },
       ],
     },

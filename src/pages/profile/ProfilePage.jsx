@@ -99,6 +99,9 @@ export const ProfilePage = () => {
             <div className="title">
               <h1>Listeledigim İlanlar</h1>
               <Link to={"addHotel"}>
+                <button>Yeni Hotel Oluştur</button>
+              </Link>
+              <Link to={"addPost"}>
                 <button>Yeni Post Oluştur</button>
               </Link>
             </div>

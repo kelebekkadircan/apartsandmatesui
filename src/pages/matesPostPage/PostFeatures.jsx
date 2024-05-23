@@ -18,40 +18,48 @@ const PostFeatures = ({
   const [buildingFeatures, setBuildingFeatures] = useState([]);
   const [roomFeatures, setRoomFeatures] = useState([]);
   const [servicesFeatures, setServicesFeatures] = useState([]);
+  const [hobbies, setHobbies] = useState([]);
 
   const { id } = useParams();
 
-  // useEffect(() => {
-  //   setLoading(true);
-  //   try {
-  //     setHotelFeatures(singlePostData);
-  //   } catch (e) {
-  //     setError(e);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  //   const tagsFetching = async () => {
-  //     try {
-  //       const tagsRes = await newRequest.get(`/posts/tags/${id}`);
-  //       const { buildingFeatures, roomFeatures, services } = tagsRes.data;
-  //       setBuildingFeatures(buildingFeatures);
-  //       setRoomFeatures(roomFeatures);
-  //       setServicesFeatures(services);
-  //       setTags(tagsRes.data);
-  //     } catch (e) {
-  //       setError(e);
-  //     } finally {
-  //       setLoading(false);
-  //     }
-  //   };
-  //   tagsFetching();
-  // }, [singlePostData, setError, setLoading, id]);
+  useEffect(() => {
+    setLoading(true);
+    try {
+      setHotelFeatures(singlePostData);
+    } catch (e) {
+      setError(e);
+    } finally {
+      setLoading(false);
+    }
+    const tagsFetching = async () => {
+      try {
+        const tagsRes = await newRequest.get(`/posts/posttags/${id}`);
+        const { buildingFeatures, roomFeatures, services } = tagsRes.data;
+        setBuildingFeatures(buildingFeatures);
+        setRoomFeatures(roomFeatures);
+        setServicesFeatures(services);
+        setTags(tagsRes.data);
+        const fetchHobbies = async () => {
+          const response = await newRequest(`/posts/posthobby/${id}`);
+          const { hobies } = response.data;
+          setHobbies(hobies);
+        };
+        fetchHobbies();
+      } catch (e) {
+        setError(e);
+      } finally {
+        setLoading(false);
+      }
+    };
+    tagsFetching();
+  }, [singlePostData, setError, setLoading, id]);
 
-  // if (error) {
-  //   return <div>Error</div>;
-  // }
+  if (error) {
+    return <div>Error</div>;
+  }
 
   console.log(buildingFeatures, roomFeatures, servicesFeatures);
+  console.log(hobbies);
 
   return loading ? (
     <div>Loading...</div>
@@ -77,6 +85,19 @@ const PostFeatures = ({
           <div className="featuresWrapperContainer">
             <div>
               <div className="buildingProperty">
+                <div className="buildingPropertyTitle">Hobilerim</div>
+                <ul>
+                  {hobbies.map((tag, i) => (
+                    <li key={i}>
+                      <img src={`/img/${tag.value}.svg`} alt="" />
+                      <span> {tag.name} </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div>
+              <div className="buildingProperty">
                 <div className="buildingPropertyTitle">Bina Özellikleri</div>
                 <ul>
                   {buildingFeatures.map((tag, i) => (
@@ -93,19 +114,6 @@ const PostFeatures = ({
                 <div className="buildingPropertyTitle">Oda Özellikleri</div>
                 <ul>
                   {roomFeatures.map((tag, i) => (
-                    <li key={i}>
-                      <img src={`/img/${tag.value}.svg`} alt="" />
-                      <span> {tag.name} </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-            <div>
-              <div className="buildingProperty">
-                <div className="buildingPropertyTitle">Hizmetler</div>
-                <ul>
-                  {servicesFeatures.map((tag, i) => (
                     <li key={i}>
                       <img src={`/img/${tag.value}.svg`} alt="" />
                       <span> {tag.name} </span>
@@ -147,7 +155,7 @@ const PostFeatures = ({
         </div>
       </div>
       <div className="mapContainer">
-        <Map items={[singlePostData]} />
+        <Map items={[hotelFeatures]} />
       </div>
     </div>
   );

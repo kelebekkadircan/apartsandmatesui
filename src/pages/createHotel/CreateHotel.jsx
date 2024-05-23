@@ -110,7 +110,7 @@ const CreateHotel = () => {
     if (values.images.length > 3 && getLatLng !== undefined) {
       // console.log("Form submitted!", values);
       try {
-        const res = await newRequest.post("/hotels", values);
+        const res = await newRequest.post("/posts", values);
         console.log(res.data);
       } catch (err) {
         console.log(err);

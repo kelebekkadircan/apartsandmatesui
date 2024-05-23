@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { newRequest } from "~/utils/newRequest";
 import "./PostsinglePage.scss";
 import PostDetail from "./PostDetail";
-// import PostFeatures from "./PostFeatures";
+import PostFeatures from "./PostFeatures";
 
 const MatesPostPage = () => {
   // const data = useLoaderData();
@@ -37,7 +37,7 @@ const MatesPostPage = () => {
   //   return <div>Loading...</div>;
   // }
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="PostdenemeSinglePage">
@@ -53,13 +53,13 @@ const MatesPostPage = () => {
               error={error}
               setError={setError}
             />
-            {/* <PostFeatures
+            <PostFeatures
               loading={loading}
               setLoading={setLoading}
               error={error}
               setError={setError}
               singlePostData={data}
-            /> */}
+            />
           </>
         )}
       </div>
