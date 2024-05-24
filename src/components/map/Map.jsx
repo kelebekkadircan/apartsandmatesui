@@ -1,27 +1,27 @@
 import "./map.scss";
 import Pin from "../../components/pin/Pin";
 import "leaflet/dist/leaflet.css";
-import { MapContainer, Marker, TileLayer, useMapEvents } from "react-leaflet";
+import { MapContainer, TileLayer } from "react-leaflet";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 export const Map = ({ items }) => {
   const [mapData, setMapData] = useState(items || []);
   const [isLoading, setisLoading] = useState(false);
-  const [clickPosition, setClickPosition] = useState(null);
+  // const [clickPosition, setClickPosition] = useState(null);
 
-  const { pathname } = useLocation();
-  const location = pathname.split("/")[1];
+  // const { pathname } = useLocation();
+  // const location = pathname.split("/")[1];
 
-  const MapClickHandler = ({ setClickPosition }) => {
-    useMapEvents({
-      click: (event) => {
-        const { lat, lng } = event.latlng;
-        setClickPosition({ lat, lng });
-      },
-    });
-    return null;
-  };
+  // const MapClickHandler = ({ setClickPosition }) => {
+  //   useMapEvents({
+  //     click: (event) => {
+  //       const { lat, lng } = event.latlng;
+  //       setClickPosition({ lat, lng });
+  //     },
+  //   });
+  //   return null;
+  // };
 
   useEffect(() => {
     setisLoading(true);
@@ -34,7 +34,7 @@ export const Map = ({ items }) => {
     }
   }, [items]);
 
-  console.log(mapData, "MAPDATA");
+  console.log(mapData[0], "MAPDATA");
   // console.log(clickPosition, "CLICKPOSITION");
   // console.log(location);
   return (
@@ -42,14 +42,14 @@ export const Map = ({ items }) => {
       <>
         <MapContainer
           // center={
-          //   mapData.length > 1
+          //   mapData?.length > 1
           //     ? [36.549362, 31.996994]
           //     : [
-          //         mapData[0].latitude ? mapData[0]?.latitude : 36.549362,
-          //         mapData[0].longitude ? mapData[0]?.longitude : 31.996994,
+          //         mapData[0]?.latitude ? mapData[0]?.latitude : 36.549362,
+          //         mapData[0]?.longitude ? mapData[0]?.longitude : 31.996994,
           //       ]
           // }
-          // zoom={mapData.length > 1 ? 14 : 16}
+          // zoom={mapData?.length > 1 ? 14 : 16}
           center={[36.549362, 31.996994]}
           zoom={14}
           scrollWheelZoom={true}
@@ -59,12 +59,12 @@ export const Map = ({ items }) => {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          <MapClickHandler setClickPosition={setClickPosition} />
+          {/* <MapClickHandler setClickPosition={setClickPosition} />
           {location === "list"
             ? null
             : clickPosition && (
                 <Marker position={[clickPosition.lat, clickPosition.lng]} />
-              )}
+              )} */}
 
           {items?.map((item, i) => (
             <Pin item={item} key={i} />

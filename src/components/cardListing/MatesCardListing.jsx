@@ -27,7 +27,11 @@ export const MatesCardListing = ({ item }) => {
   return (
     <div className="MatescardListing">
       <Link
-        to={isProfilePage === "profile" ? `/list/${item?._id}` : `${item?._id}`}
+        to={
+          isProfilePage === "profile"
+            ? `/roommates/${item?._id}`
+            : `${item?._id}`
+        }
         className="MatesimageContainer"
       >
         <img src={item?.images[0] || "/bg.png"} alt="" />
@@ -45,7 +49,15 @@ export const MatesCardListing = ({ item }) => {
           </div>
         </div>
         <h2 className="title">
-          <Link to={`${item?._id}`}>{item?.title.substring(0, 30)}...</Link>
+          <Link
+            to={
+              isProfilePage === "profile"
+                ? `/roommates/${item?._id}`
+                : `${item?._id}`
+            }
+          >
+            {item?.title.substring(0, 30)}...
+          </Link>
         </h2>
         <p className="address">
           <img src="/pin.png" alt="" />

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { NavLink, useParams } from "react-router-dom";
 import { newRequest } from "~/utils/newRequest";
 import { FaArrowRight } from "react-icons/fa";
+import { MapSingle } from "~/components/map/MapSingle";
 
 const PostFeatures = ({
   singlePostData,
@@ -155,7 +156,7 @@ const PostFeatures = ({
         </div>
       </div>
       <div className="mapContainer">
-        <Map items={[hotelFeatures]} />
+        <MapSingle items={[hotelFeatures]} />
       </div>
     </div>
   );

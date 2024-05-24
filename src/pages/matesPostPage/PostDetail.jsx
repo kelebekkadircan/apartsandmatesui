@@ -147,12 +147,7 @@ const PostDetail = ({
             </div>
             <div className="hotelDetailBottomDesc">
               <div className="hotelDetailBottomDescTitle">Açıklama</div>
-              <p>
-                {detailData?.desc} {detailData?.desc} {detailData?.desc}{" "}
-                {detailData?.desc} {detailData?.desc} {detailData?.desc}{" "}
-                {detailData?.desc} {detailData?.desc} {detailData?.desc}{" "}
-                {detailData?.desc}{" "}
-              </p>
+              <p>{detailData?.aboutPost}</p>
             </div>
             <div className="postDetailContactInfo">
               <div className="postDetailContactInfoTitle">

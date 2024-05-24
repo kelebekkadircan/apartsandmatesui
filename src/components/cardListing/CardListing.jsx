@@ -7,6 +7,7 @@ export const CardListing = ({ item }) => {
   // console.log(item);
 
   const [tags, setTags] = useState([]);
+  const [currentUser, setCurrentUser] = useState([]);
 
   const location = useLocation();
   const isProfilePage = location.pathname.split("/")[1];
@@ -17,9 +18,21 @@ export const CardListing = ({ item }) => {
       // console.log(res.data);
       setTags(res.data);
     };
-
+    const fetchUser = async () => {
+      const res = await newRequest.get(`users/auth/me`);
+      setCurrentUser(res.data);
+    };
+    fetchUser();
     featureFetch();
   }, [item]);
+
+  const { _id } = currentUser;
+
+  const handleSaveHotel = async () => {
+    // router.post('/:id/favorites/:hotelId', toggleFavoriteHotel);
+    const res = await newRequest.post(`users/${_id}/favorites/${item?._id}`);
+    console.log(res.data);
+  };
 
   return (
     <div className="cardListing">
@@ -31,7 +44,15 @@ export const CardListing = ({ item }) => {
       </Link>
       <div className="textContainer">
         <h2 className="title">
-          <Link to={`${item?._id}`}>{item?.title}</Link>
+          <Link
+            to={
+              isProfilePage === "profile"
+                ? `/list/${item?._id}`
+                : `${item?._id}`
+            }
+          >
+            {item?.title}
+          </Link>
         </h2>
         <p className="address">
           <img src="/pin.png" alt="" />
@@ -50,7 +71,7 @@ export const CardListing = ({ item }) => {
             ))}
           </div>
           <div className="icons">
-            <div className="icon">
+            <div onClick={handleSaveHotel} className="icon">
               <img src="/save.png" alt="" />
             </div>
           </div>

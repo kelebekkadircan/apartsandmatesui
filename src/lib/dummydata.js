@@ -394,6 +394,22 @@ export const binaozellikleri = [
     { name: "Yüzme Havuzu", value: "yuzmehavuzu" },
 
 ];
+
+export const Postbinaozellikleri = [
+    { name: 'Asansör', value: 'asansor' },
+    { name: "Balkon", value: "balkon" },
+    { name: 'Kamera Sistemi', value: 'kamerasistemi' },
+    { name: 'Yüzme Havuzu', value: 'yuzmehavuzu' },
+    { name: 'Güvenlik', value: 'guvenlik' },
+    { name: 'Sıcak Su', value: 'sicaksu' },
+    { name: 'Hobi Odası', value: 'hobiodasi' },
+    { name: 'Spor Salonu', value: 'sporsalonu' },
+    { name: 'Ütü Odası', value: 'utuodasi' },
+    { name: 'Çamaşırhane', value: 'camasirhane' },
+
+
+]
+
 export const odaozellikleri = [
     { name: 'Wifi', value: 'wifi' },
     { name: 'Duş ve WC', value: 'dusvewc' },
@@ -404,6 +420,23 @@ export const odaozellikleri = [
     { name: 'Mutfak', value: 'mutfak' },
     { name: 'Kişisel Dolap', value: 'kisiseldolap' },
 ];
+
+export const Postodaozellikleri = [
+
+    { name: 'Çamaşır Makinesi', value: 'camasirmakinesi' },
+    { name: 'Buzdolabı', value: 'buzdolabi' },
+    { name: 'Bulaşık Makinesi', value: 'bulasikmakinesi' },
+    { name: 'Ocak', value: 'ocak' },
+    { name: 'Fırın', value: 'firin' },
+    { name: 'Wifi', value: 'wifi' },
+    { name: 'Duş ve WC', value: 'dusvewc' },
+    { name: 'Klima', value: 'klima' },
+    { name: 'Çalışma Masası', value: 'calismamasasi' },
+    { name: 'Mutfak', value: 'mutfak' },
+    { name: 'Kişisel Dolap', value: 'kisiseldolap' },
+
+]
+
 export const servisler = [
     { name: 'Güvenlik', value: 'guvenlik' },
     { name: 'Yemek', value: 'yemek' },
@@ -430,6 +463,45 @@ export const butunozellikler = [
     { name: 'Güvenlik', value: 'guvenlik' },
     { name: 'Yemek', value: 'yemek' },
     { name: 'Günlük Temizlik', value: 'gunluktemizlik' },
+
+]
+
+export const Postbutunozellikler = [
+    { name: "Kitap Okumak", value: "kitapokuma" },
+    { name: "Seyehat Etmek", value: 'seyahatetme' },
+    { name: "Müzik Dinlemek", value: 'muzikdinleme' },
+    { name: "Yüzme", value: 'yuzme' },
+    { name: "Bisiklet Sürmek", value: 'bisikletsurme' },
+    { name: "Fitness", value: 'fitness' },
+    { name: "Fotografcilik", value: 'fotografcilik' },
+    { name: "Enstruman Çalmak", value: 'enstrumancalma' },
+    { name: "Şarkı Söylemek", value: 'sarkisoyleme' },
+    { name: "Tiyatro", value: 'tiyatro' },
+    { name: "Sinema", value: 'sinema' },
+    { name: "Video Oyunları", value: 'videooyunlari' },
+    { name: 'Spor Yapmak', value: 'sporyapmak' },
+    { name: 'Çamaşır Makinesi', value: 'camasirmakinesi' },
+    { name: 'Buzdolabı', value: 'buzdolabi' },
+    { name: 'Bulaşık Makinesi', value: 'bulasikmakinesi' },
+    { name: 'Ocak', value: 'ocak' },
+    { name: 'Fırın', value: 'firin' },
+    { name: 'Wifi', value: 'wifi' },
+    { name: 'Duş ve WC', value: 'dusvewc' },
+    { name: 'Klima', value: 'klima' },
+    { name: 'Çalışma Masası', value: 'calismamasasi' },
+    { name: 'Mutfak', value: 'mutfak' },
+    { name: 'Kişisel Dolap', value: 'kisiseldolap' },
+    { name: 'Asansör', value: 'asansor' },
+    { name: "Balkon", value: "balkon" },
+    { name: 'Kamera Sistemi', value: 'kamerasistemi' },
+    { name: 'Yüzme Havuzu', value: 'yuzmehavuzu' },
+    { name: 'Güvenlik', value: 'guvenlik' },
+    { name: 'Sıcak Su', value: 'sicaksu' },
+    { name: 'Hobi Odası', value: 'hobiodasi' },
+    { name: 'Spor Salonu', value: 'sporsalonu' },
+    { name: 'Ütü Odası', value: 'utuodasi' },
+    { name: 'Çamaşırhane', value: 'camasirhane' },
+
 ]
 
 export const misafirkabul = [
@@ -437,4 +509,108 @@ export const misafirkabul = [
     { name: "Ücretli Bir Şekilde Kalabilir", value: "gelebilirucretli" },
     { name: "Kalamaz", value: "gelemez" },
 ]
+
+
+export const inputsPostCreate = [
+
+    {
+        id: 1,
+        name: "title",
+        type: "text",
+        placeholder: "Post Başlığı",
+        errorMessage:
+            "Post Başlığı en az 3  en fazla 25 karakter olmalıdır ve özel karakter içeremez!",
+        label: "Post Başlığı",
+        // pattern: "^(?! )[A-Za-z0-9ŞşÇçİÜüĞğÖö ]{3,25}$",
+        required: false,
+    },
+    {
+        id: 2,
+        name: "address",
+        type: "text",
+        placeholder: "Adres",
+        errorMessage:
+            "Adres en az 3  en fazla 45 karakter olmalıdır ve özel karakter içeremez!",
+        label: "Adres",
+        // pattern: "^(?! )[A-Za-z0-9ŞşÇçİÜüĞğÖö ]{3,45}$",
+        required: false,
+    },
+    // {
+    //     id: 3,
+    //     name: "desc",
+    //     type: "text",
+    //     placeholder: "Kısaca Tanıtınız",
+    //     errorMessage:
+    //         "Kısa Tanımı en az 3  en fazla 65 karakter olmalıdır ve özel karakter içeremez!",
+    //     label: "Hakkında",
+    //     // pattern: "^(?! )[A-Za-z0-9ŞşÇçİÜüĞğÖö ]{3,65}$",
+    //     required: false,
+    // },
+    {
+        id: 4,
+        name: "email",
+        type: "email",
+        placeholder: "örneğin : apartsandmates@gmail.com",
+        errorMessage: "Geçerli bir mail adresi giriniz!",
+        label: "Email",
+        required: false,
+    },
+    {
+        id: 5,
+        name: "phoneNumber",
+        type: "text",
+        placeholder: "Telefon numarası",
+        errorMessage: "Geçerli bir Telefon numarası Giriniz!",
+        label: "Telefon Numarası",
+        required: false,
+    },
+
+    {
+        id: 6,
+        name: "min",
+        type: "number",
+        placeholder: "min price",
+        errorMessage: "Geçerli bir min price Giriniz!",
+        label: "Odanızın Fiyatı",
+        required: false,
+    },
+    {
+        id: 7,
+        name: "deposit",
+        type: "number",
+        placeholder: "deposit price",
+        errorMessage: "Geçerli bir depozito fiyatı Giriniz!",
+        label: "Depozito Fiyatı ",
+        required: false,
+    },
+    {
+        id: 8,
+        name: "instaAccount",
+        type: "text",
+        placeholder: "@elonmusk",
+        errorMessage: "Geçerli bir instagram kullanıcı adı Giriniz!",
+        label: "Instagram Kullanıcı Adınızı Giriniz",
+        required: false,
+    },
+
+];
+
+
+export const hobilerim = [
+    { name: "Kitap Okumak", value: "kitapokuma" },
+    { name: "Seyehat Etmek", value: 'seyahatetme' },
+    { name: "Müzik Dinlemek", value: 'muzikdinleme' },
+    { name: "Yüzme", value: 'yuzme' },
+    { name: "Bisiklet Sürmek", value: 'bisikletsurme' },
+    { name: "Fitness", value: 'fitness' },
+    { name: "Fotografcilik", value: 'fotografcilik' },
+    { name: "Enstruman Çalmak", value: 'enstrumancalma' },
+    { name: "Şarkı Söylemek", value: 'sarkisoyleme' },
+    { name: "Tiyatro", value: 'tiyatro' },
+    { name: "Sinema", value: 'sinema' },
+    { name: "Video Oyunları", value: 'videooyunlari' },
+    { name: 'Spor Yapmak', value: 'sporyapmak' }
+]
+
+
 

@@ -1,56 +1,57 @@
-import { newRequest } from "~/utils/newRequest";
+// import { newRequest } from "~/utils/newRequest";
 import "./createMatesPage.scss";
 import { useState } from "react";
 import {
-  binaozellikleri,
-  inputsHotelCreate,
+  Postbinaozellikleri,
+  hobilerim,
+  inputsPostCreate,
   mahalleler,
-  misafirkabul,
-  odaozellikleri,
-  servisler,
+  // misafirkabul,
+  Postodaozellikleri,
 } from "~/lib/dummydata";
 import FormInput from "~/components/form/FormInput";
 import { MapFinder } from "~/components/map/MapFinder";
 import UploadWidget from "~/components/uploadWidget/UploadWidget";
+import { newRequest } from "~/utils/newRequest";
+import { redirect } from "react-router-dom";
 
 const CreateMatesPage = () => {
   const [images, setImages] = useState([]);
-  const [aboutHotel, setAboutHotel] = useState("");
-  const [standoutFeatures, setStandoutFeatures] = useState("");
-  const [locationInfo, setLocationInfo] = useState("");
-  const [roomInfo, setRoomInfo] = useState("");
+  const [aboutPost, setAboutPost] = useState("");
+  // const [standoutFeatures, setStandoutFeatures] = useState("");
+  // const [locationInfo, setLocationInfo] = useState("");
+  // const [roomInfo, setRoomInfo] = useState("");
   const [buildingFeatures, setBuildingFeatures] = useState([]);
   const [roomFeatures, setRoomFeatures] = useState([]);
-  const [services, setServices] = useState([]);
+  const [hobies, setHobies] = useState([]);
   const [getLatLng, setGetLatLng] = useState();
   // const [avatars, setAvatars] = useState([]);
 
   const [values, setValues] = useState({
-    name: "",
-    ownerName: "",
     title: "",
     address: "",
-    shortDesc: "",
+    desc: "",
     email: "",
     phoneNumber: "",
-    bedCount: 120,
-    busStop: 300,
-    university: 1500,
-    market: 200,
     min: 5000,
-    max: 12500,
-    standoutFeatures: "",
-    locationInfo: "",
-    roomInfo: "",
-    receptionNumber: "",
-    type: "karma",
-    district: "oba",
-    guestPolicy: "gelebilirucretsiz",
+    deposit: 0,
+    instaAccount: "",
     buildingFeatures: [],
     roomFeatures: [],
-    services: [],
+    personalFeatures: [],
+    hobies: [],
     tags: [],
-    isPaid: "free",
+    district: "oba",
+    sexSituation: "erkekolabilir",
+    petSituation: "evetolabilir",
+    smokeSituation: "kullanabilir",
+    alcoholSituation: "kullanabilir",
+    guestPolicy: "gelebilir",
+    age: "18-21",
+    rentType: "birodaarkadasiariyor",
+    dateOfEntry: "1-2hafta",
+    priceSelection: "aylik",
+    cleaningSituation: "1",
   });
 
   const onChange = (e) => {
@@ -58,6 +59,7 @@ const CreateMatesPage = () => {
 
     setValues({ ...values, [name]: value });
   };
+
   const handleCheckboxBuild = (e) => {
     const { name, checked } = e.target;
 
@@ -78,13 +80,13 @@ const CreateMatesPage = () => {
     }
   };
 
-  const handleCheckboxServices = (e) => {
+  const handleCheckboxHobies = (e) => {
     const { name, checked } = e.target;
 
     if (checked) {
-      setServices([...services, name]);
+      setHobies([...hobies, name]);
     } else {
-      setServices(services.filter((item) => item !== name));
+      setHobies(hobies.filter((item) => item !== name));
     }
   };
 
@@ -92,24 +94,25 @@ const CreateMatesPage = () => {
     e.preventDefault();
 
     values.images = images;
-    values.aboutHotel = aboutHotel;
-    values.standoutFeatures = standoutFeatures;
-    values.locationInfo = locationInfo;
-    values.roomInfo = roomInfo;
     values.buildingFeatures = buildingFeatures;
     values.roomFeatures = roomFeatures;
-    values.services = services;
+    values.hobies = hobies;
     values.latitude = getLatLng.lat;
     values.longitude = getLatLng.lng;
+    values.aboutPost = aboutPost;
+    // values.standoutFeatures = standoutFeatures;
+    // values.locationInfo = locationInfo;
+    // values.roomInfo = roomInfo;
 
     // values.logo = avatars[0];
-    values.tags = [...buildingFeatures, ...roomFeatures, ...services];
+    values.tags = [...buildingFeatures, ...roomFeatures, ...hobies];
 
+    console.log("Form submitted!", values);
     if (values.images.length > 3 && getLatLng !== undefined) {
-      // console.log("Form submitted!", values);
       try {
         const res = await newRequest.post("/posts", values);
         console.log(res.data);
+        redirect("/roommates");
       } catch (err) {
         console.log(err);
       }
@@ -117,7 +120,7 @@ const CreateMatesPage = () => {
       alert("En az 4 resim yükleyiniz");
     }
   };
-  console.log(getLatLng, "GETLATLNG");
+  // console.log(getLatLng, "GETLATLNG");
   return (
     <div className="MatesPage">
       {" "}
@@ -138,7 +141,7 @@ const CreateMatesPage = () => {
                       uploadPreset: "apartsandmates",
                       multiple: true,
                       maxImageFileSize: 10000000,
-                      folder: "hotelsabc",
+                      folder: "matesImages",
                     }}
                     setState={setImages}
                   />
@@ -158,8 +161,9 @@ const CreateMatesPage = () => {
               >
                 <MapFinder setGetLatlng={setGetLatLng} />
               </div>
+
               <form onSubmit={handleSubmit}>
-                {inputsHotelCreate?.map((input) => (
+                {inputsPostCreate?.map((input) => (
                   <FormInput
                     key={input.id}
                     {...input}
@@ -169,63 +173,8 @@ const CreateMatesPage = () => {
                 ))}
 
                 <div className="typeInput">
-                  <label style={{ fontSize: "1.3rem" }} htmlFor="aboutHotel">
-                    Otel Hakkında Genel Bilgi Veriniz
-                  </label>
-                  <textarea
-                    name="aboutHotel"
-                    id="aboutHotel"
-                    onChange={(e) => setAboutHotel(e.target.value)}
-                    value={aboutHotel}
-                    required
-                    className="textAreaDeneme"
-                  />
-                </div>
-                <div className="typeInput">
-                  <label
-                    style={{ fontSize: "1.3rem" }}
-                    htmlFor="standoutFeatures"
-                  >
-                    Otelin Öne Çıkan Özelliklerini Yazınız
-                  </label>
-                  <textarea
-                    name="standoutFeatures"
-                    id="standoutFeatures"
-                    onChange={(e) => setStandoutFeatures(e.target.value)}
-                    value={standoutFeatures}
-                    required
-                    className="textAreaDeneme"
-                  />
-                </div>
-                <div className="typeInput">
-                  <label style={{ fontSize: "1.3rem" }} htmlFor="locationInfo">
-                    Otelin Konumu Hakkında Bilgi Veriniz
-                  </label>
-                  <textarea
-                    name="locationInfo"
-                    id="standoutFeatures"
-                    onChange={(e) => setLocationInfo(e.target.value)}
-                    value={locationInfo}
-                    required
-                    className="textAreaDeneme"
-                  />
-                </div>
-                <div className="typeInput">
-                  <label style={{ fontSize: "1.3rem" }} htmlFor="roomInfo">
-                    Otelin Odaları Hakkında Bilgi Veriniz
-                  </label>
-                  <textarea
-                    name="roomInfo"
-                    id="roomInfo"
-                    onChange={(e) => setRoomInfo(e.target.value)}
-                    value={roomInfo}
-                    required
-                    className="textAreaDeneme"
-                  />
-                </div>
-                <div className="typeInput">
                   <label style={{ fontSize: "1.3rem" }}>
-                    Mahalleyi Seçiniz
+                    Yaşadığınız Mahalleyi Seçiniz
                   </label>
                   <select
                     name="district"
@@ -246,34 +195,272 @@ const CreateMatesPage = () => {
                   </select>
                 </div>
                 <div className="typeInput">
-                  <label style={{ fontSize: "1.3rem" }}>Tipi</label>
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Aradığınız Oda Arkadaşının Cinsiyeti
+                  </label>
                   <select
-                    name="type"
-                    value={values.type}
+                    name="sexSituation"
+                    value={values.sexSituation}
                     onChange={onChange}
                     required
                   >
                     <option
                       defaultChecked={true}
                       onChange={onChange}
-                      value="karma"
+                      value="erkekolabilir"
                     >
-                      Karma
-                    </option>
-                    <option onChange={onChange} value="erkek">
                       Erkek
                     </option>
-                    <option onChange={onChange} value="kiz">
+                    <option onChange={onChange} value="kadinolabilir">
                       Kadın
                     </option>
                   </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Evcil Hayvan Getirme Durumu
+                  </label>
+                  <select
+                    name="petSituation"
+                    value={values.petSituation}
+                    onChange={onChange}
+                    required
+                  >
+                    <option
+                      defaultChecked={true}
+                      onChange={onChange}
+                      value="evetolabilir"
+                    >
+                      Evcil Hayvanı Olabilir
+                    </option>
+                    <option onChange={onChange} value="hayirolamaz">
+                      Evcil Hayvanı Olamaz
+                    </option>
+                  </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Sigara Kullanma Durumu
+                  </label>
+                  <select
+                    name="smokeSituation"
+                    value={values.smokeSituation}
+                    onChange={onChange}
+                    required
+                  >
+                    <option
+                      defaultChecked={true}
+                      onChange={onChange}
+                      value="kullanabilir"
+                    >
+                      Sigara Kullanması Sorun Değil
+                    </option>
+                    <option onChange={onChange} value="hayirkullanamaz">
+                      Sigara Kullanmamasını Tercih Ederim
+                    </option>
+                  </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Alkol Kullanma Durumu
+                  </label>
+                  <select
+                    name="alcoholSituation"
+                    value={values.alcoholSituation}
+                    onChange={onChange}
+                    required
+                  >
+                    <option
+                      defaultChecked={true}
+                      onChange={onChange}
+                      value="kullanabilir"
+                    >
+                      Odada Alkol Kullanabilir
+                    </option>
+                    <option onChange={onChange} value="hayirkullanamaz">
+                      Odada Alkol Kullanamaz
+                    </option>
+                  </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Misafiri Olma Durumu
+                  </label>
+                  <select
+                    name="guestPolicy"
+                    value={values.guestPolicy}
+                    onChange={onChange}
+                    required
+                  >
+                    <option
+                      defaultChecked={true}
+                      onChange={onChange}
+                      value="gelebilir"
+                    >
+                      Odaya Misafir Getirebilir
+                    </option>
+                    <option onChange={onChange} value="gelemez">
+                      Odaya Misafir Getiremez
+                    </option>
+                  </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Yaş Aralığı Seçiniz
+                  </label>
+                  <select
+                    name="age"
+                    value={values.age}
+                    onChange={onChange}
+                    required
+                  >
+                    <option
+                      defaultChecked={true}
+                      onChange={onChange}
+                      value="18-21"
+                    >
+                      18-21 Yaş Aralığında Olabilir
+                    </option>
+                    <option onChange={onChange} value="21-24">
+                      21-24 Yaş Aralığında Olabilir
+                    </option>
+                    <option onChange={onChange} value="24-27">
+                      24-27 Yaş Aralığında Olabilir
+                    </option>
+                    <option onChange={onChange} value="27-30">
+                      27-30 Yaş Aralığında Olabilir
+                    </option>
+                    <option onChange={onChange} value="30-33">
+                      30-33 Yaş Aralığında Olabilir
+                    </option>
+                  </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Oda Arkadaşı Arama Tipini Giriniz
+                  </label>
+                  <select
+                    name="rentType"
+                    value={values.rentType}
+                    onChange={onChange}
+                    required
+                  >
+                    <option
+                      defaultChecked={true}
+                      onChange={onChange}
+                      value="birodaarkadasiariyor"
+                    >
+                      Oda Arkadaşı Arıyorum
+                    </option>
+                    <option onChange={onChange} value="birodayikirayaveriyor">
+                      Başka Bir Odaya Taşınacak Birini Arıyorum
+                    </option>
+                  </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Ne Zaman Giriş Yapabileceğini Seçiniz
+                  </label>
+                  <select
+                    name="dateOfEntry"
+                    value={values.dateOfEntry}
+                    onChange={onChange}
+                    required
+                  >
+                    <option
+                      defaultChecked={true}
+                      onChange={onChange}
+                      value="1-2hafta"
+                    >
+                      1 - 2 Hafta içerisinde Taşınabilir
+                    </option>
+                    <option onChange={onChange} value="2-4hafta">
+                      2 - 4 Hafta arasında Taşınabilir
+                    </option>
+                    <option onChange={onChange} value="1-2ay">
+                      1 - 2 Ay İçerisinde Taşınabilir
+                    </option>
+                    <option onChange={onChange} value="hemen">
+                      Hemen
+                    </option>
+                  </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Hangi Aralıkta Ödeme Yapacağını Seçiniz
+                  </label>
+                  <select
+                    name="priceSelection"
+                    value={values.priceSelection}
+                    onChange={onChange}
+                    required
+                  >
+                    <option
+                      defaultChecked={true}
+                      onChange={onChange}
+                      value="aylik"
+                    >
+                      Aylık Ödeme Yapabilir
+                    </option>
+                    <option onChange={onChange} value="haftalik">
+                      Haftalık Ödeme Yapabilir
+                    </option>
+                    <option onChange={onChange} value="gunluk">
+                      Günlük Ödeme Yapabilir
+                    </option>
+                  </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }}>
+                    Haftada Kaç Defa Temizlik Yapmalı
+                  </label>
+                  <select
+                    name="cleaningSituation"
+                    value={values.cleaningSituation}
+                    onChange={onChange}
+                    required
+                  >
+                    <option defaultChecked={true} onChange={onChange} value="1">
+                      1 Gün Yapsa İyi Olur
+                    </option>
+                    <option onChange={onChange} value="2">
+                      2 Gün Yapsa İyi Olur
+                    </option>
+                    <option onChange={onChange} value="3">
+                      3 Gün Yapsa İyi Olur
+                    </option>
+                  </select>
+                </div>
+
+                <div className="typeInput">
+                  <label style={{ fontSize: "1.3rem" }} htmlFor="aboutPost">
+                    Postunuzun açıklamasını yazınız
+                  </label>
+                  <textarea
+                    name="aboutPost"
+                    id="aboutPost"
+                    onChange={(e) => setAboutPost(e.target.value)}
+                    value={aboutPost}
+                    required
+                    className="textAreaDeneme"
+                    style={{ height: "500px" }}
+                  />
                 </div>
                 <div className="typeInput">
                   <div className="buildingFeatures">
                     <label style={{ fontSize: "2rem" }}>
                       Bina Özelliklerini Seçiniz
                     </label>
-                    {binaozellikleri.map((ozellik, i) => (
+                    {Postbinaozellikleri.map((ozellik, i) => (
                       <label key={i} className="buildingFeaturesLabel">
                         <input
                           style={{
@@ -295,7 +482,7 @@ const CreateMatesPage = () => {
                     <label style={{ fontSize: "2rem" }}>
                       Oda Özelliklerini Seçiniz
                     </label>
-                    {odaozellikleri.map((ozellik, i) => (
+                    {Postodaozellikleri.map((ozellik, i) => (
                       <label key={i} className="buildingFeaturesLabel">
                         <input
                           style={{ width: "1.5rem", height: "1.5rem" }}
@@ -312,43 +499,21 @@ const CreateMatesPage = () => {
                 <div className="typeInput">
                   <div className="buildingFeatures">
                     <label style={{ fontSize: "2rem" }}>
-                      Sağladığınız Hizmetleri Seçiniz
+                      Hobilerinizi Seçiniz
                     </label>
-                    {servisler.map((ozellik, i) => (
+                    {hobilerim.map((ozellik, i) => (
                       <label key={i} className="buildingFeaturesLabel">
                         <input
                           style={{ width: "1.5rem", height: "1.5rem" }}
                           type="checkbox"
                           name={ozellik.value}
-                          checked={services.includes(ozellik.value)}
-                          onChange={handleCheckboxServices}
+                          checked={hobies.includes(ozellik.value)}
+                          onChange={handleCheckboxHobies}
                         />
                         {ozellik.name}
                       </label>
                     ))}
                   </div>
-                </div>
-                <div className="typeInput">
-                  <label style={{ fontSize: "1.3rem" }}>
-                    Misafir Kabul Durumu
-                  </label>
-                  <select
-                    name="guestPolicy"
-                    value={values.guestPolicy}
-                    onChange={onChange}
-                    required
-                  >
-                    {misafirkabul.map((mahalle, i) => (
-                      <option
-                        style={{ textTransform: "capitalize" }}
-                        key={i}
-                        value={mahalle.value}
-                        onChange={onChange}
-                      >
-                        {mahalle.name}
-                      </option>
-                    ))}
-                  </select>
                 </div>
 
                 <button type="submit">Submit</button>
