@@ -1,20 +1,21 @@
 import { useState } from "react";
 import "./navbar.scss";
-import { Link } from "react-router-dom";
-import { useLogout } from "~/hooks/auth/useLogout";
+import { Link, useNavigate } from "react-router-dom";
+// import { useLogout } from "~/hooks/auth/useLogout";
 import { useAuthContext } from "~/hooks/auth/useAuthContext";
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+  // const [openMenu, setOpenMenu] = useState(false);
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   const { user } = useAuthContext();
 
-  const { logout } = useLogout();
+  // const { logout } = useLogout();
 
-  const handleOut = async () => {
-    await logout();
-  };
+  // const handleOut = async () => {
+  //   await logout();
+  // };
 
   console.log(user);
 
@@ -34,23 +35,32 @@ const Navbar = () => {
               {/* <FavoriteBorderIcon /> */}
             </Link>
 
-            <Link className="findmate" to="/roommates">
-              <button className="">Oda Arkadaşı Bul</button>
+            <Link to="/roommates">
+              <button className="findmate">Oda Arkadaşı Bul</button>
             </Link>
             {!user && (
               <Link to="/login">
-                <button className="RegButton">Giriş Yap</button>
+                <button className="RegButton">Oturum Aç</button>
+              </Link>
+            )}
+            {!user && (
+              <Link to="/register">
+                <button className="LogButton">Kaydol</button>
               </Link>
             )}
             {user && (
               <div className="user" onClick={() => setOpen(!open)}>
-                <img src={user?.avatar || "/favicon.png"} alt="" />
+                <img
+                  onClick={() => navigate(`profile/${user?._id}`)}
+                  src={user?.avatar || "/favicon.png"}
+                  alt=""
+                />
                 {/* <span> {user?.username} </span> */}
-                {open && (
+                {/* {open && (
                   <div className="options">
                     {user?.isHotelOwner ? (
                       <>
-                        <Link to={`profile/${user?._id}`}>
+                        <Link to={}>
                           <span> Profilim Hotel owner</span>
                         </Link>
                         <Link to={`profile/${user?._id}`}>
@@ -79,19 +89,19 @@ const Navbar = () => {
                       </>
                     )}
                   </div>
-                )}
+                )} */}
               </div>
             )}
           </div>
-          <div className="menuIcon">
+          {/* <div className="menuIcon">
             <img
               src="/menu.png"
               alt=""
               onClick={() => setOpenMenu((prev) => !prev)}
             />
-          </div>
+          </div> */}
         </div>
-        {openMenu ? (
+        {/* {openMenu ? (
           <div className="menu">
             <Link className="link" to="/about">
               Hakkımızda
@@ -106,7 +116,7 @@ const Navbar = () => {
               Oda Arkadaşı Bul
             </Link>
           </div>
-        ) : null}
+        ) : null} */}
       </div>
     </div>
   );
