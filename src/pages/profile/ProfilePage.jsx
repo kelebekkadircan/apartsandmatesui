@@ -178,6 +178,7 @@ export const ProfilePage = () => {
   const [isLoadingFavPosts, setIsLoadingFavPosts] = useState(false);
   const [isLoadingMyPosts, setIsLoadingMyPosts] = useState(false);
   const [isConfirmingDelete, setIsConfirmingDelete] = useState(null); // Yeni state değişkeni
+  const [isConfirmingDeletePost, setIsConfirmingDeletePost] = useState(null); // Yeni state değişkeni
   const [postListError, setPostListError] = useState("");
   const [myPosts, setMyPosts] = useState([]);
 
@@ -265,8 +266,27 @@ export const ProfilePage = () => {
   const handleDelete = async (hotelId) => {
     try {
       console.log(hotelId);
-      // await newRequest.delete(`/hotels/${hotelId}`);
-      // setMyHotels(myHotels.filter((hotel) => hotel._id !== hotelId));
+      await newRequest.delete(`/hotels/${hotelId}`);
+      setMyHotels(myHotels.filter((hotel) => hotel._id !== hotelId));
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleDeleteClickPost = (postId) => {
+    if (isConfirmingDeletePost === postId) {
+      handleDeletePost(postId);
+    } else {
+      setIsConfirmingDeletePost(postId);
+      setTimeout(() => setIsConfirmingDeletePost(null), 3000);
+    }
+  };
+
+  const handleDeletePost = async (postId) => {
+    try {
+      console.log(postId);
+      await newRequest.delete(`/posts/${postId}`);
+      setMyPosts(myPosts.filter((posts) => posts._id !== postId));
     } catch (err) {
       console.error(err);
     }
@@ -423,9 +443,9 @@ export const ProfilePage = () => {
                     <div className="cardOperation">
                       <button
                         className="cardOperationDelete"
-                        onClick={() => handleDeleteClick(item._id)}
+                        onClick={() => handleDeleteClickPost(item._id)}
                       >
-                        {isConfirmingDelete === item._id
+                        {isConfirmingDeletePost === item._id
                           ? "Emin misiniz?"
                           : "Sil"}
                       </button>

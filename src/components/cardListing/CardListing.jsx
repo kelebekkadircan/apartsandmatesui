@@ -17,7 +17,7 @@ export const CardListing = ({ item }) => {
   useEffect(() => {
     const featureFetch = async () => {
       const res = await newRequest.get(`hotels/priority/${item?._id}`);
-      // console.log(res.data);
+      console.log(res.data);
       setTags(res.data);
     };
     const fetchUser = async () => {
