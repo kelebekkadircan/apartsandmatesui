@@ -138,6 +138,29 @@
           color: white;
         }
       }
+      .icons {
+        display: flex;
+        gap: 20px;
+
+        .icon {
+          border: 1px solid #999;
+          padding: 2px 5px;
+          border-radius: 5px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            width: 30px;
+            height: 30px;
+
+            &:hover {
+              scale: 1.1;
+            }
+          }
+        }
+      }
       .PhoneInfos {
         display: flex;
         align-items: center;

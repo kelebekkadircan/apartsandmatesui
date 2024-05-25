@@ -153,15 +153,15 @@
 // };
 
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "./profilePage.scss";
-import { useAuthContext } from "~/hooks/auth/useAuthContext";
+// import { useAuthContext } from "~/hooks/auth/useAuthContext";
 import { newRequest } from "~/utils/newRequest";
 import { CardListing } from "~/components/cardListing/CardListing";
-import { useEffect, useState } from "react";
 import { MatesCardListing } from "~/components/cardListing/MatesCardListing";
 
 export const ProfilePage = () => {
-  const { user } = useAuthContext();
+  // const { user } = useAuthContext();
   const { id } = useParams();
   const navigate = useNavigate();
   const [isLoadingMyHotels, setIsLoadingMyHotels] = useState(false);
@@ -234,17 +234,20 @@ export const ProfilePage = () => {
     fetchUser();
     fetchMyHotels();
     fetchFavHotels();
-  }, [id]);
+  }, [id, setFavoritePosts, setFavoriteHotels]);
 
-  if (!user || !user.details) {
-    return <div>Loading...</div>;
-  }
+  // if (!user || !user.details) {
+  //   return <div>Loading...</div>;
+  // }
 
-  if (error) {
-    return <div>{error}</div>;
-  }
+  // if (error) {
+  //   return <div>{error}</div>;
+  // }
   console.log(currentUser, "Current User");
   console.log(favoritePosts, "Favorite Posts");
+  console.log(favoriteHotels, "Favorite Hotels");
+  console.log(myHotels, "My Hotels");
+  // console.log(myPosts, "My Posts");
 
   return (
     <div className="outerDiv">
@@ -263,6 +266,7 @@ export const ProfilePage = () => {
                     onClick={handleLogout}
                   >
                     Logout
+                    {error && <div>{error}</div>}
                   </button>
                 </div>
               </div>

@@ -16,7 +16,7 @@ const Navbar = () => {
     await logout();
   };
 
-  // console.log(user);
+  console.log(user);
 
   return (
     <div className="navbar">
@@ -66,7 +66,7 @@ const Navbar = () => {
                       </>
                     ) : (
                       <>
-                        <Link to={`profile/${user?.details?._id}`}>
+                        <Link to={`profile/${user?._id}`}>
                           <span> Profilim</span>
                         </Link>
                         <Link to={`profile/${user?._id}`}>

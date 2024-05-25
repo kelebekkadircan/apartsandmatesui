@@ -1,13 +1,15 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./MatesCardListing.scss";
 import { useEffect, useState } from "react";
 import { newRequest } from "~/utils/newRequest";
-import { FaPhone } from "react-icons/fa";
+// import { FaPhone } from "react-icons/fa";
 
 export const MatesCardListing = ({ item }) => {
   // console.log(item);
 
   const [users, setUsers] = useState([]);
+  const [currentUser, setCurrentUser] = useState([]);
+  const navigate = useNavigate();
 
   const location = useLocation();
   const isProfilePage = location.pathname.split("/")[1];
@@ -18,11 +20,33 @@ export const MatesCardListing = ({ item }) => {
       //    console.log(res.data);
       setUsers(res.data);
     };
+    const fetchUser = async () => {
+      const res = await newRequest.get(`users/auth/me`);
+      setCurrentUser(res.data);
+    };
+    fetchUser();
 
     userFetch();
   }, [item]);
 
-  console.log(users);
+  const { _id } = currentUser;
+
+  const handleSavePost = async () => {
+    if (!currentUser) {
+      navigate("/login");
+    }
+    try {
+      await newRequest.post(`users/${_id}/favoriteposts/${item?._id}`);
+      if (isProfilePage === "profile") {
+        window.location.reload();
+      }
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  console.log(currentUser);
 
   return (
     <div className="MatescardListing">
@@ -68,12 +92,22 @@ export const MatesCardListing = ({ item }) => {
             <p style={{ marginRight: "5px" }}>{item?.min} </p>
             <span>₺ Aylık</span>
           </div>
-          <div className="PhoneInfos">
+          <div className="icons">
+            <div onClick={handleSavePost} className="icon">
+              {currentUser?.myLikes?.includes(item?._id) ? (
+                <img src="/img/saved.svg" alt="" />
+              ) : (
+                <img src="/img/unsaved.svg" alt="" />
+              )}
+              {/* <img src={saved ? "/img/saved.svg" : "/img/unsaved.svg"} alt="" /> */}
+            </div>
+          </div>
+          {/* <div className="PhoneInfos">
             <div className="iconContainer">
               <FaPhone />
             </div>
             {users?.phoneNumber}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

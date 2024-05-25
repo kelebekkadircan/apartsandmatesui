@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./CardListing.scss";
 import { useEffect, useState } from "react";
 import { newRequest } from "~/utils/newRequest";
@@ -8,6 +8,8 @@ export const CardListing = ({ item }) => {
 
   const [tags, setTags] = useState([]);
   const [currentUser, setCurrentUser] = useState([]);
+
+  const navigate = useNavigate();
 
   const location = useLocation();
   const isProfilePage = location.pathname.split("/")[1];
@@ -29,11 +31,22 @@ export const CardListing = ({ item }) => {
   const { _id } = currentUser;
 
   const handleSaveHotel = async () => {
-    // router.post('/:id/favorites/:hotelId', toggleFavoriteHotel);
-    const res = await newRequest.post(`users/${_id}/favorites/${item?._id}`);
-    console.log(res.data);
+    if (!currentUser) {
+      navigate("/login");
+    }
+    try {
+      await newRequest.post(`users/${_id}/favorites/${item?._id}`);
+      if (isProfilePage === "profile") {
+        window.location.reload();
+      }
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
   };
 
+  console.log(currentUser);
+  console.log(isProfilePage);
   return (
     <div className="cardListing">
       <Link
@@ -72,7 +85,12 @@ export const CardListing = ({ item }) => {
           </div>
           <div className="icons">
             <div onClick={handleSaveHotel} className="icon">
-              <img src="/save.png" alt="" />
+              {currentUser?.favoriteHotels?.includes(item?._id) ? (
+                <img src="/img/saved.svg" alt="" />
+              ) : (
+                <img src="/img/unsaved.svg" alt="" />
+              )}
+              {/* <img src={saved ? "/img/saved.svg" : "/img/unsaved.svg"} alt="" /> */}
             </div>
           </div>
         </div>

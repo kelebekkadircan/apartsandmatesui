@@ -130,8 +130,13 @@
           align-items: center;
           justify-content: center;
 
-          &:hover {
-            background-color: lightgray;
+          img {
+            width: 30px;
+            height: 30px;
+
+            &:hover {
+              scale: 1.1;
+            }
           }
         }
       }
