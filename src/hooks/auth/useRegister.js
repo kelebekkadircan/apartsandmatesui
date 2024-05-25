@@ -17,7 +17,7 @@ export const useRegister = () => {
             const res = await newRequest.post("/auth/register", { ...props });
             console.log("USE REGISTER RES : 19.SATIR", res);
             // update the user  in the context
-            dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+            // dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
 
             navigate("/login");
         } catch (err) {

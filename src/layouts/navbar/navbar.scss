@@ -17,6 +17,7 @@
   transition: 0.5s all ease-in;
   width: 100%;
   height: 80px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Yatay gölge, Dikey gölge, Gölge yayılma, Gölge rengi */
 
   .container {
     width: 90%;
@@ -28,14 +29,15 @@
 
     .left {
       .logo {
-        font-weight: 300;
+        font-weight: 500;
         font-size: 2rem;
+        color: #4a5aa3;
 
         @include sm {
-          font-size: 1rem;
+          font-size: 1.2rem;
         }
         .andSign {
-          color: #17d3a5;
+          color: #393838;
         }
       }
     }

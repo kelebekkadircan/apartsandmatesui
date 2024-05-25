@@ -7,7 +7,7 @@ const Card = ({ item }) => {
     <div className="cardHeroSlider">
       <Link to={`list/${item._id}`}>
         <div className="logoContainer">
-          <img src={item?.logo || "/noLogo.png"} alt="" />
+          <img src={item?.avatar || "/noLogo.png"} alt="" />
         </div>
         <div className="denemeName"> {item?.name} </div>
       </Link>

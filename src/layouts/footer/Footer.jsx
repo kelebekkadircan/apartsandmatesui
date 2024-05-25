@@ -7,7 +7,8 @@ const Footer = () => {
   const location = useLocation();
   const loc = location.pathname.split("/")[1];
 
-  return loc === "login" ? null : loc === "register" ? null : (
+  return loc === "login" ? null : loc === "register" ? null : loc ===
+    "dorm" ? null : (
     <div className="footer">
       {/* <div className="footerTop">
         <div className="topContainer">

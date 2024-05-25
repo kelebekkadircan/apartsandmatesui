@@ -44,14 +44,14 @@ const LoginTwo = () => {
   console.log("Login USER ", newUser);
 
   return (
-    <div className="RegisterTwo">
-      <div className="RegisterTwoContainer">
-        <div className="RegisterTwoHeader">
+    <div className="LoginTwo">
+      <div className="LoginTwoContainer">
+        <div className="LoginTwoHeader">
           <h1>Giriş Yap</h1>
         </div>
-        <div className="RegisterTwoForm">
+        <div className="LoginTwoForm">
           <form onSubmit={handleLogin}>
-            <div className="RegisterTwoFormItem">
+            <div className="LoginTwoFormItem">
               <label htmlFor="username">Kullanıcı Adı:</label>
               <input
                 onChange={handleChange}
@@ -63,7 +63,7 @@ const LoginTwo = () => {
               />
             </div>
 
-            <div className="RegisterTwoFormItem">
+            <div className="LoginTwoFormItem">
               <label htmlFor="password">Şifreniz:</label>
               <input
                 onChange={handleChange}
@@ -75,18 +75,18 @@ const LoginTwo = () => {
               />
             </div>
 
-            <div className="RegisterTwoFormButton">
+            <div className="LoginTwoFormButton">
               <button type="submit">Giriş Yap</button>
               <span>{error && <div>{error}</div>}</span>
             </div>
-            <div className="RegisterFormForgotPassword">
+            <div className="LoginFormForgotPassword">
               <p>
                 {" "}
                 veya <span>Şifremi Unuttum</span>{" "}
               </p>
             </div>
-            <div className="RegisterFormLine"></div>
-            <div className="RegisterTwoFormFooter">
+            <div className="LoginFormLine"></div>
+            <div className="LoginTwoFormFooter">
               <p>
                 Hesabınız yok mu?{" "}
                 <span onClick={() => navigate("/register")}>Kayıt Ol</span>

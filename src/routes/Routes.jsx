@@ -30,6 +30,7 @@ import UpdateHotel from "~/pages/updateHotel/UpdateHotel";
 import FormRegister from "~/components/form/FormRegister";
 import RegisterTwo from "~/pages/register/RegisterTwo";
 import LoginTwo from "~/pages/login/LoginTwo";
+import TalepForm from "~/pages/yurtForm/TalepForm";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -81,6 +82,10 @@ const App = () => {
         {
           path: "/login",
           element: <LoginTwo />,
+        },
+        {
+          path: "/dorm",
+          element: <TalepForm />,
         },
         {
           path: "*",

@@ -24,9 +24,9 @@ export const Blog = () => {
     blogDataFetch();
   }, []);
 
-  if (error) {
-    return <div>There is an error</div>;
-  }
+  // if (error) {
+  //   return <div>There is an error</div>;
+  // }
 
   // console.log(blogData);
 
@@ -36,9 +36,10 @@ export const Blog = () => {
         <div className="innerSection">
           <div className="blogContent">
             <div className="contentTitle">
-              Aparts <span className="title-color">&</span>Mates Blog
+              <span style={{ color: "#4a5aa3" }}>Aparts</span> &{" "}
+              <span style={{ color: "#4a5aa3" }}>Mates</span> Blog
             </div>
-            <div>
+            <div className="contentSubWrapper">
               <p className="contentSubTitle">
                 Öğrenci Hayatı Hakkında Haberler, Öneri ve Tavsiyelerimiz
               </p>

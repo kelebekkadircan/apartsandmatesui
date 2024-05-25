@@ -39,10 +39,15 @@ export const Aparts = () => {
       <div className="apartContainer">
         <div className="apartWrapper">
           <div className="apartContent">
-            <img src="https://www.yurtlarburada.com/img/building.svg" alt="" />
-            <div className="apartContentTitle">
-              <span className="color-blue d-block">Bölgelere Göre</span>
-              Apart Listeleri
+            <div className="apartContentWrapper">
+              <img
+                src="https://www.yurtlarburada.com/img/building.svg"
+                alt=""
+              />
+              <div className="apartContentTitle">
+                <span className="color-blue d-block">Bölgelere Göre</span>
+                Apart Listeleri
+              </div>
             </div>
             <div className="contentText">
               Üniversiteyi kazandınız kalacak yer mi arıyorsunuz? Şehrindeki kız

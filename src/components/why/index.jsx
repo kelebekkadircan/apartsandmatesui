@@ -9,9 +9,8 @@ export const Why = () => {
         <div className="whyWrapper">
           <div className="whyContent">
             <div className="title">
-              <span className="colorGreen">Neden ve Nasıl</span> <br />
-              Aparts&Mates
-              <span className="colorGreen">.com?</span>
+              Neden ve Nasıl <span style={{ color: "#4a5aa3" }}>Aparts</span> &{" "}
+              <span style={{ color: "#4a5aa3" }}>Mates</span>
             </div>
             <p className="text">
               Alanyanın ilk Apart Otel tanıtım rehberi apartsandmates.com 2024

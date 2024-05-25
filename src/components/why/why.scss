@@ -77,10 +77,9 @@
           font-weight: 600;
           margin-bottom: 25px;
           color: #333;
-
-          .colorGreen {
-            color: #17d3a5;
-          }
+          background-color: #fff;
+          padding: 10px;
+          border-radius: 10px;
         }
 
         .text {
@@ -89,13 +88,16 @@
           font-size: 17px;
           line-height: 1.5rem;
           color: #333;
+          padding: 10px;
+          background-color: #fff;
+          border-radius: 10px;
         }
 
         .buttonMore {
           text-decoration: none;
-          color: #17d3a5;
+          color: #4a5aa3;
           font-weight: 600;
-          font-size: 18px;
+          font-size: 20px;
           padding: 5px 0;
           min-height: auto;
           margin-top: 20px;
@@ -103,6 +105,10 @@
           gap: 30px;
           align-items: center;
           justify-content: flex-start;
+          background-color: #fff;
+          padding: 10px;
+          border-radius: 10px;
+          width: max-content;
 
           &:hover {
             img {
