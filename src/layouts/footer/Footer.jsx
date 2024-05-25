@@ -2,9 +2,12 @@ import "./footer.scss";
 import { FaFacebook, FaSearch, FaInstagram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const Footer = () => {
-  return (
+  const location = useLocation();
+  const loc = location.pathname.split("/")[1];
+
+  return loc === "login" ? null : loc === "register" ? null : (
     <div className="footer">
       {/* <div className="footerTop">
         <div className="topContainer">

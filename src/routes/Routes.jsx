@@ -27,6 +27,9 @@ import MatesPage from "~/pages/mates/MatesPage";
 import MatesPostPage from "~/pages/matesPostPage/MatesPostPage";
 import CreateMatesPage from "~/pages/createMates/CreateMatesPage";
 import UpdateHotel from "~/pages/updateHotel/UpdateHotel";
+import FormRegister from "~/components/form/FormRegister";
+import RegisterTwo from "~/pages/register/RegisterTwo";
+import LoginTwo from "~/pages/login/LoginTwo";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -72,11 +75,12 @@ const App = () => {
         },
         {
           path: "/register",
-          element: <Register />,
+          element: <RegisterTwo />,
+          // element: <Register />,
         },
         {
           path: "/login",
-          element: <Login />,
+          element: <LoginTwo />,
         },
         {
           path: "*",

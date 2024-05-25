@@ -385,79 +385,83 @@ export const ProfilePage = () => {
               </div>
             </div>
 
-            <div className="profileHotelContainer">
-              <div className="profileUpdate">
-                <h1>Listelediğim Oteller</h1>
+            {currentUser?.isHotelOwner || currentUser?.isAdmin ? (
+              <div className="profileHotelContainer">
+                <div className="profileUpdate">
+                  <h1>Listelediğim Oteller</h1>
 
-                <Link to={"addHotel"}>
-                  <button>Otel Ekle</button>
-                </Link>
-              </div>
-              {isLoadingMyHotels ? (
-                <div>Loading...</div>
-              ) : listError ? (
-                <div>{listError}</div>
-              ) : (
-                myHotels?.map((item) => (
-                  <div className="profileHotelCard" key={item._id}>
-                    <div className="profilecardListing">
-                      <CardListing item={item} />
+                  <Link to={"addHotel"}>
+                    <button>Otel Ekle</button>
+                  </Link>
+                </div>
+                {isLoadingMyHotels ? (
+                  <div>Loading...</div>
+                ) : listError ? (
+                  <div className="profileErrorMessage">{listError}</div>
+                ) : (
+                  myHotels?.map((item) => (
+                    <div className="profileHotelCard" key={item._id}>
+                      <div className="profilecardListing">
+                        <CardListing item={item} />
+                      </div>
+                      <div className="cardOperation">
+                        <button
+                          className="cardOperationDelete"
+                          onClick={() => handleDeleteClick(item._id)}
+                        >
+                          {isConfirmingDelete === item._id
+                            ? "Emin misiniz?"
+                            : "Sil"}
+                        </button>
+                        {/* <button className="cardOperationDelete">Sil</button> */}
+                        {/* <Link to={`/updateHotel/${item._id}`}>
+                      <button>Güncelle</button>
+                    </Link> */}
+                      </div>
                     </div>
-                    <div className="cardOperation">
-                      <button
-                        className="cardOperationDelete"
-                        onClick={() => handleDeleteClick(item._id)}
-                      >
-                        {isConfirmingDelete === item._id
-                          ? "Emin misiniz?"
-                          : "Sil"}
-                      </button>
-                      {/* <button className="cardOperationDelete">Sil</button> */}
-                      {/* <Link to={`/updateHotel/${item._id}`}>
+                  ))
+                )}
+              </div>
+            ) : null}
+
+            {currentUser?.isHotelOwner ? null : (
+              <div className="profileHotelContainer">
+                <div className="profileUpdate">
+                  <h1>Listelediğim Postlar</h1>
+
+                  <Link to={"addPost"}>
+                    <button>Post Ekle</button>
+                  </Link>
+                </div>
+                {isLoadingMyPosts ? (
+                  <div>Loading...</div>
+                ) : postListError ? (
+                  <div className="profileErrorMessage">{postListError}</div>
+                ) : (
+                  myPosts?.map((item) => (
+                    <div className="profileHotelCard" key={item._id}>
+                      <div className="profilecardListing">
+                        <MatesCardListing item={item} />
+                      </div>
+                      <div className="cardOperation">
+                        <button
+                          className="cardOperationDelete"
+                          onClick={() => handleDeleteClickPost(item._id)}
+                        >
+                          {isConfirmingDeletePost === item._id
+                            ? "Emin misiniz?"
+                            : "Sil"}
+                        </button>
+                        {/* <button className="cardOperationDelete">Sil</button> */}
+                        {/* <Link to={`/updateHotel/${item._id}`}>
                         <button>Güncelle</button>
                       </Link> */}
+                      </div>
                     </div>
-                  </div>
-                ))
-              )}
-            </div>
-
-            <div className="profileHotelContainer">
-              <div className="profileUpdate">
-                <h1>Listelediğim Postlar</h1>
-
-                <Link to={"addPost"}>
-                  <button>Post Ekle</button>
-                </Link>
+                  ))
+                )}
               </div>
-              {isLoadingMyPosts ? (
-                <div>Loading...</div>
-              ) : postListError ? (
-                <div className="profileErrorMessage">{postListError}</div>
-              ) : (
-                myPosts?.map((item) => (
-                  <div className="profileHotelCard" key={item._id}>
-                    <div className="profilecardListing">
-                      <CardListing item={item} />
-                    </div>
-                    <div className="cardOperation">
-                      <button
-                        className="cardOperationDelete"
-                        onClick={() => handleDeleteClickPost(item._id)}
-                      >
-                        {isConfirmingDeletePost === item._id
-                          ? "Emin misiniz?"
-                          : "Sil"}
-                      </button>
-                      {/* <button className="cardOperationDelete">Sil</button> */}
-                      {/* <Link to={`/updateHotel/${item._id}`}>
-                        <button>Güncelle</button>
-                      </Link> */}
-                    </div>
-                  </div>
-                ))
-              )}
-            </div>
+            )}
 
             <div className="profileHotelContainer">
               <div className="profileUpdate">
@@ -470,7 +474,7 @@ export const ProfilePage = () => {
               {isLoadingFavHotels ? (
                 <div>Loading...</div>
               ) : favError ? (
-                <div>{favError}</div>
+                <div className="profileErrorMessage">{favError}</div>
               ) : (
                 favoriteHotels?.map((item) => (
                   <div className="profileHotelCard" key={item._id}>
@@ -499,7 +503,7 @@ export const ProfilePage = () => {
               {isLoadingFavPosts ? (
                 <div>Loading...</div>
               ) : postError ? (
-                <div>{postError}</div>
+                <div className="profileErrorMessage">{postError}</div>
               ) : (
                 favoritePosts?.map((item) => (
                   <div className="profileHotelCard" key={item._id}>

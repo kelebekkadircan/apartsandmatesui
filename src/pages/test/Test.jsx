@@ -7,6 +7,7 @@ import { useState } from "react";
 import CreateHotel from "../createHotel/CreateHotel";
 import { Map } from "~/components/map/Map";
 import { listData } from "~/lib/dummydata";
+import FormRegister from "~/components/form/FormRegister";
 // import "./Test.scss";
 
 export const Test = () => {
@@ -17,9 +18,9 @@ export const Test = () => {
     //   {/* <SearchTestOne /> */}
     //   {/* <SearchTestTwo /> */}
     //   {/* <SearchBarMobil /> */}
-    //   <FormRegister />
+    <FormRegister />
     // </div>
-    <CreateHotel />
+    // <CreateHotel />
     // <div
     //   style={{
     //     height: "600px",

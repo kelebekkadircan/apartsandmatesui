@@ -73,19 +73,22 @@ const FormRegister = () => {
   };
   return (
     <div className="registerForm">
-      {" "}
-      <form onSubmit={handleSubmit}>
-        <h1>Register</h1>
-        {inputs.map((input) => (
-          <FormInput
-            key={input.id}
-            {...input}
-            value={values[input.name]}
-            onChange={onChange}
-          />
-        ))}
-        <button type="submit">Submit</button>
-      </form>
+      <div className="registerFormWrapper">
+        <form onSubmit={handleSubmit}>
+          <h1>Register</h1>
+          <div className="registerformItem">
+            {inputs.map((input) => (
+              <FormInput
+                key={input.id}
+                {...input}
+                value={values[input.name]}
+                onChange={onChange}
+              />
+            ))}
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 };

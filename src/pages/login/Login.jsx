@@ -16,7 +16,9 @@ const Login = () => {
     password: undefined,
   });
 
-  const { error, loading } = useContext(AuthContext);
+  // const navigate = useNavigate();
+
+  const { error, loading, user } = useContext(AuthContext);
   const { login } = useLogin();
 
   const handleChange = (e) => {
@@ -26,10 +28,15 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
 
-    await login(credentials.username, credentials.password);
+    await login(credentials?.username, credentials?.password);
   };
 
   console.log(credentials);
+  console.log(user);
+
+  // if (user) {
+  //   navigate("/");
+  // }
 
   return (
     <>

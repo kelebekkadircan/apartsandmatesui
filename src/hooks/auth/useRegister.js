@@ -9,11 +9,12 @@ export const useRegister = () => {
     const navigate = useNavigate();
 
 
-    const register = async (username, email, password) => {
+    const register = async (props) => {
+        console.log(props, "PROPS");
 
         dispatch({ type: "LOGIN_START" });
         try {
-            const res = await newRequest.post("/auth/register", { username, password, email });
+            const res = await newRequest.post("/auth/register", { ...props });
             console.log("USE REGISTER RES : 19.SATIR", res);
             // update the user  in the context
             dispatch({ type: "LOGIN_SUCCESS", payload: res.data });

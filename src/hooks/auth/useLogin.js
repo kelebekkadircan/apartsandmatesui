@@ -6,10 +6,10 @@ export const useLogin = () => {
   const { dispatch } = useAuthContext();
   const navigate = useNavigate();
 
-  const login = async (username, password) => {
+  const login = async (props) => {
     dispatch({ type: "LOGIN_START" });
     try {
-      const res = await newRequest.post("/auth/login", { username, password });
+      const res = await newRequest.post("/auth/login", { ...props });
       console.log("USE LOGIN RES : 19.SATIR", res);
       localStorage.setItem("user", JSON.stringify(res.data));
       // update the user  in the context
