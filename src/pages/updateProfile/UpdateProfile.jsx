@@ -232,7 +232,7 @@ const UpdateProfile = () => {
     }
 
     try {
-      const res = await newRequest.put(`/users/${user?._id}`, {
+      const res = await newRequest.put(`/users/update/${currentUser?._id}`, {
         username,
         email,
         password,
@@ -241,7 +241,9 @@ const UpdateProfile = () => {
         firstname,
         lastname,
         avatar: avatar[0],
+        confirmNewPassword,
       });
+      console.log(res.data);
       localStorage.setItem("user", JSON.stringify(res?.data));
       navigate(`/profile/${user?._id}`);
     } catch (err) {
