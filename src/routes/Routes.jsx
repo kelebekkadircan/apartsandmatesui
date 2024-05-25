@@ -26,6 +26,7 @@ import UpdateProfile from "~/pages/updateProfile/UpdateProfile";
 import MatesPage from "~/pages/mates/MatesPage";
 import MatesPostPage from "~/pages/matesPostPage/MatesPostPage";
 import CreateMatesPage from "~/pages/createMates/CreateMatesPage";
+import UpdateHotel from "~/pages/updateHotel/UpdateHotel";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -110,6 +111,10 @@ const App = () => {
         {
           path: "/profile/:id/addPost",
           element: <CreateMatesPage />,
+        },
+        {
+          path: "/updateHotel/:id",
+          element: <UpdateHotel />,
         },
       ],
     },

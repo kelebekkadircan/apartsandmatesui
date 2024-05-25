@@ -7,30 +7,61 @@
   max-width: 1366px;
   margin: 0 auto;
   margin-top: 80px;
+  flex-direction: row;
+
+  .error {
+    color: red;
+  }
 
   .formContainer {
     flex: 3;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 10px;
 
     form {
       display: flex;
       flex-direction: column;
       gap: 20px;
+      background-color: #fff;
+      width: 100%;
+      margin-right: 10px;
+      border-radius: 10px;
 
-      .item {
+      .updateProfileTitle {
+        width: 100%;
+        background-color: whitesmoke;
+        padding: 20px;
+        font-size: 30px;
+        font-weight: bold;
+        color: teal;
+        border-radius: 10px;
+      }
+
+      .itemWrapper {
         display: flex;
-        flex-direction: column;
-        gap: 5px;
+        flex-wrap: wrap;
+        .item {
+          flex: 1 1 calc(50% - 20px);
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          padding: 10px;
 
-        label {
-        }
+          label {
+            font-size: 20px;
+            font-weight: bold;
+            color: teal;
+          }
 
-        input {
-          padding: 20px;
-          border-radius: 5px;
-          border: 1px solid gray;
+          input {
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            font-size: 20px;
+            background-color: #f0f0f0;
+          }
         }
       }
       button {
@@ -41,6 +72,14 @@
         color: white;
         font-weight: bold;
         cursor: pointer;
+        font-size: 20px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #f0f0f0;
+          color: teal;
+          border: 1px solid teal;
+        }
       }
     }
   }
