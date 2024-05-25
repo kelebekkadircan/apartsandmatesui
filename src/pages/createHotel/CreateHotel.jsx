@@ -13,6 +13,7 @@ import {
 import { newRequest } from "~/utils/newRequest";
 // import { Map } from "~/components/map/Map";
 import { MapFinder } from "~/components/map/MapFinder";
+import { useNavigate } from "react-router-dom";
 // import DenemeUploadWidget from "../test/DenemeUploadWidget";
 
 const CreateHotel = () => {
@@ -26,6 +27,8 @@ const CreateHotel = () => {
   const [services, setServices] = useState([]);
   const [getLatLng, setGetLatLng] = useState();
   // const [avatars, setAvatars] = useState([]);
+
+  const navigate = useNavigate();
 
   const [values, setValues] = useState({
     name: "",
@@ -112,6 +115,7 @@ const CreateHotel = () => {
       try {
         const res = await newRequest.post("/hotels", values);
         console.log(res.data);
+        navigate(`/list/${res.data._id}`);
       } catch (err) {
         console.log(err);
       }

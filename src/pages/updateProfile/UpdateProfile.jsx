@@ -246,6 +246,7 @@ const UpdateProfile = () => {
       console.log(res.data);
       localStorage.setItem("user", JSON.stringify(res?.data));
       navigate(`/profile/${user?._id}`);
+      window.location.reload();
     } catch (err) {
       console.log(err);
       setError(err.response?.data?.message || "An error occurred");

@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./updateHotel.scss";
-import FormInput from "~/components/form/FormInput";
+// import FormInput from "~/components/form/FormInput";
 import UploadWidget from "~/components/uploadWidget/UploadWidget";
 import {
   binaozellikleri,
@@ -13,6 +13,8 @@ import {
 import { newRequest } from "~/utils/newRequest";
 // import { Map } from "~/components/map/Map";
 import { MapFinder } from "~/components/map/MapFinder";
+import { useParams } from "react-router-dom";
+import FormInputUpdate from "~/components/form/FormInputUpdate";
 // import DenemeUploadWidget from "../test/DenemeUploadWidget";
 
 const UpdateHotel = () => {
@@ -25,10 +27,13 @@ const UpdateHotel = () => {
   const [roomFeatures, setRoomFeatures] = useState([]);
   const [services, setServices] = useState([]);
   const [getLatLng, setGetLatLng] = useState();
+  const [hotelKnowledge, setHotelKnowledge] = useState([]);
   // const [avatars, setAvatars] = useState([]);
 
+  const { id } = useParams();
+
   const [values, setValues] = useState({
-    name: "",
+    name: hotelKnowledge?.name || "",
     ownerName: "",
     title: "",
     address: "",
@@ -53,6 +58,7 @@ const UpdateHotel = () => {
     services: [],
     tags: [],
     isPaid: "free",
+    aboutHotel: hotelKnowledge.aboutHotel,
   });
 
   const onChange = (e) => {
@@ -119,7 +125,20 @@ const UpdateHotel = () => {
       alert("En az 4 resim yükleyiniz");
     }
   };
-  console.log(getLatLng, "GETLATLNG");
+  // console.log(getLatLng, "GETLATLNG");
+  useEffect(() => {
+    const fetchHotelKnowledge = async () => {
+      try {
+        const res = await newRequest.get(`/hotels/single/${id}`);
+        setHotelKnowledge(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchHotelKnowledge();
+  }, [id]);
+
+  console.log(hotelKnowledge, "HOTEL KNOWLEDGE");
 
   return (
     <div className="createHotel">
@@ -129,7 +148,7 @@ const UpdateHotel = () => {
             <h1 style={{ color: "#808080" }}> Otelini Oluştur</h1>
             <div className="ImageContainer">
               <div className="hotelImageContainer">
-                {images?.map((image, index) => (
+                {hotelKnowledge.images?.map((image, index) => (
                   <img src={image} key={index} alt="" />
                 ))}
                 {images.length < 4 && <div>EN AZ 4 RESİM YÜKLEYİNİZ !!</div>}
@@ -161,11 +180,12 @@ const UpdateHotel = () => {
             </div>
             <form onSubmit={handleSubmit}>
               {inputsHotelCreate?.map((input) => (
-                <FormInput
+                <FormInputUpdate
                   key={input.id}
                   {...input}
                   value={values[input.name]}
                   onChange={onChange}
+                  defaultValue={hotelKnowledge}
                 />
               ))}
 
@@ -180,6 +200,7 @@ const UpdateHotel = () => {
                   value={aboutHotel}
                   required
                   className="textAreaDeneme"
+                  defaultValue={hotelKnowledge.aboutHotel}
                 />
               </div>
               <div className="typeInput">
@@ -196,6 +217,7 @@ const UpdateHotel = () => {
                   value={standoutFeatures}
                   required
                   className="textAreaDeneme"
+                  defaultValue={hotelKnowledge.standoutFeatures}
                 />
               </div>
               <div className="typeInput">
@@ -209,6 +231,7 @@ const UpdateHotel = () => {
                   value={locationInfo}
                   required
                   className="textAreaDeneme"
+                  defaultValue={hotelKnowledge.locationInfo}
                 />
               </div>
               <div className="typeInput">
@@ -222,6 +245,7 @@ const UpdateHotel = () => {
                   value={roomInfo}
                   required
                   className="textAreaDeneme"
+                  defaultValue={hotelKnowledge.roomInfo}
                 />
               </div>
               <div className="typeInput">
@@ -231,6 +255,7 @@ const UpdateHotel = () => {
                   value={values.district}
                   onChange={onChange}
                   required
+                  defaultValue={hotelKnowledge.district}
                 >
                   {mahalleler.map((mahalle, i) => (
                     <option
@@ -251,6 +276,7 @@ const UpdateHotel = () => {
                   value={values.type}
                   onChange={onChange}
                   required
+                  defaultValue={hotelKnowledge.type}
                 >
                   <option
                     defaultChecked={true}

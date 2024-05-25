@@ -176,6 +176,10 @@ export const ProfilePage = () => {
   // const [myPosts, setMyPosts] = useState([]);
   const [favoritePosts, setFavoritePosts] = useState([]);
   const [isLoadingFavPosts, setIsLoadingFavPosts] = useState(false);
+  const [isLoadingMyPosts, setIsLoadingMyPosts] = useState(false);
+  const [isConfirmingDelete, setIsConfirmingDelete] = useState(null); // Yeni state değişkeni
+  const [postListError, setPostListError] = useState("");
+  const [myPosts, setMyPosts] = useState([]);
 
   const handleLogout = async () => {
     try {
@@ -230,11 +234,43 @@ export const ProfilePage = () => {
       setCurrentUser(res.data);
       //sconsole.log(currentUser, "Current User");
     };
-    fetchFavPosts();
+
+    const fetchMyPosts = async () => {
+      setIsLoadingMyPosts(true);
+      try {
+        const response = await newRequest.get(`/users/myPosts/${id}`);
+        setMyPosts(response.data);
+      } catch (error) {
+        setPostListError(error.response.data.message);
+      } finally {
+        setIsLoadingMyPosts(false);
+      }
+    };
     fetchUser();
+    fetchMyPosts();
+    fetchFavPosts();
     fetchMyHotels();
     fetchFavHotels();
   }, [id, setFavoritePosts, setFavoriteHotels]);
+
+  const handleDeleteClick = (hotelId) => {
+    if (isConfirmingDelete === hotelId) {
+      handleDelete(hotelId);
+    } else {
+      setIsConfirmingDelete(hotelId);
+      setTimeout(() => setIsConfirmingDelete(null), 3000);
+    }
+  };
+
+  const handleDelete = async (hotelId) => {
+    try {
+      console.log(hotelId);
+      // await newRequest.delete(`/hotels/${hotelId}`);
+      // setMyHotels(myHotels.filter((hotel) => hotel._id !== hotelId));
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   // if (!user || !user.details) {
   //   return <div>Loading...</div>;
@@ -248,6 +284,8 @@ export const ProfilePage = () => {
   console.log(favoriteHotels, "Favorite Hotels");
   console.log(myHotels, "My Hotels");
   // console.log(myPosts, "My Posts");
+
+  console.log(postListError, "Post List Error");
 
   return (
     <div className="outerDiv">
@@ -346,10 +384,55 @@ export const ProfilePage = () => {
                       <CardListing item={item} />
                     </div>
                     <div className="cardOperation">
-                      <button className="cardOperationDelete">Sil</button>
-                      <Link to={`/updateHotel/${item._id}`}>
+                      <button
+                        className="cardOperationDelete"
+                        onClick={() => handleDeleteClick(item._id)}
+                      >
+                        {isConfirmingDelete === item._id
+                          ? "Emin misiniz?"
+                          : "Sil"}
+                      </button>
+                      {/* <button className="cardOperationDelete">Sil</button> */}
+                      {/* <Link to={`/updateHotel/${item._id}`}>
                         <button>Güncelle</button>
-                      </Link>
+                      </Link> */}
+                    </div>
+                  </div>
+                ))
+              )}
+            </div>
+
+            <div className="profileHotelContainer">
+              <div className="profileUpdate">
+                <h1>Listelediğim Postlar</h1>
+
+                <Link to={"addPost"}>
+                  <button>Post Ekle</button>
+                </Link>
+              </div>
+              {isLoadingMyPosts ? (
+                <div>Loading...</div>
+              ) : postListError ? (
+                <div className="profileErrorMessage">{postListError}</div>
+              ) : (
+                myPosts?.map((item) => (
+                  <div className="profileHotelCard" key={item._id}>
+                    <div className="profilecardListing">
+                      <CardListing item={item} />
+                    </div>
+                    <div className="cardOperation">
+                      <button
+                        className="cardOperationDelete"
+                        onClick={() => handleDeleteClick(item._id)}
+                      >
+                        {isConfirmingDelete === item._id
+                          ? "Emin misiniz?"
+                          : "Sil"}
+                      </button>
+                      {/* <button className="cardOperationDelete">Sil</button> */}
+                      {/* <Link to={`/updateHotel/${item._id}`}>
+                        <button>Güncelle</button>
+                      </Link> */}
                     </div>
                   </div>
                 ))
