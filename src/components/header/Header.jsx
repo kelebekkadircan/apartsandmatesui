@@ -1,9 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import "./header.scss";
 
 export const Header = ({ params }) => {
-  // console.log(params);
+  console.log(params);
+
+  const loc = useLocation();
+  const location = loc.pathname.split("/")[1];
+  console.log(location);
   return (
     <div className="header">
       <div className="container">
@@ -20,15 +24,18 @@ export const Header = ({ params }) => {
                 <li>
                   <NavLink className="link">
                     <span className="upperCase">
-                      {params ? params : "Alanya"} Öğrenci Apartları{" "}
+                      {params ? params : "Alanya"}{" "}
+                      {location === "roommates" ? null : (
+                        <span>Öğrenci Apartları</span>
+                      )}
                     </span>
                   </NavLink>
                 </li>
               </ul>{" "}
             </div>
             <h1 className="title">
-              {params ? <span> {params} </span> : <span>Alanya</span>} Öğrenci
-              Apartları{" "}
+              {params ? <span> {params} </span> : <span>Alanya</span>}{" "}
+              {location === "roommates" ? null : <span>Öğrenci Apartları</span>}
             </h1>
             <div className="headerText">
               <p>

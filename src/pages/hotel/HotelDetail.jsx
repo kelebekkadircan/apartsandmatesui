@@ -2,16 +2,18 @@ import Slider from "~/components/singlePageSlider/SinglePageSlider";
 // import { userData } from "~/lib/dummydata";
 import "./singlePageHotelDetails.scss";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   FaLocationDot,
-  FaBowlFood,
-  FaWifi,
+  // FaBowlFood,
+  // FaWifi,
   FaPerson,
   FaAddressCard,
   // FaInternetExplorer,
 } from "react-icons/fa6";
-import { FaBed, FaHeadphones, FaPhone } from "react-icons/fa";
+import { FaPhone } from "react-icons/fa";
+import { useAuthContext } from "~/hooks/auth/useAuthContext";
+import { newRequest } from "~/utils/newRequest";
 // import { newRequest } from "~/utils/newRequest";
 
 const HotelDetail = ({
@@ -19,12 +21,17 @@ const HotelDetail = ({
   loading,
   singlePostData,
   setError,
-  error,
+  // error,
 }) => {
   const [detailData, setDetailData] = useState(singlePostData || []);
   // const [features, setFeatures] = useState([]);
 
   // const [isOpen, setIsOpen] = useState(false);
+  const { user } = useAuthContext();
+  console.log(user, "HotelDetailUSER");
+
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -44,11 +51,24 @@ const HotelDetail = ({
     }
   }, [singlePostData, setLoading, setError]);
   // console.log(singlePostData, "HotelDetailSINGLEPOSTDATA");
-  if (error) {
-    return <div>Error</div>;
-  }
+  // if (error) {
+  //   return <div>Error</div>;
+  // }
   console.log(detailData, "HotelDetailDETAILDATA");
 
+  const handleSaveHotel = async () => {
+    console.log(user);
+    // if (user === undefined || []) {
+    //   navigate("/login");
+    // }
+    try {
+      await newRequest.post(`users/${user?._id}/favorites/${id}`);
+
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
   // console.log(features, "HotelDetailFEATURES");
   return !loading ? (
     <>
@@ -72,6 +92,16 @@ const HotelDetail = ({
                 </Link>{" "}
               </li>
             </ul>
+            <div className="icons">
+              <div onClick={handleSaveHotel} className="icon">
+                {user?.favoriteHotels?.includes(id) ? (
+                  <img src="/img/saved.svg" alt="" />
+                ) : (
+                  <img src="/img/unsaved.svg" alt="" />
+                )}
+                {/* <img src={saved ? "/img/saved.svg" : "/img/unsaved.svg"} alt="" /> */}
+              </div>
+            </div>
           </div>
 
           {/* {loading ? (
@@ -106,7 +136,7 @@ const HotelDetail = ({
               </div>
             </div>
           </div>
-          <div className="hotelDetailBottom">
+          {/* <div className="hotelDetailBottom">
             <div className="hotelDetailBottomInfo">
               <div className="hotelDetailBottomInfoItem">
                 <div className="hotelDetailBottomInfoItemIcon">
@@ -142,7 +172,7 @@ const HotelDetail = ({
                 <FaHeadphones />
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="hotelInfoContent">
             <div className="tryhotelDetailBottomPreferredWrapper">
               <div className="hotelDetailBottomPreferredItem">

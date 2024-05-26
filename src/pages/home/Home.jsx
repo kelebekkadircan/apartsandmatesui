@@ -1,5 +1,5 @@
 import "./home.scss";
-import { Why, Hero, Popular, Blog, Aparts } from "~/components";
+import { Why, Hero, Popular, Aparts } from "~/components";
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
       <Hero />
       <Why />
       <Popular />
-      <Blog />
+      {/* <Blog /> */}
       <Aparts />
     </div>
   );

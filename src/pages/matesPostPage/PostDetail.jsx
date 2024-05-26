@@ -1,8 +1,8 @@
 import Slider from "~/components/singlePageSlider/SinglePageSlider";
 // import { userData } from "~/lib/dummydata";
 import "./singlePagePostDetails.scss";
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { IoMdPerson } from "react-icons/io";
 import { FaBeer, FaInstagram } from "react-icons/fa";
 import { IoCalendarNumberOutline } from "react-icons/io5";
@@ -16,6 +16,7 @@ import {
 } from "react-icons/md";
 
 import { newRequest } from "~/utils/newRequest";
+import { AuthContext } from "~/context/auth/AuthContext";
 // import { newRequest } from "~/utils/newRequest";
 
 const PostDetail = ({
@@ -26,12 +27,14 @@ const PostDetail = ({
   error,
 }) => {
   const [detailData, setDetailData] = useState(singlePostData || []);
-  const [user, setUser] = useState();
+  const [postOwner, setPostOwner] = useState();
   const [fetchId, setFetchId] = useState(singlePostData.userId || "");
-
+  const { id } = useParams();
   // const [features, setFeatures] = useState([]);
 
   // const [isOpen, setIsOpen] = useState(false);
+
+  const { user } = useContext(AuthContext);
 
   useEffect(() => {
     setLoading(true);
@@ -41,7 +44,7 @@ const PostDetail = ({
       setFetchId(singlePostData.userId);
       const fetchUser = async () => {
         const response = await newRequest(`/users/${fetchId}`);
-        setUser(response.data);
+        setPostOwner(response.data);
       };
 
       fetchUser();
@@ -58,6 +61,21 @@ const PostDetail = ({
   console.log(detailData, "HotelDetailDETAILDATA");
   // console.log(features, "HotelDetailFEATURES");
   console.log(user);
+
+  const handleSavePost = async () => {
+    console.log(user);
+    // if (user === undefined || []) {
+    //   navigate("/login");
+    // }
+    try {
+      await newRequest.post(`users/${user?._id}/favoriteposts/${id}`);
+
+      window.location.reload();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return !loading ? (
     <>
       <div className="Postdetails">
@@ -80,6 +98,16 @@ const PostDetail = ({
                 </Link>{" "}
               </li>
             </ul>
+            <div className="icons">
+              <div onClick={handleSavePost} className="icon">
+                {user?.myLikes?.includes(id) ? (
+                  <img src="/img/saved.svg" alt="" />
+                ) : (
+                  <img src="/img/unsaved.svg" alt="" />
+                )}
+                {/* <img src={saved ? "/img/saved.svg" : "/img/unsaved.svg"} alt="" /> */}
+              </div>
+            </div>
           </div>
 
           {/* {loading ? (
@@ -91,17 +119,17 @@ const PostDetail = ({
           <div className="hotelDetailTop">
             <div className="leftDetailTop">
               <div className="hotelDetailLogo">
-                <img src={user?.avatar || "/favicon.png"} alt="" />
+                <img src={postOwner?.avatar || "/favicon.png"} alt="" />
               </div>
               <div className="hotelDetailContent">
                 <div className="hotelDetailContentTitle">
-                  {user?.firstname} <span>, {user?.age || 24} </span>
+                  {postOwner?.firstname} <span>, {postOwner?.age || 24} </span>
                 </div>
                 <div className="hotelDetailContentTitle">
                   <div
                     style={{ textTransform: "capitalize", fontWeight: "300" }}
                   >
-                    {user?.sex}
+                    {postOwner?.sex}
                   </div>
                 </div>
               </div>

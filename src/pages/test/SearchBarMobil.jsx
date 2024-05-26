@@ -173,7 +173,19 @@ const SearchBarMobil = () => {
             <img src="/img/search.svg" alt="" />
           </div>
 
-          <p>APART ARA</p>
+          <p>Apart Ara</p>
+        </Link>
+      </div>
+      <div style={{ backgroundColor: "#0097B2" }} className="mobilSearchButton">
+        <Link
+          to={`/roommates?district=${query.district}&sexSituation=${query.apartType}`}
+          className="rightBar"
+        >
+          <div className="iconContainer">
+            <img src="/img/search.svg" alt="" />
+          </div>
+
+          <p>Mates Ara</p>
         </Link>
       </div>
     </div>

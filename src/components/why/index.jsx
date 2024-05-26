@@ -10,7 +10,7 @@ export const Why = () => {
           <div className="whyContent">
             <div className="title">
               Neden ve Nasıl <span style={{ color: "#4a5aa3" }}>Aparts</span> &{" "}
-              <span style={{ color: "#4a5aa3" }}>Mates</span>
+              <span style={{ color: "#0097B2" }}>Mates</span>
             </div>
             <p className="text">
               Alanyanın ilk Apart Otel tanıtım rehberi apartsandmates.com 2024
@@ -18,7 +18,7 @@ export const Why = () => {
               sahiplerini bir araya getiriyor. Kriterlerinize uygun apartı
               bulamazsanız, arayın sizin için en uygun yurdu bulalım!
             </p>
-            <Link className="buttonMore">
+            <Link to={"/aboutUs"} className="buttonMore">
               <span>Devamını Oku</span>
               <img src={More} alt="" />
             </Link>
@@ -26,6 +26,7 @@ export const Why = () => {
           <div className="whyImages">
             <img
               src="https://www.yurtlarburada.com/img/popular-cities.png"
+              // src="/micoOne.png"
               alt=""
             />
           </div>

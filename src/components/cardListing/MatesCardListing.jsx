@@ -32,9 +32,9 @@ export const MatesCardListing = ({ item }) => {
   const { _id } = currentUser;
 
   const handleSavePost = async () => {
-    if (!currentUser) {
-      navigate("/login");
-    }
+    // if (!currentUser) {
+    //   navigate("/login");
+    // }
     try {
       await newRequest.post(`users/${_id}/favoriteposts/${item?._id}`);
       if (isProfilePage === "profile") {

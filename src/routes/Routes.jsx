@@ -31,6 +31,7 @@ import FormRegister from "~/components/form/FormRegister";
 import RegisterTwo from "~/pages/register/RegisterTwo";
 import LoginTwo from "~/pages/login/LoginTwo";
 import TalepForm from "~/pages/yurtForm/TalepForm";
+import AboutUs from "~/pages/about/AboutUs";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -86,6 +87,10 @@ const App = () => {
         {
           path: "/dorm",
           element: <TalepForm />,
+        },
+        {
+          path: "/aboutUs",
+          element: <AboutUs />,
         },
         {
           path: "*",

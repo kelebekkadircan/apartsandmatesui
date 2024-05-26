@@ -57,13 +57,18 @@
 
 import { Marker, Popup } from "react-leaflet";
 import "./pin.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function Pin({ item }) {
   const [itemData, setItemData] = useState(item || {});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const location = useLocation();
+  console.log(location.pathname, "LOCATION");
+  const loc = location.pathname.split("/")[1];
+  console.log(loc, "LOC");
 
   const [coverImage, setCoverImage] = useState(
     item?.images?.[0] || "/noLogo.png"
@@ -101,8 +106,16 @@ function Pin({ item }) {
         <div className="popupContainer">
           <img src={coverImage} alt="Cover" />
           <div className="textContainer">
-            <Link to={`/list/${itemData._id}`}>{itemData.title}</Link>
-            <b>$ {itemData.min}</b>
+            <Link
+              to={
+                loc === "roommates"
+                  ? `/roommates/${itemData._id}`
+                  : `/list/${itemData._id}`
+              }
+            >
+              {itemData.title}
+            </Link>
+            <b> {itemData.min}₺</b>
           </div>
         </div>
       </Popup>

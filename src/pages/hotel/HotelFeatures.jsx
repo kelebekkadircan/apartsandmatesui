@@ -65,9 +65,9 @@ const HotelFeatures = ({
               <div className="navbarListItem">
                 <NavLink>Özellikler</NavLink>
               </div>
-              <div className="navbarListItem">
+              {/* <div className="navbarListItem">
                 <NavLink>Yorumlar</NavLink>
-              </div>
+              </div> */}
               <div className="navbarListItem">
                 <NavLink>Harita</NavLink>
               </div>
@@ -117,7 +117,7 @@ const HotelFeatures = ({
             </div>
           </div>
         </div>
-        <div className="contentComment">
+        {/* <div className="contentComment">
           <div className="contentCommentContainer">
             <div className="resultBracket">
               <div className="emptyContent">
@@ -145,7 +145,7 @@ const HotelFeatures = ({
               </div>
             </form>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="mapContainer">
         {/* {loading ? (

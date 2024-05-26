@@ -99,8 +99,12 @@
             line-height: 1.6;
             padding: 10px;
             gap: 20px;
+            display: flex;
+            flex-wrap: wrap;
             // list-style-type: none;
             li {
+              flex: 1 1 calc(33.333% - 20px); // 3'e bölmek için hesaplama
+
               margin-bottom: 2rem;
               font-size: 14px;
               color: #6b7493;

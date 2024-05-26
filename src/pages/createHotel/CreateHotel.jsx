@@ -118,6 +118,8 @@ const CreateHotel = () => {
         navigate(`/list/${res.data._id}`);
       } catch (err) {
         console.log(err);
+      } finally {
+        navigate(`/list`);
       }
     } else {
       alert("En az 4 resim yükleyiniz");

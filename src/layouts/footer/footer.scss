@@ -146,6 +146,7 @@
         display: flex;
         align-items: stretch;
         width: 100%;
+        display: none;
 
         @include md {
           display: none;

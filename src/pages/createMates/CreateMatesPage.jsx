@@ -13,7 +13,7 @@ import FormInput from "~/components/form/FormInput";
 import { MapFinder } from "~/components/map/MapFinder";
 import UploadWidget from "~/components/uploadWidget/UploadWidget";
 import { newRequest } from "~/utils/newRequest";
-import { redirect } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 
 const CreateMatesPage = () => {
   const [images, setImages] = useState([]);
@@ -26,6 +26,7 @@ const CreateMatesPage = () => {
   const [hobies, setHobies] = useState([]);
   const [getLatLng, setGetLatLng] = useState();
   // const [avatars, setAvatars] = useState([]);
+  const navigate = useNavigate();
 
   const [values, setValues] = useState({
     title: "",
@@ -115,6 +116,8 @@ const CreateMatesPage = () => {
         redirect("/roommates");
       } catch (err) {
         console.log(err);
+      } finally {
+        navigate(`/list`);
       }
     } else {
       alert("En az 4 resim yükleyiniz");

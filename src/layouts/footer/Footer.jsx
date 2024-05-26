@@ -27,7 +27,8 @@ const Footer = () => {
                 alt=""
               /> */}
               <h1>
-                Aparts<span style={{ color: "#1C5C90" }}>&</span>Mates
+                Aparts<span style={{ color: "#1C5C90" }}>&</span>{" "}
+                <span style={{ color: "#0097B2" }}> Mates</span>
               </h1>
             </Link>
             <div className="infoTxt">

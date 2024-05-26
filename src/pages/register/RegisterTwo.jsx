@@ -156,6 +156,12 @@ const RegisterTwo = () => {
                 <span onClick={() => navigate("/login")}>Oturum Açın</span>
               </p>
             </div>
+            <div className="RegisterTwoFormFooter">
+              <p>
+                Oteliniz var mı?{" "}
+                <span onClick={() => navigate("/dorm")}>Talep Oluşturun</span>
+              </p>
+            </div>
           </form>
         </div>
       </div>

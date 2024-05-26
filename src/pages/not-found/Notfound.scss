@@ -1,4 +1,72 @@
+// Colors
+$primary-color: #333; // Mavi
+$background-color: #d9dee6; // Siyah
+$text-color: #fff; // Beyaz
+
+// Mixin for border-radius
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
 .notFound {
-  min-height: 100svh;
-  background-color: red;
+  background-color: $background-color;
+  color: $text-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.notFoundWrapper {
+  background-color: lighten($background-color, 10%);
+  padding: 20px;
+  @include border-radius(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.notFoundContent {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.notFoundTitle {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  @include border-radius(10px);
+  background-color: $primary-color;
+  padding: 10px 20px;
+  color: $text-color;
+}
+
+.notFoundNavigator {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  @include border-radius(10px);
+  border: 2px solid $primary-color;
+  padding: 10px 20px;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+
+  .navigationLinks {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+
+    .navLink {
+      color: $primary-color;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 20px;
+      @include border-radius(10px);
+      border: 2px solid $primary-color;
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $text-color;
+      }
+    }
+  }
 }

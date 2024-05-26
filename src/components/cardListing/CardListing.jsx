@@ -31,9 +31,10 @@ export const CardListing = ({ item }) => {
   const { _id } = currentUser;
 
   const handleSaveHotel = async () => {
-    if (!currentUser) {
-      navigate("/login");
-    }
+    console.log(currentUser);
+    // if (currentUser === undefined || []) {
+    //   navigate("/login");
+    // }
     try {
       await newRequest.post(`users/${_id}/favorites/${item?._id}`);
       if (isProfilePage === "profile") {

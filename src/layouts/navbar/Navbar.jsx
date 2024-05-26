@@ -148,7 +148,8 @@ const Navbar = () => {
         <div className="left">
           <Link to="/" className="link">
             <div className="logo">
-              Aparts<span className="andSign">&</span>Mates
+              Aparts<span className="andSign">&</span>{" "}
+              <span style={{ color: "#0097B2" }}>Mates</span>
             </div>
           </Link>
         </div>
@@ -159,7 +160,12 @@ const Navbar = () => {
             </Link>
 
             <Link to="/roommates">
-              <button className="findmate">Oda Arkadaşı Bul</button>
+              <button
+                style={{ backgroundColor: "#0097B2" }}
+                className="findmate"
+              >
+                Oda Arkadaşı Bul
+              </button>
             </Link>
             <Link to="/dorm">
               <button className="findmate">Otelimi Ekle</button>
