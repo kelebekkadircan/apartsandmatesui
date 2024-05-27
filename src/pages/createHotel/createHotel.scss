@@ -14,6 +14,7 @@
     max-width: 1366px;
     margin: 0 auto;
     // padding: 30px;
+    padding: 15px;
     // background-color: red;
     .createHotelWrapper {
       margin: 30px 50px 100px 0px;
@@ -174,7 +175,6 @@
           margin: 20px 0px;
           overflow: hidden;
           padding: 20px;
-          background-color: yellow;
 
           @include sm {
             flex-direction: column;
@@ -192,7 +192,6 @@
             display: flex;
             flex-direction: row;
             gap: 20px;
-            background-color: red;
 
             @include sm {
               flex-direction: column;
@@ -205,7 +204,6 @@
               height: 100%;
               object-fit: contain;
               border-radius: 5px;
-              background-color: blue;
             }
           }
         }
