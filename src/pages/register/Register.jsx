@@ -1,5 +1,5 @@
 import "./register.scss";
-import video from "/assets/login/video.mp4";
+// import video from "/assets/login/video.mp4";
 import logo from "/assets/login/logo.png";
 import { Link } from "react-router-dom";
 import { FaUserShield } from "react-icons/fa";
@@ -45,7 +45,7 @@ const Register = () => {
       <div className="registerPage flex">
         <div className="container flex">
           <div className="videoDiv">
-            <video src={video} autoPlay muted loop></video>
+            {/* <video src={video} autoPlay muted loop></video> */}
 
             <div className="textDiv">
               <h2 className="title">Find Aparts or Mates</h2>
