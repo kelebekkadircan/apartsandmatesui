@@ -375,7 +375,6 @@ const CreateHotel = () => {
                 Oluştur
               </button>
               {error && <div className="CreateHotelError">{error}</div>}
-              <div>kadir</div>
             </form>
             {/* <DenemeUploadWidget avatars={avatars} setAvatars={setAvatars} /> */}
           </div>
