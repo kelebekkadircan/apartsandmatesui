@@ -1,3 +1,5 @@
+@import "../../layouts/main/responsive.scss";
+
 .aboutUs {
   min-height: 100svh;
   //   background-color: #333;
@@ -29,6 +31,10 @@
         font-weight: 700;
         color: #333;
         margin-bottom: 20px;
+
+        @include sm {
+          font-size: 1.4rem;
+        }
       }
 
       .aboutUsDescription {
@@ -40,6 +46,16 @@
         width: 100%;
         padding: 10px;
         border-radius: 10px;
+        p {
+          font-size: 1.6rem;
+          // line-height: 20px;
+          color: #333;
+          margin-bottom: 20px;
+          background-color: #fff;
+          width: 100%;
+          padding: 10px;
+          border-radius: 10px;
+        }
       }
     }
 
@@ -64,6 +80,8 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
+        margin-bottom: 50px;
+        padding-bottom: 50px;
 
         .aboutUsProfileItem {
           flex: 1 1 calc(33.333% - 30px);

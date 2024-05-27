@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "~/context/auth/AuthContext";
 import "./login.scss";
-// import video from "/assets/login/video.mp4";
+import video from "/assets/login/video.mp4";
 import logo from "/assets/login/logo.png";
 import { Link } from "react-router-dom";
 import { FaUserShield } from "react-icons/fa";
@@ -44,7 +44,7 @@ const Login = () => {
       <div className="loginPage flex">
         <div className="container flex">
           <div className="videoDiv">
-            {/* <video src={video} autoPlay muted loop></video> */}
+            <video src={video} autoPlay muted loop></video>
 
             <div className="textDiv">
               <h2 className="title">Find Aparts or Mates</h2>

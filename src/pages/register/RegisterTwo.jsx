@@ -6,7 +6,7 @@ import { useRegister } from "~/hooks/auth/useRegister";
 
 const RegisterTwo = () => {
   const { user } = useContext(AuthContext);
-  const { register } = useRegister();
+  const { register, error } = useRegister();
 
   const [newUser, setNewUser] = useState({
     username: "",
@@ -30,8 +30,13 @@ const RegisterTwo = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
-    await register(newUser);
-    console.log("NEW USER ", newUser);
+
+    try {
+      await register(newUser);
+      console.log("NEW USER ", newUser);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   console.log(user);
@@ -136,6 +141,7 @@ const RegisterTwo = () => {
             <div className="RegisterTwoFormButton">
               <button type="submit">Kayıt Ol</button>
             </div>
+            {error && <div className="RegisterTwoError">{error}</div>}
             <div className="RegisterTwoFormTerm">
               <p>
                 Kaydolurken{" "}

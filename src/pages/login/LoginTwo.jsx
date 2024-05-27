@@ -6,14 +6,13 @@ import "./LoginTwo.scss";
 
 const LoginTwo = () => {
   const { user } = useContext(AuthContext);
-  const { login } = useLogin();
+  const { login, error } = useLogin();
 
   const [newUser, setNewUser] = useState({
     username: "",
     password: "",
   });
   const navigate = useNavigate();
-  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     setNewUser((prev) => {
@@ -31,7 +30,6 @@ const LoginTwo = () => {
       console.log("NEW USER ", newUser);
     } catch (err) {
       console.log(err);
-      setError(err.response.data.message);
     }
   };
 
@@ -77,8 +75,8 @@ const LoginTwo = () => {
 
             <div className="LoginTwoFormButton">
               <button type="submit">Giriş Yap</button>
-              <span>{error && <div>{error}</div>}</span>
             </div>
+            {error && <div className="LoginTwoFormError">{error}</div>}
             <div className="LoginFormForgotPassword">
               <p>
                 {" "}

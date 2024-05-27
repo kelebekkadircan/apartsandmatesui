@@ -186,6 +186,7 @@ const CreateHotel = () => {
                   value={aboutHotel}
                   required
                   className="textAreaDeneme"
+                  placeholder=" örnek : Otelimiz Alanya'nın kalbinde konumlanmış olup, üniversite öğrencilerine konforlu konaklama ve üstün hizmet kalitesi sunarak, ders çalışmak için ideal bir ortam sağlamaktadır."
                 />
               </div>
               <div className="typeInput">
@@ -202,6 +203,7 @@ const CreateHotel = () => {
                   value={standoutFeatures}
                   required
                   className="textAreaDeneme"
+                  placeholder="örnek: Otel, 24 saat güvenlik, ücretsiz Wi-Fi, çeşitli sosyal alanlar ve düzenli temizlik hizmetleri gibi olanaklarla misafirlerine konforlu ve güvenli bir ortam sağlar."
                 />
               </div>
               <div className="typeInput">
@@ -215,6 +217,8 @@ const CreateHotel = () => {
                   value={locationInfo}
                   required
                   className="textAreaDeneme"
+                  placeholder="örnek: Marketlere, sahile ve alışveriş merkezlerine birkaç adım uzaklıkta olan otelimiz, hem kolay ulaşım hem de tarihi yerlere yakın olma avantajı sunar. Merkezi konumuyla ders çalışmak  isteyen öğrenciler için idealdir.
+                  "
                 />
               </div>
               <div className="typeInput">
@@ -228,6 +232,8 @@ const CreateHotel = () => {
                   value={roomInfo}
                   required
                   className="textAreaDeneme"
+                  placeholder="örnek : iki kişilik klimalı odaları, konforlu konaklama sunar. Modern donanımlarıyla odalarımızda rahat yataklar, çalışma masası, TV, internet ve banyo bulunmaktadır.
+                  "
                 />
               </div>
               <div className="typeInput">

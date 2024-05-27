@@ -1139,7 +1139,7 @@ export const inputsPostCreate = [
             "Post Başlığı en az 3  en fazla 25 karakter olmalıdır ve özel karakter içeremez!",
         label: "Post Başlığı",
         // pattern: "^(?! )[A-Za-z0-9ŞşÇçİÜüĞğÖö ]{3,25}$",
-        required: false,
+        required: true,
     },
     {
         id: 2,

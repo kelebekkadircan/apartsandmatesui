@@ -105,7 +105,9 @@
           border: black 1px solid;
 
           @include sm {
-            display: none;
+            // display: none;
+            padding: 5px 10px;
+            font-size: 12px;
           }
 
           &:hover {

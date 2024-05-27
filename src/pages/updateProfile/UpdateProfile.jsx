@@ -341,6 +341,7 @@ const UpdateProfile = () => {
         </form>
       </div>
       <div className="sideContainer">
+        {user.isHotelOwner && <div>Otelinizin Logosunu Ekleyiniz</div>}
         <img
           src={avatar[0] || currentUser?.avatar || "/noavatar.jpg"}
           alt="avatar"

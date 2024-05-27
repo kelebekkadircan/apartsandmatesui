@@ -176,7 +176,7 @@ const SearchBarMobil = () => {
           <p>Apart Ara</p>
         </Link>
       </div>
-      <div style={{ backgroundColor: "#0097B2" }} className="mobilSearchButton">
+      {/* <div style={{ backgroundColor: "#0097B2" }} className="mobilSearchButton">
         <Link
           to={`/roommates?district=${query.district}&sexSituation=${query.apartType}`}
           className="rightBar"
@@ -187,7 +187,7 @@ const SearchBarMobil = () => {
 
           <p>Mates Ara</p>
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

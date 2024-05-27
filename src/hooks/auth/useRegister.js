@@ -1,12 +1,14 @@
 import { newRequest } from "~/utils/newRequest";
 import { useAuthContext } from "./useAuthContext"
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 
 export const useRegister = () => {
 
     const { dispatch, } = useAuthContext()
     const navigate = useNavigate();
+    const [error, setError] = useState(null);
 
 
     const register = async (props) => {
@@ -22,9 +24,10 @@ export const useRegister = () => {
             navigate("/login");
         } catch (err) {
             console.log("USE LOGIN ERR : 28.SATIR", err.response.data.message);
+            setError(err.response.data.message);
             dispatch({ type: "LOGIN_FAILURE", payload: err.response.data.message });
         }
     }
 
-    return { register };
+    return { register, error };
 }

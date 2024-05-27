@@ -131,7 +131,7 @@ const CreateMatesPage = () => {
         <div className="createHotelContainer">
           <div className="createHotelWrapper">
             <div className="createHotelForm">
-              <h1 style={{ color: "#808080" }}> Otelini Oluştur</h1>
+              <h1 style={{ color: "#808080" }}> Mates İlanını Oluştur!</h1>
               <div className="ImageContainer">
                 <div className="hotelImageContainer">
                   {images?.map((image, index) => (
@@ -456,6 +456,8 @@ const CreateMatesPage = () => {
                     required
                     className="textAreaDeneme"
                     style={{ height: "500px" }}
+                    placeholder="örnek : Ekonomik nedenlerden ötürü Kirayı karşılayamıyorum O yüzden bir oda arkadaşına ihtiyacım var. evin bulunduğu mahalle çok sakin ve komşularımız da çok iyi insanlar.
+                    "
                   />
                 </div>
                 <div className="typeInput">

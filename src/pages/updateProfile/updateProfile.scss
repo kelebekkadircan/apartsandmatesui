@@ -1,3 +1,5 @@
+@import "../../layouts/main/responsive.scss";
+
 .profileUpdatePage {
   height: 100%;
   display: flex;
@@ -11,6 +13,10 @@
 
   .error {
     color: red;
+  }
+
+  @include sm {
+    flex-direction: column;
   }
 
   .formContainer {

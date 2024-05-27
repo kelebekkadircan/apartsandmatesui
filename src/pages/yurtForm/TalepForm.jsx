@@ -37,6 +37,9 @@ const TalepForm = () => {
         newUser
       );
       console.log(res);
+      if (res.status === 200) {
+        navigate("/login");
+      }
     } catch (err) {
       setError(err.response.data.error);
     }
@@ -149,12 +152,14 @@ const TalepForm = () => {
               </p>
             </div>
             <div className="RegisterTwoLine"></div>
-            <div className="RegisterTwoFormFooter">
-              <p>
-                Zaten Hesabınız var mı?{" "}
-                <span onClick={() => navigate("/login")}>Oturum Açın</span>
-              </p>
-            </div>
+            {user && (
+              <div className="RegisterTwoFormFooter">
+                <p>
+                  Zaten Hesabınız var mı?{" "}
+                  <span onClick={() => navigate("/login")}>Oturum Açın</span>
+                </p>
+              </div>
+            )}
           </form>
         </div>
       </div>
