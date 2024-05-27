@@ -266,6 +266,8 @@ const UpdateProfile = () => {
     fetchUser();
   }, [fetchUser]);
 
+  console.log(currentUser);
+
   return (
     <div className="profileUpdatePage">
       <div className="formContainer">

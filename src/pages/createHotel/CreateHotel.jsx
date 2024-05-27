@@ -122,7 +122,7 @@ const CreateHotel = () => {
         navigate(`/list`);
       } catch (err) {
         console.log(err);
-        setError(err.data.response.message);
+        setError(err.response.data.message);
       } finally {
         setLoading(false);
       }
@@ -372,9 +372,10 @@ const CreateHotel = () => {
                 style={{ backgroundColor: "#4a5aa3" }}
                 type="submit"
               >
-                Gönder
+                Oluştur
               </button>
               {error && <div className="CreateHotelError">{error}</div>}
+              <div>kadir</div>
             </form>
             {/* <DenemeUploadWidget avatars={avatars} setAvatars={setAvatars} /> */}
           </div>

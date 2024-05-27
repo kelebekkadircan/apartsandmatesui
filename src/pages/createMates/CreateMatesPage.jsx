@@ -531,7 +531,7 @@ const CreateMatesPage = () => {
                   style={{ backgroundColor: "#4a5aa3" }}
                   type="submit"
                 >
-                  Gönder
+                  Oluştur
                 </button>
                 {error && <div className="CreteMatePageError">{error}</div>}
               </form>

@@ -55,12 +55,11 @@
         justify-content: center;
 
         .RegButton {
-          padding: 10px 15px;
-          background-color: white;
+          padding: 15px 30px;
+          background-color: #fff;
           border: black 1px solid;
           color: black;
           border-radius: 8px;
-          padding: 10px 20px;
           cursor: pointer;
 
           @include sm {
@@ -71,20 +70,26 @@
           &:hover {
             background-color: #e4e4e4;
             border: black 1px solid;
+            scale: 1.04;
           }
         }
         .LogButton {
-          padding: 10px 15px;
+          padding: 15px 30px;
           background-color: black;
           border: black 1px solid;
           color: white;
           border-radius: 8px;
-          padding: 10px 20px;
           cursor: pointer;
+
+          @include sm {
+            padding: 5px 10px;
+            font-size: 12px;
+          }
 
           transition: all 0.5s ease-in-out;
           &:hover {
             background-color: #393838;
+            scale: 1.04;
           }
         }
 
@@ -114,6 +119,7 @@
             background-color: #0097b2;
             &:hover {
               background-color: #147181;
+              scale: 1.04;
             }
           }
 
@@ -122,6 +128,7 @@
 
             &:hover {
               background-color: #2e3d7f;
+              scale: 1.04;
             }
           }
         }

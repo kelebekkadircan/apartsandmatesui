@@ -114,6 +114,14 @@ const SearchBarMobil = () => {
         ) : (
           districts.length > 0 && (
             <div className="listDistricts">
+              <div
+                className="districtItem"
+                name="district"
+                value=""
+                onClick={(e) => handleClick(e)}
+              >
+                Hepsi
+              </div>
               {districts?.map((d, index) => (
                 <div
                   className="districtItem"
@@ -149,6 +157,15 @@ const SearchBarMobil = () => {
         </div>
         {types.length > 0 && (
           <div className="listDistricts">
+            <div
+              className="districtItem"
+              name="apartType"
+              placeholder="Apart Tipini Giriniz..."
+              value=""
+              onClick={(e) => handleClick(e)}
+            >
+              Hepsi
+            </div>
             {types?.map((d, index) => (
               <div
                 className="districtItem"
