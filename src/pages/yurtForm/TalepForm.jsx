@@ -41,7 +41,7 @@ const TalepForm = () => {
         navigate("/");
       }
     } catch (err) {
-      setError(err.response.data.error);
+      setError(err.response.data.message);
     }
   };
 
@@ -49,7 +49,7 @@ const TalepForm = () => {
   console.log("REGISTER USER ", newUser);
 
   return (
-    <div className="RegisterTwo">
+    <div className="RegisterTwoTalep">
       <div className="RegisterTwoContainer">
         <div className="RegisterTwoHeader">
           <h1>Otel Kayıt Talep Formu</h1>
@@ -137,7 +137,7 @@ const TalepForm = () => {
             <div className="RegisterTwoFormButton">
               <button type="submit">Gönder</button>
             </div>
-            {error && <p>{error}</p>}
+            {error && <div className="RegisterTwoError">{error}</div>}
             <div className="RegisterTwoFormTerm">
               <p>
                 Kaydolurken{" "}

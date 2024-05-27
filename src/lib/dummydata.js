@@ -821,9 +821,9 @@ export const inputsHotelCreate = [
         type: "text",
         placeholder: "örnek : Alanya Apart Otel",
         errorMessage:
-            "Otel adı en az 3 en fazla 25 karakter olmalıdır ve özel karakter içeremez!",
+            "Otel adı en az 3 en fazla 45 karakter olmalıdır ve özel karakter içeremez!",
         label: "Otel Adı",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,25}$",
+        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,45}$",
         required: true,
     },
     {
@@ -832,9 +832,9 @@ export const inputsHotelCreate = [
         type: "text",
         placeholder: "örnek : Ali Atay",
         errorMessage:
-            "Otel sahibi adı en az 3  en fazla 25 karakter olmalıdır ve özel karakter içeremez!",
+            "Otel sahibi adı en az 3  en fazla 45 karakter olmalıdır ve özel karakter içeremez!",
         label: "Otel Sahibi Adı",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,25}$",
+        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,45}$",
         required: true,
     },
     {
@@ -843,9 +843,9 @@ export const inputsHotelCreate = [
         type: "text",
         placeholder: "örnek : Alanya Apart",
         errorMessage:
-            "Otel Başlığı en az 3  en fazla 25 karakter olmalıdır ve özel karakter içeremez!",
+            "Otel Başlığı en az 3  en fazla 40 karakter olmalıdır ve özel karakter içeremez!",
         label: "Otel Başlığı",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,25}$",
+        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,40}$",
         required: true,
     },
     {
@@ -854,9 +854,9 @@ export const inputsHotelCreate = [
         type: "text",
         placeholder: "örnek : Kestel Mah. Üniversite Cad. Alanya/Antalya",
         errorMessage:
-            "Adres en az 3 en fazla 45 karakter olmalıdır ve özel karakter içeremez!",
+            "Adres en az 3 en fazla 100 karakter olmalıdır ve özel karakter içeremez!",
         label: "Adres",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,25}$",
+        // pattern: "^(?![ ] )(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s ]{3,100}$",
         required: true,
     },
     {
@@ -887,7 +887,7 @@ export const inputsHotelCreate = [
         placeholder: "ornek : 0555 555 55 55",
         errorMessage: "Geçerli bir Telefon numarası Giriniz! (örnek : 0555 555 55 55)",
         label: "Telefon Numarası",
-        pattern: "^(05)[0-9][0-9]\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}",
+        pattern: "^([0-9]){4}\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}",
         required: true,
     },
     {
@@ -935,7 +935,7 @@ export const inputsHotelCreate = [
         name: "receptionNumber",
         type: "text",
         placeholder: "örnek : 0216 555 55 55",
-        pattern: "^(05)[0-9][0-9]\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}",
+        pattern: "^([0-9]){4}\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}",
         errorMessage: "Geçerli bir Telefon numarası Giriniz! (örnek : 0216 555 55 55)",
         label: "Resepsiyon Numarası",
         required: true,
@@ -1143,7 +1143,7 @@ export const inputsPostCreate = [
             "Post Başlığı en az 3  en fazla 25 karakter olmalıdır ve özel karakter içeremez!",
         label: "Post Başlığı",
         pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,25}$",
-        required: false,
+        required: true,
     },
     {
         id: 2,
@@ -1153,7 +1153,7 @@ export const inputsPostCreate = [
         errorMessage:
             "Adres en az 3  en fazla 45 karakter olmalıdır ve özel karakter içeremez!",
         label: "Adres",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,45}$",
+        //pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s//:.]{3,45}$",
         required: false,
     },
     // {
@@ -1175,17 +1175,17 @@ export const inputsPostCreate = [
         pattern: "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
         errorMessage: "Geçerli bir mail adresi giriniz!",
         label: "Email",
-        required: false,
+        required: true,
     },
     {
         id: 5,
         name: "phoneNumber",
         type: "text",
         placeholder: "örnek : 0555 555 55 55",
-        pattern: "^(05)[0-9][0-9]\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}",
+        pattern: "^([0-9]){4}\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}",
         errorMessage: "Geçerli bir Telefon numarası Giriniz! 0555 555 55 55 şeklinde giriniz",
         label: "Telefon Numarası",
-        required: false,
+        required: true,
     },
 
     {
@@ -1196,7 +1196,7 @@ export const inputsPostCreate = [
         pattern: "^[0-9]{1,5}$",
         errorMessage: "Geçerli bir Fiyat Giriniz ve sayı olduğundan emin olunuz!",
         label: "Odanızın Fiyatı",
-        required: false,
+        required: true,
     },
     {
         id: 7,
@@ -1206,7 +1206,7 @@ export const inputsPostCreate = [
         pattern: "^[0-9]{1,5}$",
         errorMessage: "Geçerli bir depozito fiyatı Giriniz ve sayı olduğundan emin olunuz!",
         label: "Depozito Fiyatı ",
-        required: false,
+        required: true,
     },
     {
         id: 8,
@@ -1214,9 +1214,9 @@ export const inputsPostCreate = [
         type: "text",
         placeholder: "örnek : @elonmusk",
         errorMessage: "Geçerli bir instagram kullanıcı adı Giriniz!",
-        pattern: "^@[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){0,28}$",
+        pattern: "^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){0,28}$",
         label: "Instagram Kullanıcı Adınızı Giriniz @ işareti ile başlayarak!",
-        required: false,
+        required: true,
     },
 
 ];
