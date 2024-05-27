@@ -13,7 +13,7 @@ import FormInput from "~/components/form/FormInput";
 import { MapFinder } from "~/components/map/MapFinder";
 import UploadWidget from "~/components/uploadWidget/UploadWidget";
 import { newRequest } from "~/utils/newRequest";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const CreateMatesPage = () => {
   const [images, setImages] = useState([]);
@@ -25,6 +25,8 @@ const CreateMatesPage = () => {
   const [roomFeatures, setRoomFeatures] = useState([]);
   const [hobies, setHobies] = useState([]);
   const [getLatLng, setGetLatLng] = useState();
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   // const [avatars, setAvatars] = useState([]);
   const navigate = useNavigate();
 
@@ -110,14 +112,17 @@ const CreateMatesPage = () => {
 
     console.log("Form submitted!", values);
     if (values.images.length > 3 && getLatLng !== undefined) {
+      setLoading(true);
       try {
         const res = await newRequest.post("/posts", values);
         console.log(res.data);
-        redirect("/roommates");
+        setLoading(false);
+        navigate("/roommates");
       } catch (err) {
         console.log(err);
+        setError(err.response.data.message);
       } finally {
-        navigate(`/roommates`);
+        setLoading(false);
       }
     } else {
       alert("En az 4 resim yükleyiniz ve konum seçiniz !!");
@@ -521,7 +526,14 @@ const CreateMatesPage = () => {
                   </div>
                 </div>
 
-                <button type="submit">Submit</button>
+                <button
+                  disabled={loading}
+                  style={{ backgroundColor: "#4a5aa3" }}
+                  type="submit"
+                >
+                  Gönder
+                </button>
+                {error && <div className="CreteMatePageError">{error}</div>}
               </form>
               {/* <DenemeUploadWidget avatars={avatars} setAvatars={setAvatars} /> */}
             </div>

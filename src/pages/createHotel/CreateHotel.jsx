@@ -26,6 +26,8 @@ const CreateHotel = () => {
   const [roomFeatures, setRoomFeatures] = useState([]);
   const [services, setServices] = useState([]);
   const [getLatLng, setGetLatLng] = useState();
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   // const [avatars, setAvatars] = useState([]);
 
   const navigate = useNavigate();
@@ -38,12 +40,12 @@ const CreateHotel = () => {
     shortDesc: "",
     email: "",
     phoneNumber: "",
-    bedCount: 120,
-    busStop: 300,
-    university: 1500,
-    market: 200,
-    min: 5000,
-    max: 12500,
+    bedCount: Number,
+    busStop: Number,
+    university: Number,
+    market: Number,
+    min: Number,
+    max: Number,
     standoutFeatures: "",
     locationInfo: "",
     roomInfo: "",
@@ -112,14 +114,17 @@ const CreateHotel = () => {
 
     if (values.images.length > 3 && getLatLng !== undefined) {
       // console.log("Form submitted!", values);
+      setLoading(true);
       try {
         const res = await newRequest.post("/hotels", values);
         console.log(res.data);
+        setLoading(false);
         navigate(`/list`);
       } catch (err) {
         console.log(err);
+        setError(err.data.response.message);
       } finally {
-        navigate(`/list`);
+        setLoading(false);
       }
     } else {
       alert("En az 4 resim yükleyiniz ve konum seçiniz");
@@ -362,7 +367,14 @@ const CreateHotel = () => {
                 </select>
               </div>
 
-              <button type="submit">Submit</button>
+              <button
+                disabled={loading}
+                style={{ backgroundColor: "#4a5aa3" }}
+                type="submit"
+              >
+                Gönder
+              </button>
+              {error && <div className="CreateHotelError">{error}</div>}
             </form>
             {/* <DenemeUploadWidget avatars={avatars} setAvatars={setAvatars} /> */}
           </div>

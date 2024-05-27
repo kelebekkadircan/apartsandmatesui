@@ -15,7 +15,7 @@ function FilterMates() {
     district: searchParams.get("district") || "",
     sexSituation: searchParams.get("sexSituation") || "",
     // property: searchParams.get("property") || "",
-    // min: searchParams.get("min") || 1,
+    min: searchParams.get("min") || 1,
     // max: searchParams.get("max") || 100000,
     // bedroom: searchParams.get("bedroom") || 1,
   });
@@ -72,7 +72,12 @@ function FilterMates() {
         <div className="item">
           <label htmlFor="district">Mahalle</label>
 
-          <select onChange={handleChange} name="district" id="district">
+          <select
+            defaultValue={query.district}
+            onChange={handleChange}
+            name="district"
+            id="district"
+          >
             <option value="">Hepsi</option>
             {districtData.map((mahalle, i) => (
               <option key={i} value={mahalle.value}>

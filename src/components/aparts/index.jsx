@@ -57,7 +57,7 @@ export const Aparts = () => {
             </div>
             <div className="contentInfo">
               <div className="infoTitle">
-                <strong>{apartNumber}</strong>
+                <strong style={{ color: "#4a5aa3" }}>{apartNumber}</strong>
                 Aktif Apart
               </div>
               <div className="apartNav">

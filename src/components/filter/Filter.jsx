@@ -66,7 +66,7 @@ function Filter() {
         <b style={{ textTransform: "capitalize" }}>
           {query.district || "Alanya  "}
         </b>{" "}
-        <div> Arama Sonuçları</div>{" "}
+        <div> - Arama Sonuçları</div>{" "}
       </h1>
       <div className="top">
         <div className="item">

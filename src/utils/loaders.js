@@ -38,3 +38,24 @@ export const profilePageLoader = async () => {
     })
 
 }
+
+export const matesPageLoader = async ({ request, params }) => {
+    const query = request.url.split("?")[1]
+    // console.log("LOADER QUERY : ", query)
+    try {
+        const postPromise = await newRequest("/posts?" + query)
+        // console.log("LOADER RESPONSE : ", postPromise.data);
+        return defer({
+            postResponse: postPromise
+        })
+
+    } catch (e) {
+        console.log(e);
+        // const postPromise = await newRequest("/hotels?")
+        // console.log("LOADER RESPONSE : ", postPromise.data);
+        // return defer({
+        //     postResponse: postPromise
+        // })
+    }
+
+}

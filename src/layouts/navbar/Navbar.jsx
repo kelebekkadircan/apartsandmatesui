@@ -159,16 +159,11 @@ const Navbar = () => {
               {/* Add your favorite icon component here */}
             </Link>
 
-            <Link to="/roommates">
-              <button
-                style={{ backgroundColor: "#0097B2" }}
-                className="findmate"
-              >
-                Oda Arkadaşı Bul
-              </button>
+            <Link to="/roommates?district=&sexSituation=&min=">
+              <button className="findmate roommates">Oda Arkadaşı Bul</button>
             </Link>
             <Link to="/dorm">
-              <button className="findmate">Otelimi Ekle</button>
+              <button className="findmate addhotel">Otelimi Ekle</button>
             </Link>
             {!user ? (
               <>

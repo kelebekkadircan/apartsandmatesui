@@ -91,7 +91,9 @@ const PostFeatures = ({
                   {hobbies.map((tag, i) => (
                     <li key={i}>
                       <img src={`/img/${tag.value}.svg`} alt="" />
-                      <span>{tag.name}</span>
+                      <span style={{ textTransform: "capitalize" }}>
+                        {tag.name}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -104,7 +106,10 @@ const PostFeatures = ({
                   {buildingFeatures.map((tag, i) => (
                     <li key={i}>
                       <img src={`/img/${tag.value}.svg`} alt="" />
-                      <span> {tag.name} </span>
+                      <span style={{ textTransform: "capitalize" }}>
+                        {" "}
+                        {tag.name}{" "}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -117,7 +122,10 @@ const PostFeatures = ({
                   {roomFeatures.map((tag, i) => (
                     <li key={i}>
                       <img src={`/img/${tag.value}.svg`} alt="" />
-                      <span> {tag.name} </span>
+                      {tag.value}
+                      <span style={{ textTransform: "capitalize" }}>
+                        {tag.name}
+                      </span>
                     </li>
                   ))}
                 </ul>

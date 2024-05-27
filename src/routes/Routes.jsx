@@ -21,7 +21,7 @@ import { Test } from "~/pages/test/Test";
 import Notfound from "~/pages/not-found/Notfound";
 import { ProfilePage } from "~/pages/profile/ProfilePage";
 import CreateHotelPage from "~/pages/newpost/NewPostPage";
-import { listPageLoader } from "~/utils/loaders.js";
+import { listPageLoader, matesPageLoader } from "~/utils/loaders.js";
 import UpdateProfile from "~/pages/updateProfile/UpdateProfile";
 import MatesPage from "~/pages/mates/MatesPage";
 import MatesPostPage from "~/pages/matesPostPage/MatesPostPage";
@@ -122,6 +122,7 @@ const App = () => {
         {
           path: "/roommates",
           element: <MatesPage />,
+          loader: matesPageLoader,
         },
         {
           path: "/roommates/:id",

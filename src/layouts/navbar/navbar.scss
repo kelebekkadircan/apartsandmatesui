@@ -99,9 +99,9 @@
           color: #fff;
           cursor: pointer;
           transition: all 0.5s ease-in-out;
-          padding: 10px 20px;
+          padding: 15px 30px;
           border-radius: 8px;
-          background-color: #4a5aa3;
+          // background-color: #4a5aa3;
           border: black 1px solid;
 
           @include sm {
@@ -110,8 +110,19 @@
             font-size: 12px;
           }
 
-          &:hover {
-            background-color: #3a4a93;
+          &.roommates {
+            background-color: #0097b2;
+            &:hover {
+              background-color: #147181;
+            }
+          }
+
+          &.addhotel {
+            background-color: #4a5aa3;
+
+            &:hover {
+              background-color: #2e3d7f;
+            }
           }
         }
 

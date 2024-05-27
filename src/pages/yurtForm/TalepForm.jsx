@@ -38,7 +38,7 @@ const TalepForm = () => {
       );
       console.log(res);
       if (res.status === 200) {
-        navigate("/login");
+        navigate("/");
       }
     } catch (err) {
       setError(err.response.data.error);
@@ -107,7 +107,7 @@ const TalepForm = () => {
                 onChange={handleChange}
                 type="text"
                 id="phoneNumber"
-                placeholder="05369847114"
+                placeholder="örnek : 05369847114"
                 name="phoneNumber"
                 required={true}
               />
@@ -130,7 +130,7 @@ const TalepForm = () => {
                 name="desc"
                 id="desc"
                 onChange={(e) => setDesc(e.target.value)}
-                placeholder=""
+                placeholder="örnek : Mavi Deniz Oteli, Akdeniz'in muhteşem kıyısında, misafirlerine konfor ve lüksü bir arada sunan bir butik oteldir. Modern ve şık tasarımıyla dikkat çeken otelimiz, huzurlu bir tatil arayan misafirler için ideal bir konaklama deneyimi sunar."
               />
             </div>
 

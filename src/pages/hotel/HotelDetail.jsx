@@ -2,7 +2,7 @@ import Slider from "~/components/singlePageSlider/SinglePageSlider";
 // import { userData } from "~/lib/dummydata";
 import "./singlePageHotelDetails.scss";
 import { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import {
   FaLocationDot,
   // FaBowlFood,
@@ -31,7 +31,7 @@ const HotelDetail = ({
   console.log(user, "HotelDetailUSER");
 
   const { id } = useParams();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
@@ -70,6 +70,7 @@ const HotelDetail = ({
     }
   };
   // console.log(features, "HotelDetailFEATURES");
+  console.log(detailData, "HotelDetailDETAILDATA");
   return !loading ? (
     <>
       <div className="details">
@@ -113,7 +114,7 @@ const HotelDetail = ({
           <div className="hotelDetailTop">
             <div className="leftDetailTop">
               <div className="hotelDetailLogo">
-                <img src={detailData?.logo || "/noLogo.png"} alt="" />
+                <img src={detailData?.avatar || "/noLogo.png"} alt="" />
               </div>
               <div className="hotelDetailContent">
                 <div className="hotelDetailContentTitle">
