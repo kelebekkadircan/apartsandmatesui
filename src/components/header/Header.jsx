@@ -16,7 +16,7 @@ export const Header = ({ params }) => {
             <div className="breadcrumbs">
               <ul>
                 <li>
-                  <NavLink className="link">
+                  <NavLink to="/" className="link">
                     <span>Aparts&Mates</span>
                     <span> / </span>
                   </NavLink>

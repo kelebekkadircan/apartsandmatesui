@@ -117,10 +117,10 @@ const CreateMatesPage = () => {
       } catch (err) {
         console.log(err);
       } finally {
-        navigate(`/list`);
+        navigate(`/roommates`);
       }
     } else {
-      alert("En az 4 resim yükleyiniz");
+      alert("En az 4 resim yükleyiniz ve konum seçiniz !!");
     }
   };
   // console.log(getLatLng, "GETLATLNG");

@@ -115,14 +115,14 @@ const CreateHotel = () => {
       try {
         const res = await newRequest.post("/hotels", values);
         console.log(res.data);
-        navigate(`/list/${res.data._id}`);
+        navigate(`/list`);
       } catch (err) {
         console.log(err);
       } finally {
         navigate(`/list`);
       }
     } else {
-      alert("En az 4 resim yükleyiniz");
+      alert("En az 4 resim yükleyiniz ve konum seçiniz");
     }
   };
   console.log(getLatLng, "GETLATLNG");

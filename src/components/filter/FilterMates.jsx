@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
-import "./filter.scss";
+import "./filterMates.scss";
 import { newRequest } from "~/utils/newRequest";
 
-function Filter() {
+function FilterMates() {
   // query params for search filter and search results page
   const [searchParams, setSearchParams] = useSearchParams();
   const [districtData, setDistrictData] = useState([]);
@@ -61,7 +61,7 @@ function Filter() {
   ) : error ? (
     <div>error occured</div>
   ) : (
-    <div className="filter">
+    <div className="filterMates">
       <h1>
         <b style={{ textTransform: "capitalize" }}>
           {query.district || "Alanya  "}
@@ -75,9 +75,11 @@ function Filter() {
           <select onChange={handleChange} name="district" id="district">
             <option value="">Hepsi</option>
             {districtData.map((mahalle, i) => (
-              <option key={i} value={mahalle.value}>
-                {mahalle.name}
-              </option>
+              <>
+                <option key={i} value={mahalle.value}>
+                  {mahalle.name}
+                </option>
+              </>
             ))}
           </select>
         </div>
@@ -94,9 +96,11 @@ function Filter() {
             <option value="">Hepsi</option>
             {loc !== "roommates" ? (
               apartTypes.map((type, i) => (
-                <option key={i} value={type.value}>
-                  {type.name}
-                </option>
+                <>
+                  <option key={i} value={type.value}>
+                    {type.name}
+                  </option>
+                </>
               ))
             ) : (
               <>
@@ -128,4 +132,4 @@ function Filter() {
   );
 }
 
-export default Filter;
+export default FilterMates;
