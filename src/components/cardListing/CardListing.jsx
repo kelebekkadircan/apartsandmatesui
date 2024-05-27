@@ -73,7 +73,7 @@ export const CardListing = ({ item }) => {
           <span>{item?.address}</span>
         </p>
         <div className="price">
-          <p>{item?.min} </p>
+          <p style={{ color: "#fff" }}>{item?.min} </p>
           <span>₺`den Başlayan Fiyatlarla</span>
         </div>
         <div className="bottom">
