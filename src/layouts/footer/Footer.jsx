@@ -38,17 +38,17 @@ const Footer = () => {
               </p>
             </div>
             <div className="socialGroup">
-              <Link className="item">
+              <Link to="/" className="item">
                 <div className="iconFacebook">
                   <FaFacebook />
                 </div>
               </Link>
-              <Link className="item">
+              <Link to="/" className="item">
                 <div className="iconTwitter">
                   <FaXTwitter />
                 </div>
               </Link>
-              <Link className="item">
+              <Link to="/" className="item">
                 <div className="iconInstagram">
                   <FaInstagram />
                 </div>

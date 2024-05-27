@@ -122,7 +122,6 @@ const PostFeatures = ({
                   {roomFeatures.map((tag, i) => (
                     <li key={i}>
                       <img src={`/img/${tag.value}.svg`} alt="" />
-                      {tag.value}
                       <span style={{ textTransform: "capitalize" }}>
                         {tag.name}
                       </span>

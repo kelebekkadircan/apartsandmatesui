@@ -75,11 +75,8 @@ export const Popular = () => {
               <NavLink onClick={() => setDistrict("hacet")} className="navLink">
                 <div className="navItem">Hacet</div>
               </NavLink>
-              <NavLink
-                onClick={() => setDistrict("damlatas")}
-                className="navLink"
-              >
-                <div className="navItem">Damlataş</div>
+              <NavLink onClick={() => setDistrict("saray")} className="navLink">
+                <div className="navItem">Saray</div>
               </NavLink>
             </div>
           </div>
