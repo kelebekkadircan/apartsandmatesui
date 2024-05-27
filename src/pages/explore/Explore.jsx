@@ -54,7 +54,7 @@ const Explore = () => {
               </Await>
             </Suspense>
           </div>
-          <div className="mapAltiDeneme">
+          <div className="mapAltiFilterOtel">
             <Filter />
           </div>
         </div>

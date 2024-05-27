@@ -82,7 +82,8 @@ export const Header = ({ params }) => {
             </svg>
             <img
               className="shapeFour"
-              src="https://cdn-yb.ams3.cdn.digitaloceanspaces.com/uploads/cities/34/15549863741032379973.png"
+              // src="https://cdn-yb.ams3.cdn.digitaloceanspaces.com/uploads/cities/34/15549863741032379973.png"
+              src="/micoFour.png"
               alt="usual image"
             />
           </div>

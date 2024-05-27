@@ -25,8 +25,8 @@ export const Why = () => {
           </div>
           <div className="whyImages">
             <img
-              src="https://www.yurtlarburada.com/img/popular-cities.png"
-              // src="/micoOne.png"
+              // src="https://www.yurtlarburada.com/img/popular-cities.png"
+              src="/micoFour.png"
               alt=""
             />
           </div>
