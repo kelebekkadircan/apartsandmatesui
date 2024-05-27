@@ -11,8 +11,8 @@ import Home from "~/pages/home/Home";
 // import Hotel from "~/pages/hotel/Hotel";
 // import Notfound from "~/pages/not-found/Notfound";
 // import Mainlayout from "~/layouts/main/Mainlayout";
-import Register from "~/pages/register/Register";
-import Login from "~/pages/login/Login";
+// import Register from "~/pages/register/Register";
+// import Login from "~/pages/login/Login";
 // import { useAuthContext } from "~/hooks/auth/useAuthContext";
 import { Mainlayout, RequireAuth } from "~/layouts/main/Mainlayout";
 import ListPage from "~/pages/explore/Explore";
@@ -27,11 +27,12 @@ import MatesPage from "~/pages/mates/MatesPage";
 import MatesPostPage from "~/pages/matesPostPage/MatesPostPage";
 import CreateMatesPage from "~/pages/createMates/CreateMatesPage";
 import UpdateHotel from "~/pages/updateHotel/UpdateHotel";
-import FormRegister from "~/components/form/FormRegister";
+// import FormRegister from "~/components/form/FormRegister";
 import RegisterTwo from "~/pages/register/RegisterTwo";
 import LoginTwo from "~/pages/login/LoginTwo";
 import TalepForm from "~/pages/yurtForm/TalepForm";
 import AboutUs from "~/pages/about/AboutUs";
+import TermsPage from "~/pages/terms/TermsPage";
 // import { Test } from "~/pages/test/Test";
 
 const App = () => {
@@ -65,7 +66,7 @@ const App = () => {
           path: "list",
           element: <ListPage />,
           loader: listPageLoader,
-          errorElement: <div style={{ minHeight: "100svh" }}>error</div>,
+          errorElement: <Notfound />,
         },
         {
           path: "list/:id",
@@ -91,6 +92,10 @@ const App = () => {
         {
           path: "/aboutUs",
           element: <AboutUs />,
+        },
+        {
+          path: "/terms",
+          element: <TermsPage />,
         },
         {
           path: "*",

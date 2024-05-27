@@ -83,8 +83,10 @@ import { newRequest } from "~/utils/newRequest";
 // import { CardListing } from "~/components/cardListing/CardListing";
 import { MatesCardListing } from "~/components/cardListing/MatesCardListing";
 import { Header } from "~/components/header/Header";
-import Filter from "~/components/filter/Filter";
+// import Filter from "~/components/filter/Filter";
 import { Map } from "~/components/map/Map";
+import FilterMates from "~/components/filter/FilterMates";
+import { useSearchParams } from "react-router-dom";
 
 const MatesPage = () => {
   const [matesData, setMatesData] = useState([]);
@@ -93,6 +95,8 @@ const MatesPage = () => {
 
   // const navigate = useNavigate();
   const abortControllerRef = useRef(null);
+  const [params] = useSearchParams();
+  console.log(params.get("district"));
 
   useEffect(() => {
     const fetchPopularHotels = async () => {
@@ -122,7 +126,7 @@ const MatesPage = () => {
     return () => {
       abortControllerRef.current?.abort();
     };
-  }, []);
+  }, [params]);
 
   const headerDistrict = "Oda Arkadaşını Bul!";
 
@@ -148,7 +152,7 @@ const MatesPage = () => {
             <Map items={matesData} />
           </div>
           <div className="mapAltiDeneme">
-            <Filter />
+            <FilterMates />
           </div>
         </div>
       </div>

@@ -91,7 +91,7 @@ const PostFeatures = ({
                   {hobbies.map((tag, i) => (
                     <li key={i}>
                       <img src={`/img/${tag.value}.svg`} alt="" />
-                      <span> {tag.name} </span>
+                      <span>{tag.name}</span>
                     </li>
                   ))}
                 </ul>

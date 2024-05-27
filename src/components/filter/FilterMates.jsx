@@ -13,9 +13,9 @@ function FilterMates() {
 
   const [query, setQuery] = useState({
     district: searchParams.get("district") || "",
-    type: searchParams.get("type") || "",
+    sexSituation: searchParams.get("sexSituation") || "",
     // property: searchParams.get("property") || "",
-    min: searchParams.get("min") || 1,
+    // min: searchParams.get("min") || 1,
     // max: searchParams.get("max") || 100000,
     // bedroom: searchParams.get("bedroom") || 1,
   });
@@ -41,10 +41,10 @@ function FilterMates() {
     const dataFetch = async () => {
       setLoading(true);
       try {
-        const resDistrict = await newRequest.get("hotels/districts");
+        const resDistrict = await newRequest.get("posts/postdistricts");
         // const { districts } = resDistrict.data;
         setDistrictData(resDistrict.data);
-        const resTypes = await newRequest.get("hotels/types");
+        const resTypes = await newRequest.get("posts/posttypes");
         // const { types } = resTypes.data;
         setApartTypes(resTypes.data);
       } catch (e) {
@@ -66,7 +66,7 @@ function FilterMates() {
         <b style={{ textTransform: "capitalize" }}>
           {query.district || "Alanya  "}
         </b>{" "}
-        <div> Arama Sonuçları</div>{" "}
+        <div>- Arama Sonuçları</div>{" "}
       </h1>
       <div className="top">
         <div className="item">
@@ -75,37 +75,33 @@ function FilterMates() {
           <select onChange={handleChange} name="district" id="district">
             <option value="">Hepsi</option>
             {districtData.map((mahalle, i) => (
-              <>
-                <option key={i} value={mahalle.value}>
-                  {mahalle.name}
-                </option>
-              </>
+              <option key={i} value={mahalle.value}>
+                {mahalle.name}
+              </option>
             ))}
           </select>
         </div>
       </div>
       <div className="bottom">
         <div className="item">
-          <label htmlFor="type">Tip</label>
+          <label htmlFor="sexSituation">Tip</label>
           <select
-            defaultValue={query.type}
+            defaultValue={query.sexSituation}
             onChange={handleChange}
-            name="type"
-            id="type"
+            name="sexSituation"
+            id="sexSituation"
           >
             <option value="">Hepsi</option>
             {loc !== "roommates" ? (
               apartTypes.map((type, i) => (
-                <>
-                  <option key={i} value={type.value}>
-                    {type.name}
-                  </option>
-                </>
+                <option key={i} value={type.value}>
+                  {type.name}
+                </option>
               ))
             ) : (
               <>
-                <option value="erkek">Erkek</option>
-                <option value="kadin">Kadın</option>
+                <option value="erkekolabilir">Erkek</option>
+                <option value="kadinolabilir">Kadın</option>
               </>
             )}
           </select>
