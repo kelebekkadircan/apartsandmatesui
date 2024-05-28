@@ -193,7 +193,7 @@ const PostDetail = ({
                       Telefon Numarası
                     </div>
                     <div className="postDetailContactInfoContentAnswer">
-                      0536 123 45 67
+                      {detailData?.phoneNumber}
                     </div>
                   </div>
                 </div>
@@ -205,10 +205,10 @@ const PostDetail = ({
                   </div>
                   <div className="postDetailContactInfoContent">
                     <div className="postDetailContactInfoContentQuestion">
-                      Mail Adresi
+                      Mail Adresi{" "}
                     </div>
                     <div className="postDetailContactInfoContentAnswer">
-                      kelebekkadircan@gmail.com
+                      {detailData?.email}
                     </div>
                   </div>
                 </div>
@@ -220,10 +220,10 @@ const PostDetail = ({
                   </div>
                   <div className="postDetailContactInfoContent">
                     <div className="postDetailContactInfoContentQuestion">
-                      İnstagram Adresi
+                      Instagram Kullanıcı Adı
                     </div>
                     <div className="postDetailContactInfoContentAnswer">
-                      kelebekkadircan
+                      {detailData?.instaAccount}
                     </div>
                   </div>
                 </div>
