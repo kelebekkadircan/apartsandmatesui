@@ -119,7 +119,6 @@
 //     img: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
 // };
 
-
 // export const districtData = [
 //     {
 //         name: "Cikcilli",
@@ -177,7 +176,6 @@
 //         name: "Bektaş",
 //         value: "bektas"
 //     },
-
 
 // ]
 
@@ -407,7 +405,6 @@
 //     { name: 'Ütü Odası', value: 'utuodasi' },
 //     { name: 'Çamaşırhane', value: 'camasirhane' },
 
-
 // ]
 
 // export const odaozellikleri = [
@@ -510,7 +507,6 @@
 //     { name: "Kalamaz", value: "gelemez" },
 // ]
 
-
 // export const inputsPostCreate = [
 
 //     {
@@ -595,7 +591,6 @@
 
 // ];
 
-
 // export const hobilerim = [
 //     { name: "Kitap Okumak", value: "kitapokuma" },
 //     { name: "Seyehat Etmek", value: 'seyahatetme' },
@@ -612,95 +607,92 @@
 //     { name: 'Spor Yapmak', value: 'sporyapmak' }
 // ]
 
-
-
-
 export const listData = [
     {
         id: 1,
-        title: "A Great Apartment Next to the Beach!",
-        img: "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: 'A Great Apartment Next to the Beach!',
+        img: 'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         bedroom: 2,
         bathroom: 1,
         price: 1000,
-        address: "456 Park Avenue, London",
+        address: '456 Park Avenue, London',
         latitude: 51.5074,
         longitude: -0.1278,
     },
     {
         id: 2,
-        title: "An Awesome Apartment Near the Park! Almost too good to be true!",
-        img: "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: 'An Awesome Apartment Near the Park! Almost too good to be true!',
+        img: 'https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         bedroom: 3,
         bathroom: 2,
         price: 1500,
-        address: "789 Oxford Street, London",
+        address: '789 Oxford Street, London',
         latitude: 52.4862,
         longitude: -1.8904,
     },
     {
         id: 3,
-        title: "A New Apartment in the City!",
-        img: "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: 'A New Apartment in the City!',
+        img: 'https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         bedroom: 1,
         bathroom: 1,
         price: 800,
-        address: "101 Baker Street, London",
+        address: '101 Baker Street, London',
         latitude: 53.4808,
         longitude: -2.2426,
     },
     {
         id: 4,
-        title: "Great Location! Great Price! Great Apartment!",
-        img: "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: 'Great Location! Great Price! Great Apartment!',
+        img: 'https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         bedroom: 2,
         bathroom: 1,
         price: 1000,
-        address: "234 Kingsway, London,",
+        address: '234 Kingsway, London,',
         latitude: 53.8008,
         longitude: -1.5491,
     },
     {
         id: 5,
-        title: "Apartment 5",
-        img: "https://images.pexels.com/photos/276625/pexels-photo-276625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: 'Apartment 5',
+        img: 'https://images.pexels.com/photos/276625/pexels-photo-276625.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         bedroom: 3,
         bathroom: 2,
         price: 1500,
-        address: "567 Victoria Road, London",
+        address: '567 Victoria Road, London',
         latitude: 53.4084,
         longitude: -2.9916,
     },
     {
         id: 6,
-        title: "Apartment 6",
-        img: "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: 'Apartment 6',
+        img: 'https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         bedroom: 1,
         bathroom: 1,
         price: 800,
-        address: "890 Regent Street, London",
+        address: '890 Regent Street, London',
         latitude: 54.9783,
         longitude: -1.6174,
     },
     {
         id: 7,
-        title: "Apartment 7",
-        img: "https://images.pexels.com/photos/2029667/pexels-photo-2029667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: 'Apartment 7',
+        img: 'https://images.pexels.com/photos/2029667/pexels-photo-2029667.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         bedroom: 2,
         bathroom: 1,
         price: 1000,
-        address: "112 Piccadilly, London",
+        address: '112 Piccadilly, London',
         latitude: 53.3811,
         longitude: -1.4701,
     },
     {
         id: 8,
-        title: "Apartment 8",
-        img: "https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        title: 'Apartment 8',
+        img: 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
         bedroom: 3,
         bathroom: 2,
         price: 1500,
-        address: "8765 Main High Street, London",
+        address: '8765 Main High Street, London',
         latitude: 51.4545,
         longitude: -2.5879,
     },
@@ -708,317 +700,318 @@ export const listData = [
 
 export const singlePostData = {
     id: 1,
-    title: "Beautiful Apartment",
+    title: 'Beautiful Apartment',
     price: 1200,
     images: [
-        "https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
-        "https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+        'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        'https://images.pexels.com/photos/1428348/pexels-photo-1428348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        'https://images.pexels.com/photos/2062426/pexels-photo-2062426.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+        'https://images.pexels.com/photos/2467285/pexels-photo-2467285.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     ],
     bedRooms: 2,
     bathroom: 1,
     size: 861,
     latitude: 51.5074,
     longitude: -0.1278,
-    city: "London",
-    address: "1234 Broadway St",
-    school: "250m away",
-    bus: "100m away",
-    restaurant: "50m away",
+    city: 'London',
+    address: '1234 Broadway St',
+    school: '250m away',
+    bus: '100m away',
+    restaurant: '50m away',
     description:
-        "Future alike hill pull picture swim magic chain seed engineer nest outer raise bound easy poetry gain loud weigh me recognize farmer bare danger. actually put square leg vessels earth engine matter key cup indeed body film century shut place environment were stage vertical roof bottom lady function breeze darkness beside tin view local breathe carbon swam declared magnet escape has from pile apart route coffee storm someone hold space use ahead sheep jungle closely natural attached part top grain your grade trade corn salmon trouble new bend most teacher range anybody every seat fifteen eventually",
+        'Future alike hill pull picture swim magic chain seed engineer nest outer raise bound easy poetry gain loud weigh me recognize farmer bare danger. actually put square leg vessels earth engine matter key cup indeed body film century shut place environment were stage vertical roof bottom lady function breeze darkness beside tin view local breathe carbon swam declared magnet escape has from pile apart route coffee storm someone hold space use ahead sheep jungle closely natural attached part top grain your grade trade corn salmon trouble new bend most teacher range anybody every seat fifteen eventually',
 };
 
 export const userData = {
     id: 1,
-    name: "John Doe",
-    img: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    name: 'John Doe',
+    img: 'https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
 };
-
 
 export const districtData = [
     {
-        name: "Cikcilli",
-        value: "cikcilli"
+        name: 'Cikcilli',
+        value: 'cikcilli',
     },
     {
-        name: "Mahmutlar",
-        value: "mahmutlar"
+        name: 'Mahmutlar',
+        value: 'mahmutlar',
     },
     {
-        name: "Kestel",
-        value: "kestel"
+        name: 'Kestel',
+        value: 'kestel',
     },
     {
-        name: "Oba",
-        value: "oba"
+        name: 'Oba',
+        value: 'oba',
     },
     {
-        name: "Tosmur",
-        value: "tosmur"
+        name: 'Tosmur',
+        value: 'tosmur',
     },
     {
-        name: "Alanya Merkez",
-        value: "merkez"
+        name: 'Alanya Merkez',
+        value: 'merkez',
     },
     {
-        name: "Avsallar",
-        value: "avsallar"
+        name: 'Avsallar',
+        value: 'avsallar',
     },
     {
-        name: "Konakli",
-        value: "konakli"
+        name: 'Konakli',
+        value: 'konakli',
     },
     {
-        name: "Kargicak",
-        value: "kargicak"
+        name: 'Kargicak',
+        value: 'kargicak',
     },
     {
-        name: "Demirtaş",
-        value: "demirtas"
+        name: 'Demirtaş',
+        value: 'demirtas',
     },
     {
-        name: "Çıplaklı",
-        value: "ciplakli"
+        name: 'Çıplaklı',
+        value: 'ciplakli',
     },
     {
-        name: "Dinek",
-        value: "dinek"
+        name: 'Dinek',
+        value: 'dinek',
     },
     {
-        name: "Çamlıca",
-        value: "camlica"
+        name: 'Çamlıca',
+        value: 'camlica',
     },
     {
-        name: "Bektaş",
-        value: "bektas"
+        name: 'Bektaş',
+        value: 'bektas',
     },
-
-
-]
+];
 
 export const apartTypes = [
     {
-        name: "Erkek",
-        value: "erkek"
+        name: 'Erkek',
+        value: 'erkek',
     },
     {
-        name: "Kız",
-        value: "kiz"
+        name: 'Kız',
+        value: 'kiz',
     },
     {
-        name: "Karışık",
-        value: "karisik"
+        name: 'Karışık',
+        value: 'karisik',
     },
-
-]
+];
 
 export const inputsHotelCreate = [
     {
         id: 1,
-        name: "name",
-        type: "text",
-        placeholder: "örnek : Alanya Apart Otel",
+        name: 'name',
+        type: 'text',
+        placeholder: 'örnek : Alanya Apart Otel',
         errorMessage:
-            "Otel adı en az 3 en fazla 45 karakter olmalıdır ve özel karakter içeremez!",
-        label: "Otel Adı",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,45}$",
+            'Otel adı en az 3 en fazla 60 karakter olmalıdır ve özel karakter içeremez!',
+        label: 'Otel Adı',
+        pattern:
+            "^(?![0-9\\s])[a-zA-Z0-9\\s'&çÇğĞıİöÖşŞüÜ]{2,57}[a-zA-Z0-9'&çÇğĞıİöÖşŞüÜ](\\s{0,2})?$",
         required: true,
     },
     {
         id: 2,
-        name: "ownerName",
-        type: "text",
-        placeholder: "örnek : Ali Atay",
+        name: 'ownerName',
+        type: 'text',
+        placeholder: 'örnek : Ali Atay',
         errorMessage:
-            "Otel sahibi adı en az 3  en fazla 45 karakter olmalıdır ve özel karakter içeremez!",
-        label: "Otel Sahibi Adı",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,45}$",
+            'Otel sahibi adı en az 3  en fazla 45 karakter olmalıdır ve özel karakter içeremez!',
+        label: 'Otel Sahibi Adı',
+        pattern:
+            "^(?![0-9\\s])[a-zA-Z0-9\\s'&çÇğĞıİöÖşŞüÜ]{2,45}[a-zA-Z0-9'&çÇğĞıİöÖşŞüÜ](\\s{0,2})?$",
         required: true,
     },
     {
         id: 3,
-        name: "title",
-        type: "text",
-        placeholder: "örnek : Alanya Apart",
+        name: 'title',
+        type: 'text',
+        placeholder: 'örnek : Alanya Apart',
         errorMessage:
-            "Otel Başlığı en az 3  en fazla 40 karakter olmalıdır ve özel karakter içeremez!",
-        label: "Otel Başlığı",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,40}$",
+            'Otel Başlığı en az 3  en fazla 40 karakter olmalıdır ve özel karakter içeremez!',
+        label: 'Otel Başlığı',
+        pattern:
+            "^(?![0-9\\s])[a-zA-Z0-9\\s.,'&çÇğĞıİöÖşŞüÜ]{2,57}[a-zA-Z0-9.,'&çÇğĞıİöÖşŞüÜ](\\s{0,2})?$",
         required: true,
     },
     {
         id: 4,
-        name: "address",
-        type: "text",
-        placeholder: "örnek : Kestel Mah. Üniversite Cad. Alanya/Antalya",
+        name: 'address',
+        type: 'text',
+        placeholder: 'örnek : Kestel Mah. Üniversite Cad. Alanya/Antalya',
         errorMessage:
-            "Adres en az 3 en fazla 100 karakter olmalıdır ve özel karakter içeremez!",
-        label: "Adres",
-        // pattern: "^(?![ ] )(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s ]{3,100}$",
+            'Adres en az 3 en fazla 100 karakter olmalıdır ve özel karakter içeremez!',
+        label: 'Adres',
+        pattern:
+            "^(?![0-9\\s])[a-zA-Z0-9\\s'.,:&\\/çÇğĞıİöÖşŞüÜ]{2,97}[a-zA-Z0-9'.,:&\\/çÇğĞıİöÖşŞüÜ](\\s{0,2})?$",
         required: true,
     },
     {
         id: 5,
-        name: "shortDesc",
-        type: "text",
+        name: 'shortDesc',
+        type: 'text',
         placeholder: "örnek : Alanya'da denize sıfır Apartlar.",
         errorMessage:
-            "Kısa Tanımı en az 3 en fazla 65 karakter olmalıdır ve özel karakter içeremez!",
-        label: "Hakkında",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,25}$",
+            'Kısa Tanımı en az 3 en fazla 100 karakter olmalıdır ve özel karakter içeremez!',
+        label: 'Hakkında',
+        pattern:
+            "^(?![0-9\\s])[a-zA-Z0-9\\s'.,&çÇğĞıİöÖşŞüÜ]{2,98}[a-zA-Z0-9.,'&çÇğĞıİöÖşŞüÜ](\\s{0,2})?$",
         required: true,
     },
     {
         id: 6,
-        name: "email",
-        type: "email",
-        placeholder: "örnek : deneme@gmail.com",
-        pattern: "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
-        errorMessage: "Geçerli bir mail adresi giriniz!",
-        label: "Email",
+        name: 'email',
+        type: 'email',
+        placeholder: 'örnek : deneme@gmail.com',
+        pattern: '^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$',
+        errorMessage: 'Geçerli bir mail adresi giriniz!',
+        label: 'Email',
         required: true,
     },
     {
         id: 7,
-        name: "phoneNumber",
-        type: "text",
-        placeholder: "ornek : 0555 555 55 55",
-        errorMessage: "Geçerli bir Telefon numarası Giriniz! (örnek : 0555 555 55 55)",
-        label: "Telefon Numarası",
-        pattern: "^([0-9]){4}\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}",
+        name: 'phoneNumber',
+        type: 'text',
+        placeholder: 'ornek : 0555 555 55 55',
+        errorMessage:
+            'Geçerli bir Telefon numarası Giriniz! (örnek : 0555 555 55 55)',
+        label: 'Telefon Numarası',
+        pattern: '^([0-9]){4}\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}',
         required: true,
     },
     {
         id: 8,
-        name: "bedCount",
-        type: "text",
-        placeholder: "örnek : 2",
-        errorMessage: "Geçerli bir oda Sayısı Giriniz!",
-        pattern: "^[0-9]{1,3}$",
-        label: "Yatak Sayısı",
+        name: 'bedCount',
+        type: 'text',
+        placeholder: 'örnek : 2',
+        errorMessage: 'Geçerli bir oda Sayısı Giriniz!',
+        pattern: '^[0-9]{1,3}$',
+        label: 'Yatak Sayısı',
         required: true,
     },
     {
         id: 9,
-        name: "busStop",
-        type: "text",
-        placeholder: "örnek : 250 (Metre cinsinden giriniz)",
-        errorMessage: "Geçerli bir Mesafe Giriniz ve sayı olduğundan emin olunuz!",
-        pattern: "^[0-9]{1,5}$",
-        label: "Otobüs Durağına Mesafe",
+        name: 'busStop',
+        type: 'text',
+        placeholder: 'örnek : 250 (Metre cinsinden giriniz)',
+        errorMessage: 'Geçerli bir Mesafe Giriniz ve sayı olduğundan emin olunuz!',
+        pattern: '^[0-9]{1,5}$',
+        label: 'Otobüs Durağına Mesafe',
         required: true,
     },
     {
         id: 10,
-        name: "university",
-        type: "text",
-        placeholder: "örnek : 2500 (Metre cinsinden giriniz)",
-        pattern: "^[0-9]{1,5}$",
-        label: "Üniversiteye Olan Mesafesi",
-        errorMessage: "Geçerli bir Mesafe Giriniz ve sayı olduğundan emin olunuz!",
+        name: 'university',
+        type: 'text',
+        placeholder: 'örnek : 2500 (Metre cinsinden giriniz)',
+        pattern: '^[0-9]{1,5}$',
+        label: 'Üniversiteye Olan Mesafesi',
+        errorMessage: 'Geçerli bir Mesafe Giriniz ve sayı olduğundan emin olunuz!',
         required: true,
     },
     {
         id: 11,
-        name: "market",
-        type: "text",
-        placeholder: "örnek : 250 (Metre cinsinden giriniz)",
-        pattern: "^[0-9]{1,5}$",
-        label: "En Yakın Markete Olan Mesafesi",
-        errorMessage: "Geçerli bir Mesafe Giriniz ve sayı olduğundan emin olunuz!",
+        name: 'market',
+        type: 'text',
+        placeholder: 'örnek : 250 (Metre cinsinden giriniz)',
+        pattern: '^[0-9]{1,5}$',
+        label: 'En Yakın Markete Olan Mesafesi',
+        errorMessage: 'Geçerli bir Mesafe Giriniz ve sayı olduğundan emin olunuz!',
         required: true,
     },
     {
         id: 13,
-        name: "receptionNumber",
-        type: "text",
-        placeholder: "örnek : 0216 555 55 55",
-        pattern: "^([0-9]){4}\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}",
-        errorMessage: "Geçerli bir Telefon numarası Giriniz! (örnek : 0216 555 55 55)",
-        label: "Resepsiyon Numarası",
+        name: 'receptionNumber',
+        type: 'text',
+        placeholder: 'örnek : 0216 555 55 55',
+        pattern: '^([0-9]){4}\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}',
+        errorMessage:
+            'Geçerli bir Telefon numarası Giriniz! (örnek : 0216 555 55 55)',
+        label: 'Resepsiyon Numarası',
         required: true,
     },
     {
         id: 14,
-        name: "min",
-        type: "text",
-        placeholder: "örnek : 2500 (tl cinsinden giriniz)",
-        pattern: "^[0-9]{3,5}$",
-        errorMessage: "Geçerli bir Fiyat Giriniz ve sayı olduğundan emin olunuz!",
-        label: "En Düşük Fiyatlı Odanızın Fiyatı",
+        name: 'min',
+        type: 'text',
+        placeholder: 'örnek : 2500 (tl cinsinden giriniz)',
+        pattern: '^[0-9]{3,5}$',
+        errorMessage: 'Geçerli bir Fiyat Giriniz ve sayı olduğundan emin olunuz!',
+        label: 'En Düşük Fiyatlı Odanızın Fiyatı',
         required: true,
     },
     {
         id: 15,
-        name: "max",
-        type: "text",
-        placeholder: "örnek : 2500 (tl cinsinden giriniz)",
-        pattern: "^[0-9]{3,5}$",
-        errorMessage: "Geçerli bir Fiyat Giriniz ve sayı olduğundan emin olunuz!",
-        label: "En Pahalı Odanızın Fiyatı",
+        name: 'max',
+        type: 'text',
+        placeholder: 'örnek : 2500 (tl cinsinden giriniz)',
+        pattern: '^[0-9]{3,5}$',
+        errorMessage: 'Geçerli bir Fiyat Giriniz ve sayı olduğundan emin olunuz!',
+        label: 'En Pahalı Odanızın Fiyatı',
         required: true,
     },
 ];
 
 export const mahalleler = [
-    { name: "Mahmutlar", value: "mahmutlar" },
-    { name: "Oba", value: "oba" },
-    { name: "Cikcilli", value: "cikcilli" },
-    { name: "Güllerpınarı", value: "gullerpinari" },
-    { name: "Saray", value: "saray" },
-    { name: "Konaklı", value: "konakli" },
-    { name: "Hacet", value: "hacet" },
-    { name: "Kadipaşa", value: "kadipasa" },
-    { name: "Avsallar", value: "avsallar" },
-    { name: "Sekerhane", value: "sekerhane" },
-    { name: "Kızlarpınarı", value: "kizlarpinari" },
-    { name: "Kestel", value: "kestel" },
-    { name: "Tosmur", value: "tosmur" },
-    { name: "Payallar", value: "payallar" },
-    { name: "Çıplaklı", value: "ciplakli" },
-    { name: "Sugözü", value: "sugozu" },
-    { name: "Cumhuriyet", value: "cumhuriyet" },
-    { name: "Okurcalar", value: "okurcalar" },
-    { name: "Türkler", value: "turkler" },
-    { name: "Figla", value: "figla" },
-    { name: "Küçükhasbahçe", value: "kucukhasbahce" },
-    { name: "Demirtaş", value: "demirtas" },
-    { name: "Guzelbağ", value: "guzelbag" },
-    { name: "İncekum", value: "incekum" },
-    { name: "Kargıcak", value: "kargicak" },
-    { name: "Emisbeleni", value: "emisbeleni" },
-    { name: "Toslak", value: "toslak" },
-    { name: "Çarşı", value: "carsi" },
-    { name: "Büyükhasbahce", value: "buyukhasbahce" },
-    { name: "Dinek", value: "dinek" },
-    { name: "Elikesik", value: "elikesik" },
-    { name: "Hacımehmetli", value: "hacimehmetli" },
-    { name: "Emisbeleni", value: "emisbeleni" },
-    { name: "Yeşiloz", value: "yesiloz" },
-    { name: "Akdam", value: "akdam" },
-    { name: "Çamlıca", value: "camlica" },
-    { name: "Yaylalı", value: "yaylali" },
-    { name: "Dere", value: "dere" },
-
+    { name: 'Mahmutlar', value: 'mahmutlar' },
+    { name: 'Oba', value: 'oba' },
+    { name: 'Cikcilli', value: 'cikcilli' },
+    { name: 'Güllerpınarı', value: 'gullerpinari' },
+    { name: 'Saray', value: 'saray' },
+    { name: 'Konaklı', value: 'konakli' },
+    { name: 'Hacet', value: 'hacet' },
+    { name: 'Kadipaşa', value: 'kadipasa' },
+    { name: 'Avsallar', value: 'avsallar' },
+    { name: 'Sekerhane', value: 'sekerhane' },
+    { name: 'Kızlarpınarı', value: 'kizlarpinari' },
+    { name: 'Kestel', value: 'kestel' },
+    { name: 'Tosmur', value: 'tosmur' },
+    { name: 'Payallar', value: 'payallar' },
+    { name: 'Çıplaklı', value: 'ciplakli' },
+    { name: 'Sugözü', value: 'sugozu' },
+    { name: 'Cumhuriyet', value: 'cumhuriyet' },
+    { name: 'Okurcalar', value: 'okurcalar' },
+    { name: 'Türkler', value: 'turkler' },
+    { name: 'Figla', value: 'figla' },
+    { name: 'Küçükhasbahçe', value: 'kucukhasbahce' },
+    { name: 'Demirtaş', value: 'demirtas' },
+    { name: 'Guzelbağ', value: 'guzelbag' },
+    { name: 'İncekum', value: 'incekum' },
+    { name: 'Kargıcak', value: 'kargicak' },
+    { name: 'Emisbeleni', value: 'emisbeleni' },
+    { name: 'Toslak', value: 'toslak' },
+    { name: 'Çarşı', value: 'carsi' },
+    { name: 'Büyükhasbahce', value: 'buyukhasbahce' },
+    { name: 'Dinek', value: 'dinek' },
+    { name: 'Elikesik', value: 'elikesik' },
+    { name: 'Hacımehmetli', value: 'hacimehmetli' },
+    { name: 'Emisbeleni', value: 'emisbeleni' },
+    { name: 'Yeşiloz', value: 'yesiloz' },
+    { name: 'Akdam', value: 'akdam' },
+    { name: 'Çamlıca', value: 'camlica' },
+    { name: 'Yaylalı', value: 'yaylali' },
+    { name: 'Dere', value: 'dere' },
 ];
 
 export const binaozellikleri = [
-    { name: "Hobi Odası", value: "hobiodasi" },
-    { name: "Asansör", value: "asansor" },
-    { name: "Kamera Sistemi", value: "kamerasistemi" },
-    { name: "Spor Salonu", value: "sporsalonu" },
-    { name: "Kafeterya", value: "kafeterya" },
-    { name: "Ütü Odası", value: "utuodasi" },
-    { name: "Çamaşırhane", value: "camasirhane" },
-    { name: "Yüzme Havuzu", value: "yuzmehavuzu" },
-
+    { name: 'Hobi Odası', value: 'hobiodasi' },
+    { name: 'Asansör', value: 'asansor' },
+    { name: 'Kamera Sistemi', value: 'kamerasistemi' },
+    { name: 'Spor Salonu', value: 'sporsalonu' },
+    { name: 'Kafeterya', value: 'kafeterya' },
+    { name: 'Ütü Odası', value: 'utuodasi' },
+    { name: 'Çamaşırhane', value: 'camasirhane' },
+    { name: 'Yüzme Havuzu', value: 'yuzmehavuzu' },
 ];
 
 export const Postbinaozellikleri = [
     { name: 'Asansör', value: 'asansor' },
-    { name: "Balkon", value: "balkon" },
+    { name: 'Balkon', value: 'balkon' },
     { name: 'Kamera Sistemi', value: 'kamerasistemi' },
     { name: 'Yüzme Havuzu', value: 'yuzmehavuzu' },
     { name: 'Güvenlik', value: 'guvenlik' },
@@ -1027,9 +1020,7 @@ export const Postbinaozellikleri = [
     { name: 'Spor Salonu', value: 'sporsalonu' },
     { name: 'Ütü Odası', value: 'utuodasi' },
     { name: 'Çamaşırhane', value: 'camasirhane' },
-
-
-]
+];
 
 export const odaozellikleri = [
     { name: 'Wifi', value: 'wifi' },
@@ -1043,7 +1034,6 @@ export const odaozellikleri = [
 ];
 
 export const Postodaozellikleri = [
-
     { name: 'Çamaşır Makinesi', value: 'camasirmakinesi' },
     { name: 'Buzdolabı', value: 'buzdolabi' },
     { name: 'Bulaşık Makinesi', value: 'bulasikmakinesi' },
@@ -1055,8 +1045,7 @@ export const Postodaozellikleri = [
     { name: 'Çalışma Masası', value: 'calismamasasi' },
     { name: 'Mutfak', value: 'mutfak' },
     { name: 'Kişisel Dolap', value: 'kisiseldolap' },
-
-]
+];
 
 export const servisler = [
     { name: 'Güvenlik', value: 'guvenlik' },
@@ -1065,14 +1054,14 @@ export const servisler = [
 ];
 
 export const butunozellikler = [
-    { name: "Hobi Odası", value: "hobiodasi" },
-    { name: "Asansör", value: "asansor" },
-    { name: "Kamera Sistemi", value: "kamerasistemi" },
-    { name: "Spor Salonu", value: "sporsalonu" },
-    { name: "Kafeterya", value: "kafeterya" },
-    { name: "Ütü Odası", value: "utuodasi" },
-    { name: "Çamaşırhane", value: "camasirhane" },
-    { name: "Yüzme Havuzu", value: "yuzmehavuzu" },
+    { name: 'Hobi Odası', value: 'hobiodasi' },
+    { name: 'Asansör', value: 'asansor' },
+    { name: 'Kamera Sistemi', value: 'kamerasistemi' },
+    { name: 'Spor Salonu', value: 'sporsalonu' },
+    { name: 'Kafeterya', value: 'kafeterya' },
+    { name: 'Ütü Odası', value: 'utuodasi' },
+    { name: 'Çamaşırhane', value: 'camasirhane' },
+    { name: 'Yüzme Havuzu', value: 'yuzmehavuzu' },
     { name: 'Wifi', value: 'wifi' },
     { name: 'Duş ve WC', value: 'dusvewc' },
     { name: 'Klima', value: 'klima' },
@@ -1084,22 +1073,21 @@ export const butunozellikler = [
     { name: 'Güvenlik', value: 'guvenlik' },
     { name: 'Yemek', value: 'yemek' },
     { name: 'Günlük Temizlik', value: 'gunluktemizlik' },
-
-]
+];
 
 export const Postbutunozellikler = [
-    { name: "Kitap Okumak", value: "kitapokuma" },
-    { name: "Seyehat Etmek", value: 'seyahatetme' },
-    { name: "Müzik Dinlemek", value: 'muzikdinleme' },
-    { name: "Yüzme", value: 'yuzme' },
-    { name: "Bisiklet Sürmek", value: 'bisikletsurme' },
-    { name: "Fitness", value: 'fitness' },
-    { name: "Fotografcilik", value: 'fotografcilik' },
-    { name: "Enstruman Çalmak", value: 'enstrumancalma' },
-    { name: "Şarkı Söylemek", value: 'sarkisoyleme' },
-    { name: "Tiyatro", value: 'tiyatro' },
-    { name: "Sinema", value: 'sinema' },
-    { name: "Video Oyunları", value: 'videooyunlari' },
+    { name: 'Kitap Okumak', value: 'kitapokuma' },
+    { name: 'Seyehat Etmek', value: 'seyahatetme' },
+    { name: 'Müzik Dinlemek', value: 'muzikdinleme' },
+    { name: 'Yüzme', value: 'yuzme' },
+    { name: 'Bisiklet Sürmek', value: 'bisikletsurme' },
+    { name: 'Fitness', value: 'fitness' },
+    { name: 'Fotografcilik', value: 'fotografcilik' },
+    { name: 'Enstruman Çalmak', value: 'enstrumancalma' },
+    { name: 'Şarkı Söylemek', value: 'sarkisoyleme' },
+    { name: 'Tiyatro', value: 'tiyatro' },
+    { name: 'Sinema', value: 'sinema' },
+    { name: 'Video Oyunları', value: 'videooyunlari' },
     { name: 'Spor Yapmak', value: 'sporyapmak' },
     { name: 'Çamaşır Makinesi', value: 'camasirmakinesi' },
     { name: 'Buzdolabı', value: 'buzdolabi' },
@@ -1113,7 +1101,7 @@ export const Postbutunozellikler = [
     { name: 'Mutfak', value: 'mutfak' },
     { name: 'Kişisel Dolap', value: 'kisiseldolap' },
     { name: 'Asansör', value: 'asansor' },
-    { name: "Balkon", value: "balkon" },
+    { name: 'Balkon', value: 'balkon' },
     { name: 'Kamera Sistemi', value: 'kamerasistemi' },
     { name: 'Yüzme Havuzu', value: 'yuzmehavuzu' },
     { name: 'Güvenlik', value: 'guvenlik' },
@@ -1122,39 +1110,38 @@ export const Postbutunozellikler = [
     { name: 'Spor Salonu', value: 'sporsalonu' },
     { name: 'Ütü Odası', value: 'utuodasi' },
     { name: 'Çamaşırhane', value: 'camasirhane' },
-
-]
+];
 
 export const misafirkabul = [
-    { name: "Ücretsiz Bir Şekilde Kalabilir", value: "gelebilirucretsiz" },
-    { name: "Ücretli Bir Şekilde Kalabilir", value: "gelebilirucretli" },
-    { name: "Kalamaz", value: "gelemez" },
-]
-
+    { name: 'Ücretsiz Bir Şekilde Kalabilir', value: 'gelebilirucretsiz' },
+    { name: 'Ücretli Bir Şekilde Kalabilir', value: 'gelebilirucretli' },
+    { name: 'Kalamaz', value: 'gelemez' },
+];
 
 export const inputsPostCreate = [
-
     {
         id: 1,
-        name: "title",
-        type: "text",
-        placeholder: "örnek : Oda arkadaşı arıyorum",
+        name: 'title',
+        type: 'text',
+        placeholder: 'örnek : Oda arkadaşı arıyorum',
         errorMessage:
-            "Post Başlığı en az 3  en fazla 25 karakter olmalıdır ve özel karakter içeremez!",
-        label: "Post Başlığı",
-        pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s]{3,25}$",
+            'Post Başlığı en az 3  en fazla 60 karakter olmalıdır ve özel karakter içeremez!',
+        label: 'Post Başlığı',
+        pattern:
+            "^(?![0-9\\s])[a-zA-Z0-9\\s.,'&çÇğĞıİöÖşŞüÜ]{2,57}[a-zA-Z0-9.,'&çÇğĞıİöÖşŞüÜ](\\s{0,2})?$",
         required: true,
     },
     {
         id: 2,
-        name: "address",
-        type: "text",
-        placeholder: "örnek : Kestel Mah. Üniversite Cad. Alanya/Antalya",
+        name: 'address',
+        type: 'text',
+        placeholder: 'örnek : Kestel Mah. Üniversite Cad. Alanya/Antalya',
         errorMessage:
-            "Adres en az 3  en fazla 45 karakter olmalıdır ve özel karakter içeremez!",
-        label: "Adres",
-        //pattern: "^(?![ ])(?!.* $)[A-Za-zğüşıöçĞÜŞİÖÇ\\s//:.]{3,45}$",
-        required: false,
+            'Adres en az 3  en fazla 45 karakter olmalıdır ve özel karakter içeremez!',
+        label: 'Adres',
+        pattern:
+            "^(?![0-9\\s])[a-zA-Z0-9\\s'.,&\\/çÇğĞıİöÖşŞüÜ]{2,97}[a-zA-Z0-9'.,&\\/çÇğĞıİöÖşŞüÜ](\\s{0,2})?$",
+        required: true,
     },
     // {
     //     id: 3,
@@ -1169,75 +1156,71 @@ export const inputsPostCreate = [
     // },
     {
         id: 4,
-        name: "email",
-        type: "email",
-        placeholder: "örnek : apartsandmates@gmail.com",
-        pattern: "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
-        errorMessage: "Geçerli bir mail adresi giriniz!",
-        label: "Email",
+        name: 'email',
+        type: 'email',
+        placeholder: 'örnek : apartsandmates@gmail.com',
+        pattern: '^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$',
+        errorMessage: 'Geçerli bir mail adresi giriniz!',
+        label: 'Email',
         required: true,
     },
     {
         id: 5,
-        name: "phoneNumber",
-        type: "text",
-        placeholder: "örnek : 0555 555 55 55",
-        pattern: "^([0-9]){4}\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}",
-        errorMessage: "Geçerli bir Telefon numarası Giriniz! 0555 555 55 55 şeklinde giriniz",
-        label: "Telefon Numarası",
+        name: 'phoneNumber',
+        type: 'text',
+        placeholder: 'örnek : 0555 555 55 55',
+        pattern: '^([0-9]){4}\\s([0-9]){3}\\s([0-9]){2}\\s([0-9]){2}',
+        errorMessage:
+            'Geçerli bir Telefon numarası Giriniz! 0555 555 55 55 şeklinde giriniz',
+        label: 'Telefon Numarası',
         required: true,
     },
 
     {
         id: 6,
-        name: "min",
-        type: "text",
-        placeholder: "örnek : 2500 (Tl cinsinden giriniz)",
-        pattern: "^[0-9]{1,5}$",
-        errorMessage: "Geçerli bir Fiyat Giriniz ve sayı olduğundan emin olunuz!",
-        label: "Odanızın Fiyatı",
+        name: 'min',
+        type: 'text',
+        placeholder: 'örnek : 2500 (Tl cinsinden giriniz)',
+        pattern: '^[0-9]{1,5}$',
+        errorMessage: 'Geçerli bir Fiyat Giriniz ve sayı olduğundan emin olunuz!',
+        label: 'Odanızın Fiyatı',
         required: true,
     },
     {
         id: 7,
-        name: "deposit",
-        type: "text",
-        placeholder: "örnek : 2500 (Tl cinsinden giriniz)",
-        pattern: "^[0-9]{1,5}$",
-        errorMessage: "Geçerli bir depozito fiyatı Giriniz ve sayı olduğundan emin olunuz!",
-        label: "Depozito Fiyatı ",
+        name: 'deposit',
+        type: 'text',
+        placeholder: 'örnek : 2500 (Tl cinsinden giriniz)',
+        pattern: '^[0-9]{1,5}$',
+        errorMessage:
+            'Geçerli bir depozito fiyatı Giriniz ve sayı olduğundan emin olunuz!',
+        label: 'Depozito Fiyatı ',
         required: true,
     },
     {
         id: 8,
-        name: "instaAccount",
-        type: "text",
-        placeholder: "örnek : @elonmusk",
-        errorMessage: "Geçerli bir instagram kullanıcı adı Giriniz!",
-        pattern: "^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){0,28}$",
-        label: "Instagram Kullanıcı Adınızı Giriniz @ işareti ile başlayarak!",
+        name: 'instaAccount',
+        type: 'text',
+        placeholder: 'örnek : @elonmusk',
+        errorMessage: 'Geçerli bir instagram kullanıcı adı Giriniz!',
+        pattern: '^[a-zA-Z0-9](?:[._]?[a-zA-Z0-9]){0,28}$',
+        label: 'Instagram Kullanıcı Adınızı Giriniz @ işareti ile başlayarak!',
         required: true,
     },
-
 ];
 
-
 export const hobilerim = [
-    { name: "Kitap Okumak", value: "kitapokuma" },
-    { name: "Seyehat Etmek", value: 'seyahatetme' },
-    { name: "Müzik Dinlemek", value: 'muzikdinleme' },
-    { name: "Yüzme", value: 'yuzme' },
-    { name: "Bisiklet Sürmek", value: 'bisikletsurme' },
-    { name: "Fitness", value: 'fitness' },
-    { name: "Fotografcilik", value: 'fotografcilik' },
-    { name: "Enstruman Çalmak", value: 'enstrumancalma' },
-    { name: "Şarkı Söylemek", value: 'sarkisoyleme' },
-    { name: "Tiyatro", value: 'tiyatro' },
-    { name: "Sinema", value: 'sinema' },
-    { name: "Video Oyunları", value: 'videooyunlari' },
-    { name: 'Spor Yapmak', value: 'sporyapmak' }
-]
-
-
-
-
+    { name: 'Kitap Okumak', value: 'kitapokuma' },
+    { name: 'Seyehat Etmek', value: 'seyahatetme' },
+    { name: 'Müzik Dinlemek', value: 'muzikdinleme' },
+    { name: 'Yüzme', value: 'yuzme' },
+    { name: 'Bisiklet Sürmek', value: 'bisikletsurme' },
+    { name: 'Fitness', value: 'fitness' },
+    { name: 'Fotografcilik', value: 'fotografcilik' },
+    { name: 'Enstruman Çalmak', value: 'enstrumancalma' },
+    { name: 'Şarkı Söylemek', value: 'sarkisoyleme' },
+    { name: 'Tiyatro', value: 'tiyatro' },
+    { name: 'Sinema', value: 'sinema' },
+    { name: 'Video Oyunları', value: 'videooyunlari' },
+    { name: 'Spor Yapmak', value: 'sporyapmak' },
+];
