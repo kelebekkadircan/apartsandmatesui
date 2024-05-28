@@ -888,7 +888,7 @@ export const inputsHotelCreate = [
         id: 8,
         name: 'bedCount',
         type: 'text',
-        placeholder: 'örnek : 2',
+        placeholder: 'örnek : 200 (Yatak Sayısı)',
         errorMessage: 'Geçerli bir oda Sayısı Giriniz!',
         pattern: '^[0-9]{1,3}$',
         label: 'Yatak Sayısı',

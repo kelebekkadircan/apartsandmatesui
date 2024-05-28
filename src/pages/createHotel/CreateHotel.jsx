@@ -112,7 +112,15 @@ const CreateHotel = () => {
     // values.logo = avatars[0];
     values.tags = [...buildingFeatures, ...roomFeatures, ...services];
 
-    if (values.images.length > 3 && getLatLng !== undefined) {
+    console.log(getLatLng, "GETLATLNG");
+
+    if (
+      values.images.length > 3 ||
+      getLatLng !== null ||
+      getLatLng !== undefined ||
+      getLatLng !== "" ||
+      getLatLng !== 0
+    ) {
       // console.log("Form submitted!", values);
       setLoading(true);
       try {
@@ -130,6 +138,7 @@ const CreateHotel = () => {
       alert("En az 4 resim yükleyiniz ve konum seçiniz");
     }
   };
+
   console.log(getLatLng, "GETLATLNG");
 
   return (
